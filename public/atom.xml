@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://guilhermeka.github.com/samuraidev-blog/atom.xml" rel="self"/>
   <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T18:59:34-03:00</updated>
+  <updated>2012-09-07T20:23:32-03:00</updated>
   <id>http://guilhermeka.github.com/samuraidev-blog/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Post]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/"/>
+    <updated>2012-09-07T15:48:00-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world</id>
+    <content type="html"><![CDATA[<p>Hi, this is an experiment with Octopress. Nice! :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Você conhece Ruby?]]></title>
@@ -119,7 +128,17 @@
 
 <p>Agora vamos para a parte prática. Como utilizar fontes ricas em sistemas web? A maneira atualmente mais segura é utilizar o método de CSS chamado @font-face. Ela permite baixar uma determinada fonte de seu servidor para ser mostrada em uma página web mesmo que o usuário não possua a fonte instalada. A sintaxe básica é bastante simples. A propriedade font-family dentro de @font-face irá definir como você utilizará a fonte no restante do css (veja utilização em .exemplo). Além disso você precisa do arquivo da fonte e declarar de onde ele será carregado, fornecendo opcionalmente o formato.</p>
 
-<p>[gist id=2990412]</p>
+<div><script src='https://gist.github.com/2990412.js?file='></script>
+<noscript><pre><code>@font-face {
+    font-family: &quot;TK4F&quot;;
+    src: url(&quot;/fonts/TkachenkoSketch4F.ttf&quot;)
+    format(&quot;truetype&quot;);
+}
+
+.exemplo {
+    font-family: &quot;TK4F&quot;, Arial, sans-serif;
+}</code></pre></noscript></div>
+
 
 <p>Deve-se sempre considerar a possibilidade de não haver suporte para o formato da fonte. Quando desenvolvemos para a web devemos lembrar que ela é universal, pode ser acessada não apenas de seu smartphone ou desktop, mas de geladeiras, carros, etc. Note que após declarar a fonte “TK4F” na classe .exemplo, temos outras fontes separadas por virgula, elas são fallbacks e substituirão em ordem a fonte antecessora caso ela não possa ser carregada. Mesmo nos desktops há dores de cabeça, especialmente quanto ao formato e licensas das fontes. No final do post você encontra links para mais informações sobre os tipos e suportes cross-browsers. Além disso, você pode ver um exemplo de utilização de fontes e tambem experimentar e verificar os conceitos aprendidos nesse post em <a href="http://samuraiplayground.appspot.com/tipografia">um site que construí como exercicio</a> enquanto aprendia jQuery.</p>
 
@@ -164,7 +183,16 @@
 
 <p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
 
-<p>[gist id=2941459]</p>
+<div><script src='https://gist.github.com/2941459.js?file='></script>
+<noscript><pre><code>from google.appengine.api import memcache 
+
+def get_vaga(vaga_id, update = False): 
+    vaga = memcache.get(vaga_id) 
+    if vaga is None or update: 
+        vaga = Vaga.by_id(int(vaga_id)) 
+        memcache.set(vaga_id,vaga) 
+    return vaga</code></pre></noscript></div>
+
 
 <p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
 
@@ -900,22 +928,22 @@ $ git commit -m ‘inclusão do nome Guilherme Kruger Araujo 25’
 <p>O resutlado será algo assim:</p>
 
 <p>  <em>commit b0837c9d941a9e9549164aedaeb620d23d9ca6cc</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#103;&#117;&#105;&#x32;&#56;&#x31;&#49;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x67;&#x75;&#105;&#50;&#56;&#x31;&#49;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x67;&#x75;&#105;&#50;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#103;&#117;&#105;&#x32;&#x38;&#x31;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></em>
   <em>Date: Sat Apr 21 19:54:08 2012 -0300</em>
   <em>teste</em></p>
 
 <p>  <em>commit c5873bf79859688622b29a3d576c12e06cfd793b</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x67;&#117;&#105;&#50;&#x38;&#49;&#49;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#117;&#105;&#50;&#56;&#x31;&#49;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x67;&#x75;&#x69;&#x32;&#56;&#x31;&#x31;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#103;&#117;&#x69;&#50;&#56;&#49;&#x31;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></em>
   <em>Date: Sat Apr 21 19:33:41 2012 -0300</em>
   <em>inclusão do nome Guilherme Kruger Araujo 25</em></p>
 
 <p>  <em>commit 6de3005ccc52f829d10ac78a2c3062796d96a135</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x67;&#117;&#105;&#x32;&#x38;&#49;&#49;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#103;&#117;&#x69;&#50;&#x38;&#49;&#x31;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#103;&#x75;&#x69;&#x32;&#x38;&#49;&#x31;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#103;&#x75;&#105;&#x32;&#56;&#49;&#49;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a></em>
   <em>Date: Sat Apr 21 19:13:37 2012 -0300</em>
   <em>criando arquivos para o post</em></p>
 
 <p>  <em>commit c2df99536d815782a34a4bb64789e65aa4790947</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x67;&#x75;&#x69;&#50;&#x38;&#49;&#49;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#103;&#x75;&#x69;&#50;&#56;&#49;&#x31;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#103;&#117;&#x69;&#x32;&#x38;&#x31;&#49;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#109;">&#x67;&#x75;&#105;&#50;&#56;&#x31;&#49;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></em>
   <em>Date: Wed Apr 11 21:37:41 2012 -0300</em>
   <em>first commit</em></p>
 

@@ -107,7 +107,16 @@
 
 <p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
 
-<p>[gist id=2941459]</p>
+<div><script src='https://gist.github.com/2941459.js?file='></script>
+<noscript><pre><code>from google.appengine.api import memcache 
+
+def get_vaga(vaga_id, update = False): 
+    vaga = memcache.get(vaga_id) 
+    if vaga is None or update: 
+        vaga = Vaga.by_id(int(vaga_id)) 
+        memcache.set(vaga_id,vaga) 
+    return vaga</code></pre></noscript></div>
+
 
 <p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
 
@@ -190,6 +199,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/07/hello-world/">Hello World Post</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
       </li>
     
@@ -203,10 +216,6 @@
     
       <li class="post">
         <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Você conhece? | My Octopress Blog]]></title>
   <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/você-conhece-/atom.xml" rel="self"/>
   <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T18:59:34-03:00</updated>
+  <updated>2012-09-07T20:23:32-03:00</updated>
   <id>http://guilhermeka.github.com/samuraidev-blog/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -119,7 +119,17 @@
 
 <p>Agora vamos para a parte prática. Como utilizar fontes ricas em sistemas web? A maneira atualmente mais segura é utilizar o método de CSS chamado @font-face. Ela permite baixar uma determinada fonte de seu servidor para ser mostrada em uma página web mesmo que o usuário não possua a fonte instalada. A sintaxe básica é bastante simples. A propriedade font-family dentro de @font-face irá definir como você utilizará a fonte no restante do css (veja utilização em .exemplo). Além disso você precisa do arquivo da fonte e declarar de onde ele será carregado, fornecendo opcionalmente o formato.</p>
 
-<p>[gist id=2990412]</p>
+<p><div><script src='https://gist.github.com/2990412.js?file='></script>
+<noscript><pre><code>@font-face {
+    font-family: &quot;TK4F&quot;;
+    src: url(&quot;/fonts/TkachenkoSketch4F.ttf&quot;)
+    format(&quot;truetype&quot;);
+}
+
+.exemplo {
+    font-family: &quot;TK4F&quot;, Arial, sans-serif;
+}</code></pre></noscript></div>
+</p>
 
 <p>Deve-se sempre considerar a possibilidade de não haver suporte para o formato da fonte. Quando desenvolvemos para a web devemos lembrar que ela é universal, pode ser acessada não apenas de seu smartphone ou desktop, mas de geladeiras, carros, etc. Note que após declarar a fonte “TK4F” na classe .exemplo, temos outras fontes separadas por virgula, elas são fallbacks e substituirão em ordem a fonte antecessora caso ela não possa ser carregada. Mesmo nos desktops há dores de cabeça, especialmente quanto ao formato e licensas das fontes. No final do post você encontra links para mais informações sobre os tipos e suportes cross-browsers. Além disso, você pode ver um exemplo de utilização de fontes e tambem experimentar e verificar os conceitos aprendidos nesse post em <a href="http://samuraiplayground.appspot.com/tipografia">um site que construí como exercicio</a> enquanto aprendia jQuery.</p>
 

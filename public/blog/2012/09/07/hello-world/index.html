@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Instalando node.js no Fedora a partir do código fonte - My Octopress Blog</title>
+  <title>Hello World Post - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="[singlepic id=12 w=320 h=240 float=left] O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um &hellip;">
+  <meta name="description" content="Hi, this is an experiment with Octopress. Nice! :)
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/">
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Instalando node.js No Fedora a Partir Do Código Fonte</h1>
+      <h1 class="entry-title">Hello World Post</h1>
     
     
       <p class="meta">
@@ -83,71 +84,14 @@
   
 
 
-<time datetime="2012-04-26T16:21:09-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2012</time>
+<time datetime="2012-09-07T15:48:00-03:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>[singlepic id=12 w=320 h=240 float=left]</p>
-
-<p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
-
-<pre><code># yum install openssl-devel
-# yum install gcc
-# yum install gcc-c++
-</code></pre>
-
-<p>Para pegar o código fonte você pode clonar pelo git ou buscar no site <a href="http://nodejs.org/">http://nodejs.org/</a>
-Pelo git:</p>
-
-<pre><code>$ git clone git://github.com/joyent/node.git
-</code></pre>
-
-<p>É importante destacar que você estará pegando a mais recente versão do código no repositório. Se quiser uma versão anterior (provavelmente mais estável) busque pelas tags do programa e faça um checkout dessa tag.</p>
-
-<pre><code>$ git tag
-$ git checkout [nome_da_tag]
-</code></pre>
-
-<p>Agora que você tem o código, navegue até a pasta node e prossiga com a instalação:</p>
-
-<pre><code>$ cd node
-# ./configure
-# make -j2
-</code></pre>
-
-<p>Se você se deparar com o erro: &#8220;fatal error: gnu/stubs-64.h: No such file or directory&#8221; execute o seguinte comando:</p>
-
-<pre><code># yum install glibc-devel.x86_64
-</code></pre>
-
-<p>Termine a instalação:</p>
-
-<pre><code># make install
-</code></pre>
-
-<p>Adicione usr local ao PATH</p>
-
-<pre><code># export PATH=$PATH:/usr/local/bin:/usr/local
-</code></pre>
-
-<p>Execute o comando visudo para editar /etc/sudoers</p>
-
-<pre><code># visudo
-</code></pre>
-
-<p>Procure a linha que contem &#8220;Defaults secure_path=/sbin:/bin:/usr/sbin:/usr/bin&#8221; e adicione ao fim da linha &#8220;:/usr/local/bin&#8221; sem os parenteses. Você faz isso indo com cursor até o fim da linha, digite &#8220;i&#8221;, escreva &#8220;:/usr/local/bin&#8221; e então, para salvar, aperte ESC e digite &#8220;wq&#8221;, ENTER.</p>
-
-<p>[singlepic id=13 w=320 h=240 float=center]</p>
-
-<p>Para verificar a versão instalada:</p>
-
-<pre><code>$ node -v
-</code></pre>
-
-<p>Pronto!</p>
+<div class="entry-content"><p>Hi, this is an experiment with Octopress. Nice! :)</p>
 </div>
 
 
@@ -156,7 +100,7 @@ $ git checkout [nome_da_tag]
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Guilherme Kruger Araujo</span></span>
 
       
 
@@ -170,12 +114,12 @@ $ git checkout [nome_da_tag]
   
 
 
-<time datetime="2012-04-26T16:21:09-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2012</time>
+<time datetime="2012-09-07T15:48:00-03:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/linguagens-e-frameworks/'>Linguagens e frameworks</a>, <a class='category' href='/blog/categories/tutoriais/'>Tutoriais</a>
+    <a class='category' href='/blog/categories/hello/'>hello</a>
   
 </span>
 
@@ -184,7 +128,7 @@ $ git checkout [nome_da_tag]
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/" >Tweet</a>
   
   
   
@@ -193,10 +137,8 @@ $ git checkout [nome_da_tag]
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/04/24/eventos-fim-de-abril/" title="Previous Post: Eventos fim de abril">&laquo; Eventos fim de abril</a>
+        <a class="basic-alignment left" href="/blog/2012/07/04/voce-conhece-ruby/" title="Previous Post: Você conhece Ruby?">&laquo; Você conhece Ruby?</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/05/07/css-inteligente-use-sass/" title="Next Post: CSS inteligente, use SASS!">CSS inteligente, use SASS! &raquo;</a>
       
     </p>
   </footer>
