@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>DNS do Registro.br + Google App Engine - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">DNS Do Registro.br + Google App Engine</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-10T18:34:40-03:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
+
+<p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
+
+<p>O processo é meio tortuoso se você não sabe por onde começar, por isso resolvi fazer esse post. Você tem que ir até o painel de administração do Google App Engine, no menu Application Setting e Clicar no botão Add Domain em Domain Setup. Digitar o seu dominio e seguir para a página do Google Apps, onde fará o cadastro se ainda não tiver conta para esse dominio. Ao fim você deve chegar na página do seu aplicativo e adicionar a url correspondente (Veja algumas imagens abaixo)</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;614&#8221; caption=&#8221;Encontra-se no menu Administration Settings do seu aplicativo no Google App Engine&#8221;]<img src="https://lh6.googleusercontent.com/GUZ9mQFRcyufitezcinlUYH3uGM1_LpluFS0h0zCWPDY8rEiHYuvJk997cKJPxXbfjJt_3Ud9kKTXqEQA8WX7e82Xm_HL1jLeSZpnP3UodwAR9OlcaQ" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;622&#8221; caption=&#8221;Após clicar em Add Domain, deve preencher seu dominio e será encaminhado para o Google Apps.&#8221;]<img src="https://lh6.googleusercontent.com/XAAqmu4uL7UeaoYgRTkFJMaTxuRL0TUHM_oxHfXlcenFIPsKeGPHlbEoyYl3YRC5gSNhVBDHkCJxNP6FNFpaPMoTzz9g8gBtlN_805TD_v7q5vHUNFA" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;394&#8221; caption=&#8221;Página do seu aplicativo (no meu caso tweetvagas) onde você deve adicionar a url do seu dominio.&#8221;]<img src="https://lh6.googleusercontent.com/5s53_VmweH1GVXpdvJNikUMggE8emaMYtTlQvQqYjc5kpNHkApMSds2UFqxzJh1U7uJAJjNR2PTLXUA3DrGQbTghtNFrBHRgUUugaCmOJpZhbxVsOQo" alt="" />[/caption]</p>
+
+<p>Depois de se cadastrar e adicionar a url do seu dominio para a aplicação, você terá que criar um CNAME no servidor DNS (provavelmente será necessário marcar uma opção para validar seu dominio em outro momento no Google Apps). Então vá para Registro.br na página de administração do seu domínio, marque a opção “Utilizar os servidores DNS do Registro.br”, clique em Salvar &amp; Editar, selecione o Modo Avançado. Agora você deve configurar CNAME do seu dominio para ghs.google.com.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;385&#8221; caption=&#8221;Na página de administração do seu domínio.&#8221;]<img src="https://lh6.googleusercontent.com/SCejf5vYJgdfk5GfRx7Z6cb2yfgw_xoLE5sOicdTNvuU9O6xsaOufdwK0aMZrpNRAZMYfBx52XempYuSIfUCoYaX-WAVOFJxe1qOeozKFvTgBymdayw" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;684&#8221; caption=&#8221;Modo Avançado.&#8221;]<strong><img src="https://lh5.googleusercontent.com/fnzxfDS4uOdMC_mtphfqxQBVWfWyWJrHoro7ZusJHh3Dz_6pk0cy4DM40aHj5Ak6lOdoIvnrs81evVPn3FHQlS8nr1MnR7JxgYGCZzOth7ipLPRHibI" alt="" /></strong>[/caption]</p>
+
+<p>ATENÇÃO: Os servidores DNS demoram cerca de 30 min para refletirem a configuração.</p>
+
+<p>Agora o seu dominio deve estar funcionando, mas ele só é acessível através do www. Para você validar o seu dominio no Google Apps pelo método padrão, ainda é preciso fazer uma configuração para que seu site seja acessivel sem o www. Vá para o menu Domain Setting do Google Apps, em Domain Names, clique no link “Change de A record”, onde você encontra os endereços IPs que você deve adicionar lá no Registro.br conforme imagens.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;647&#8221; caption=&#8221;Clique no Link “change the A record&#8221;]<img src="https://lh4.googleusercontent.com/t452VMAVkKBE1jB9U6E8FTFhNUK6JB1UCO2Bb-qtsU1Mu7jUg-tUWBJZGqOmzlRmdpRZ-wY4kjMIYaEIST1LeLbJgzGrmY_niMFQACoBvo4Us-JDUn0" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;alignnone&#8221; width=&#8221;648&#8221; caption=&#8221;Adicione A record no DNS do Registro.br&#8221;]<img src="https://lh3.googleusercontent.com/Xz70cn1vI4pPVK44DNNvC-CdhmdwZv77JqQkfA4XRWiicpe1ycMiRSQ5gXrSUS2QIb_VymIp-xrBPQ6HNFHAvahI55dIlogqyKqw3pw7C9AQJ2BPGME" alt="" />[/caption]</p>
+
+<p>Depois disso você terá configurado tudo, seu site estará acessível pelo dominio e ainda terá todos os recursos fornecidos pelo Google, sem nenhum custo além do registro de domínio.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">bsouzaguilherme</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-10T18:34:40-03:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/dicas-web/'>Dicas web</a>, <a class='category' href='/blog/categories/tutoriais/'>Tutoriais</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/" title="Previous Post: Dica de editor simples - SublimeText">&laquo; Dica de editor simples - SublimeText</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/16/voce-conhece-memcached/" title="Next Post: Você conhece Memcached?!">Você conhece Memcached?! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

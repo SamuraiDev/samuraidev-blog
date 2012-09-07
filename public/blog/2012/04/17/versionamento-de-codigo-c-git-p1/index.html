@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Versionamento de Código (c/ Git) p1 - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Se você é um desenvolvedor entusiasta e gosta de estar por dentro das novidades desse mundo, vai encontrar aqui no SamuraiDev uma fonte riquissíma e &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Versionamento De Código (C/ Git) P1</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-17T13:54:18-03:00" pubdate data-updated="true">Apr 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Se você é um desenvolvedor entusiasta e gosta de estar por dentro das novidades desse mundo, vai encontrar aqui no SamuraiDev uma fonte riquissíma e abrangente sobre tecnologias e ferramentas de desenvolvimento, assim como debates e novidades envolvendo o tema.</p>
+
+<p>Como muitos dos posts serão no estilo <a href="http://pt.wikipedia.org/wiki/DIY">DIY</a>, acredito que não existe uma melhor maneira de começar do que apresentar uma ferramenta que revolucionou a cultura do Desenvolvimento de Software. O <a href="https://github.com/">GitHub</a>! Ele é uma plataforma social para o desenvolvimento de software construido ao redor do <a href="http://pt.wikipedia.org/wiki/Git">Git</a>, e traz uma nova abordagem para a escrita e compartilhamento de código. Enquanto o Git cuida da parte técnica, como fork e merge, o GitHub trata das questões sociais como requisições para pulls e o rastreamento de forks.</p>
+
+<p>É interessante destacar que o Git foi criado por <a href="http://pt.wikipedia.org/wiki/Linus_Torvalds">Linus Trovalds</a>. Em uma divertida palestra para o Google Tech Talk, nomeada <a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Trovalds on git</a>, ele fala sobre as motivações de sua criação. Se por acaso você não deseja assistir aos 110 minutos de palestra, vou resumi-la rapidamente e introduzir o que é, e o que existe, em relação a versionamento de código.</p>
+
+<p>Em um jogo rápido, um sistema de versionamento de código é uma ferramenta que você gostaria de ter caso não desenvolva sozinho e isolado no mundo (e mesmo desenvolvendo sozinho pode fazer bom uso do Git). Ele serve para gerênciar diferentes versões no desenvolvimento de software (ou de um documento qualquer), permitindo guardar históricos de código-fonte e documentação, criar diferentes linhas de desenvolvimento, marcar e resgatar versões estáveis, facilitando especialmente o desenvolvimento em equipes.</p>
+
+<p>Em relação aos tipos de sistemas de versionamentos podemos separa-los em dois tipos: Centralizados e Descentralizados. No primeiro time dois exemplos são <a href="http://pt.wikipedia.org/wiki/CVS">CVS</a> e <a href="http://pt.wikipedia.org/wiki/Subversion">Subversion</a>, muito criticados por Linus. E no outro estão <a href="http://pt.wikipedia.org/wiki/Mercurial">Mercurial</a>, BitKeeper e o Git. Se quiser existe uma <a href="http://en.wikipedia.org/wiki/List_of_revision_control_software">lista na Wiki</a>.</p>
+
+<p>Segundo o próprio Linus, que ainda coordena o desenvolvimento do kernel Linux, o BitKeeper foi o primeiro sistema de versionamento existente que valia a pena usar. Para o criador do Linux, as caracteristicas básicas para tal sistema são necessariamente as seguintes:</p>
+
+<p><strong>Distribuido: </strong>Não é possível depender de um servidor centralizado, por varios motivos, que incluem conectividade, segurança e logistica. Se faltar conexão, ou houver problemas com o servidor central, todo o desenvolvimento é prejudicado. Na computação conhecemos isso como <a href="http://pt.wikipedia.org/wiki/Ponto_%C3%BAnico_de_falha">Ponto Unico de Falha</a>. Por isso um sistema distribuido é muito importante.</p>
+
+<p><strong>Performance: </strong>No Git, cada desenvolvedor possui uma copia local de toda história de desenvolvimento e pode trabalhar offline nessa copia. Isso permite realizar quase todas operações localmente, gerando um ganho enorme de performance. A maioria das operações parecem quase instantâneas.</p>
+
+<p><strong>Confiabilidade</strong>: Além disso, tudo o que é colocado no repositório deve ser confiável, de modo que você saiba, com certeza, que o que deixou nele não foi corrompido ou adulterado. O Git verifica a integridade de tudo que é armazenado com <a href="http://pt.wikipedia.org/wiki/SHA1">SHA-1</a>, o que torna impossível alterar algum dado sem que o Git saiba. Se por acaso forem perdidas informações o Git irá detectar.</p>
+
+<h1>Instalando o Git</h1>
+
+<p>Como essa apresentação ja foi bastante longa, nessa primeira parte vou apenas mostrar como instalar o Git em seu sistema operacional.</p>
+
+<p><strong>Linux</strong></p>
+
+<p>No Fedora:</p>
+
+<pre><code>$ yum install git-core
+</code></pre>
+
+<p>Debian-based (Ubuntu):</p>
+
+<pre><code>$ apt-get install git-core
+</code></pre>
+
+<p><strong>Mac</strong></p>
+
+<p>Faça o download de: <a href="http://code.google.com/p/git-osx-installer">http://code.google.com/p/git-osx-installer</a></p>
+
+<p>Instale!</p>
+
+<p><strong>Windows</strong></p>
+
+<p>Faça o download de: <a href="http://code.google.com/p/msysgit">http://code.google.com/p/msysgit</a></p>
+
+<p>Instale!</p>
+
+<p>Facil né?! Mas antes de terminar, existem algumas configurações que você deve fazer ao menos uma vez (e poderá muda-las depois).</p>
+
+<p><strong>Identidade</strong></p>
+
+<p>A primeira delas é configurar sua identidade, que será incluida permanentemente em cada commit. É preciso realizar isso apenas uma vez se você passar a opção &#8211;global.</p>
+
+<pre><code>$ git config --global user.name "Samurai Dev"
+$ git config --global user.email samurai@samuraidev.com
+</code></pre>
+
+<p><strong>Editor</strong></p>
+
+<p>É bom configurar seu editor padrão, caso contrário, provavelmente utilizará o Vi ou Vim. Digamos que você deseje utilizar o emacs.</p>
+
+<p>   $ git config &#8211;global core.editor emacs</p>
+
+<p><strong>Ferramenta de Diff</strong></p>
+
+<p>Configure também uma ferramenta para resolver os conflitos de merge.</p>
+
+<p>   $ git config &#8211;global merge.tool vimdiff</p>
+
+<p><strong>Finalmente</strong></p>
+
+<p>Verifque as configurações com o comando: git config &#8211;list</p>
+
+<p>Se precisar de ajuda use:</p>
+
+<p>   $ git help comando
+   $ git comando &#8211;help
+   $ man git-comando</p>
+
+<p>Se por acaso precisar de uma ajuda pessoal, um bom lugar para se encontrar é nos canais #git e #github no server Freenode (irc.freenode.net)</p>
+
+<p>Nos próximos posts vou explicar mais detalhadamente o funcionamento do Git.</p>
+
+<p>Se você não quiser esperar, deixo um Quick Start e alguns links interessantes.</p>
+
+<p><strong>Links</strong>:</p>
+
+<p><a href="http://progit.org/">Pro Git</a></p>
+
+<p><a href="http://byte.kde.org/%7Ezrusin/git/git-cheat-sheet-medium.png">Git Cheat Sheet</a></p>
+
+<p><a href="http://git-scm.com/">Git Site Oficial</a></p>
+
+<p><a href="http://schacon.github.com/git/everyday.html">Everyday GIT</a></p>
+
+<p><a href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">guilherme</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-17T13:54:18-03:00" pubdate data-updated="true">Apr 17<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tutoriais/'>Tutoriais</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/04/22/versionamento-de-codigo-c-git-p2/" title="Next Post: Versionamento de Código (c/ Git) p2">Versionamento de Código (c/ Git) p2 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

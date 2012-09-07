@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="No outro post, fiz uma introdução ao versionamento de código, falei sobre o Git e GitHub. Agora vamos ver mais de perto como essa ferramenta funciona &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/page/2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/22/versionamento-de-codigo-c-git-p2/">Versionamento De Código (C/ Git) P2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-22T14:28:02-03:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>No outro <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">post</a>, fiz uma introdução ao versionamento de código, falei sobre o Git e GitHub. Agora vamos ver mais de perto como essa ferramenta funciona. Ao fim desse post você vai ter visto como configurar e inicializar um repositório, realizar, gravar, desfazer e comparar mudanças, e ver o estado e historico de seus arquivos.</p>
+
+<p>Se você vai utilizar o Git, seria muito legal tambem criar uma conta no <a href="https://github.com/">GitHub</a>. Não só porque ele oferece a hospedagem gratuita para repositórios de código livre, mas também por ser uma espécie de currículo utilizado no mercado de desenvolvimento. Além do GitHub, existem outros sites de hospedagem de repositórios para o Git, veja uma lista deles:</p>
+
+<p><strong> Apenas respositórios públicos: </strong></p>
+
+<ul>
+<li><p><a href="http://repo.or.cz/">repo</a><a href="http://repo.or.cz/">.</a><a href="http://repo.or.cz/">or</a><a href="http://repo.or.cz/">.</a><a href="http://repo.or.cz/">cz</a> é o mais antigo dos repositórios (completamente open source), hospeda apenas projetos de software livre e possui interface Gitweb (interface web padrão do GIT). O tamanho máximo não deve exceder 400M após realizar um repack (quando os dados são comprimidos em um unico arquivo).</p></li>
+<li><p><a href="http://gitorious.org/">Gitorious</a> é outro repositório gratuito com interface web, suporte a multiplos repositórios por projeto, instalação local e open source;</p></li>
+</ul>
+
+
+<p><strong> Repositórios públicos e privados: </strong></p>
+
+<ul>
+<li><p><a href="http://www.assembla.com/">Assembla</a> oferece hospedagem segura e confiável, navegador de código web, onde é possivel navegar pelos changesets (revisões com alguma alteração de código), inclui bug/issue tracking e ferramentas colaborativas. Fornece repositório privado gratuito para até 1GB. Repositórios públicos são gratuitos.</p></li>
+<li><p><a href="https://github.com/">GitHub</a> dispensa apresentação, é o maior site de hospedagem com mais de 1 milhão de repositórios públicos. Ele da ênfase à rede social de desenvolvedores de projetos.</p></li>
+<li><p><a href="https://bitbucket.org/">Bitbucket</a> hospeda repositórios Git e Mercurial. É gratuito para repositórios privados com até 5 usuários (ou ilimitado para estudantes com email .edu), e totalmente gratuito para repositórios públicos. Tem wiki, issue tracking, entre outras funcionalidades.</p></li>
+</ul>
+
+
+<p><strong> Apenas repositórios privados: </strong></p>
+
+<ul>
+<li><p><a href="http://unfuddle.com/">Unfuddle</a> tem diversos planos, inclusive um gratuito. Ele é uma solução de gerenciamento de times de desenvolvedores de software. Oferece sistema de tickets, hospeda projetos com subversion ou Git, entre outras ferramentas para gerênciamento de projetos.</p></li>
+<li><p><a href="http://www.codebasehq.com/">codebase</a> oferede controle de versão, sistema de tickets e acompanhamento de implantação. Possui um pacote gratuito com limitação de um projeto, 50MB, 2 usuários e sem nenhuma das ferramentas.</p></li>
+</ul>
+
+
+<p>No outro post mostramos como instalar o Git, agora você deve criar um repositório e para isso existem basicamente duas maneiras:</p>
+
+<ul>
+<li>Pegar um projeto ou repositório existente e importar para o Git.</li>
+<li>Clonar um repositório Git existente.</li>
+</ul>
+
+
+<h1>Inicializando um repositório em um diretório existente</h1>
+
+<p>Primeiro você deve navegar até o diretório do projeto e digitar o comando:</p>
+
+<pre><code>$ git init
+</code></pre>
+
+<p>Será criado um novo subdiretório .git que contem um esqueleto de um repositório Git. Se o projeto não estava vazio, você deve adicionar todos arquivos no repositório com o comando add e em seguida realizar um commit. Assim todos seus arquivos estarão sendo “rastreados” pelo Git, exemplo:</p>
+
+<pre><code>$ git add *.c
+$ git add README
+$ git commit -m ‘versão inicial do projeto’
+</code></pre>
+
+<h1>Clonando um repositório existente</h1>
+
+<p>Quando você deseja contribuir para um projeto existente o comando que precisará é o git clone. Se você esta familiarizado com outros sistemas de versionamento, note que esse comando se chama clone, e não checkout, porque existe uma importante diferença entre eles. Com o <em>git clone</em>, você recebe uma copia de praticamente todos dados contidos no servidor e se por acaso o disco do servidor for corrompido, é possivel usar qualquer clone de qualquer cliente para configurar o servidor no estado de quando ele foi clonado.</p>
+
+<p>   $ git clone [url]</p>
+
+<p>Exemplos de repositórios interessantes para serem clonados:</p>
+
+<ul>
+<li>Git:  <br/>
+$ git clone https://github.com/gitster/git.git</li>
+<li>Kernel Linux:
+$ git clone https://github.com/torvalds/linux.git</li>
+<li>Ruby on Rails:
+$ git clone https://github.com/rails/rails.git</li>
+<li>Lista de repositórios Android em: <a href="https://github.com/android">https://github.com/android</a></li>
+</ul>
+
+
+<h1>Realizando mudanças no repositório</h1>
+
+<p>Agora que você ja sabe como criar ou clonar um projeto no Git, vamos ver como gravar mudanças no repositório. Cada arquivo do diretório do projeto pode estar em dois estados: <em>tracked</em> ou <em>untracked</em>. <em>Tracked</em> significa que eles estão na ultima “imagem” ou snapshot, e eles podem ser <em>unmodified</em>, <em>modified</em>, ou <em>staged</em>. Quando você clona um repositório, todos os arquivos serão <em>tracked</em> e <em>unmodified</em>, porque você acabou de pega-los e não modificou nada ainda. A medida que você edita os arquivos eles passam a ser <em>modified</em>, porque eles mudaram desde o ultimo commit. Você então muda esses arquivos para estado <em>staged </em>(veja a seguir como fazer isso) para depois fazer um commit. Após o commit os arquivos que estavam anteriormente em staged passam a ser <em>unmodified </em>e o ciclo se reinicia. No entanto, se você criou um novo arquivo dentro do diretório do projeto, ele esta no estado <em>untracked</em> e precisa ser adicionado ao estado <em>staged</em> com o comando:</p>
+
+<pre><code>$ git add [nome_do_arquivo]
+</code></pre>
+
+<p>E então realizar um commit com:</p>
+
+<pre><code>$ git commit -m ‘comentarios do commit’
+</code></pre>
+
+<p>Veja uma imagem ilustrativa:</p>
+
+<p>[singlepic id=8 w=320 h=240 float=center]</p>
+
+<p>Um arquivo <em>untracked</em> é como se o Git desconsiderasse esse arquivo.</p>
+
+<h2>Verificando o estado de seus arquivos</h2>
+
+<p>Primeira coisa que vamos fazer é clonar o seguinte repositório: git@github.com:guilhermeka/Hello-Git.git</p>
+
+<p>Antes de fazer qualquer alteração digite o comando:</p>
+
+<pre><code>$ git status
+</code></pre>
+
+<p>Você deve receber a seguinte resposta do terminal:</p>
+
+<p>_   # On branch master_</p>
+
+<pre><code>_ nothing to commit (working directory clean)_
+</code></pre>
+
+<p>Significa que não há nada para ser comitado. Agora crie um arquivo texto qualquer no diretório e repita o comando, você deve receber o seguinte retorno:</p>
+
+<p>  <em># On branch master</em>
+  <em># Untracked files:</em>
+  <em># (use &#8220;git add <file>&#8230;&#8221; to include in what will be committed)</em>
+  <em>#</em>
+  <em># nome_do_arquivo.txt</em>
+  <em>nothing added to commit but untracked files present (use &#8220;git add&#8221; to track)</em></p>
+
+<p>Agora existe um arquivo que esta no estado <em>untracked</em>. Execute o comando git add no arquivo ($ git add nome_do_arquivo.txt) e veja novamente o estado.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em>#</em></p>
+
+<p>O arquivo agora esta no estado <em>staged </em>(quando esta pronto para o commit). Agora abra o arquivo nomes.txt, adicione seu nome ao fim da lista e salve-o. Verifique o estado do projeto novamente.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em>#</em>
+  <em># Changed but not updated:</em>
+  <em># (use &#8220;git add <file>&#8230;&#8221; to update what will be committed)</em>
+  <em>#</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em></p>
+
+<p>Surgiu um novo arquivo na lista (nomes.txt) que esta no estado <em>modified</em>. Isso significa que ele foi alterado, mas se você realizar um commit agora ele não será incluido nele. Apenas os arquivos no estado <em>staged</em> entram para o commit. Use o comando $ git add nomes.txt e verifique novamente o estado com o comando git status.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em></p>
+
+<p>Digamos que você esqueceu de colocar sua idade junto ao seu nome. Altere o arquivo e verifique novamente o estado.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em>
+  <em># Changed but not updated:</em>
+  <em># (use &#8220;git add <file>&#8230;&#8221; to update what will be committed)</em>
+  <em>#</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em></p>
+
+<p>Veja que o arquivo nome consta em dois estados, staged e modified. Isso significa que se realizar um commit agora, o commit irá incluir apenas a versão do nomes.txt que não possui a sua idade. Você deve adiciona-lo denovo para o estado staged para incluir esses mudanças no commit. Faça isso e realize um commit.</p>
+
+<pre><code>$ git add nomes.txt
+$ git commit -m ‘inclusão do nome Guilherme Kruger Araujo 25’
+</code></pre>
+
+<p><em>*se você digitar apenas $ git commit, ele irá abrir o editor padrão do git para você inserir a mensagem de commit.</em></p>
+
+<h2>Vendo as mudanças</h2>
+
+<p>Para ver as mudanças entre os arquivos que foram modificados e aqueles que estão <em>staged</em> use o comando:</p>
+
+<pre><code>$ git diff
+</code></pre>
+
+<p>*<em>esse comando usará a ferramenta configurada na <strong><a href="../../../../../tutoriais/versionamento-de-codigo-c-git-p1/">parte</a><a href="../../../../../tutoriais/versionamento-de-codigo-c-git-p1/"> 1</a></strong> desse tutorial.</em></p>
+
+<p>Para ver as mudanças entre os arquivos staged e seu ultimo commit o comando é o seguinte:</p>
+
+<pre><code>$ git diff --cached
+</code></pre>
+
+<p>É muito importante lembrar que o primeiro comando (git diff) não mostra as diferenças desde seu ultimo commit, apenas as diferenças dos seus arquivos que ainda não foram para o estado <em>staged</em>. Se você mudar todos arquivos para <em>staged</em> o comando não irá retornar nada.</p>
+
+<h2>Ignorando o estado staged</h2>
+
+<p>Se você quiser pular esses passos de adicionar arquivos para estado staged você pode simplesmente realizar o comando commit com a opção -a.</p>
+
+<pre><code>$ git commit -a -m ‘Commit pulando a area staged’
+</code></pre>
+
+<p>Desse modo o Git automaticamente adiciona todos arquivos para <em>staged</em> e realiza o commit.</p>
+
+<h2>Removendo arquivos</h2>
+
+<p>Se você remover algum arquivo diretamente do diretorio, ele aparecerá sob status <em>modified</em>. Mas o git só o considera removido se você adiciona-lo para <em>staged </em>e posteriormente comitar.</p>
+
+<p>  <em># On branch master</em>
+  <em>#</em>
+  <em># Changed but not updated:</em>
+  <em># (use &#8220;git add/rm <file>&#8230;&#8221; to update what will be committed)</em>
+  <em>#</em>
+  <em># deleted: nome_do_arquivo</em>
+  <em>#</em></p>
+
+<p>Para remove-lo diretamente utilize o comando:</p>
+
+<pre><code>$ git rm nome_do_arquivo.txt
+</code></pre>
+
+<p>Esse comando irá tornar o arquivo <em>untracked</em> e irá remove-lo. E você irá ve-lo da seguinte maneira no status.</p>
+
+<p>  <em># On branch master</em>
+  <em>#</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># deleted: nome_do_arquivo</em>
+  <em>#</em></p>
+
+<p>Se você quiser apenas remover o arquivo da área <em>staged</em> mas mante-lo no diretório use:</p>
+
+<pre><code>$ git rm --cached nome_do_arquivo
+</code></pre>
+
+<p>*<em>o arquivo passará para o estado modificado. Esse comando apenas remove ele do estado staged. Seus arquivos continuam modificados. Considere staged como se fosse uma organização para o commit.</em></p>
+
+<h2>Movendo arquivos</h2>
+
+<p>Se você mover algum arquivo o Git vai considerar que ele foi deletado e incluido um novo arquivo em uma nova localização (o mesmo se tiver renomeado). Se você quiser mover o arquivo ou renomea-lo basta usar o comando:</p>
+
+<pre><code>$ git mv nome_do_arquivo_origem nome_do_arquivo_destino
+</code></pre>
+
+<p>Dessa forma o Git detecta se o arquivo foi renomeado ou movido, colocando-o no estado <em>staged</em> automaticamente. Isso ocorre de forma muito semelhante a remoção de arquivos e pode parecer um pouco confuso.</p>
+
+<h2>Visualizando histórico de commit</h2>
+
+<p>Para ver o histórico de commit execute o comando:</p>
+
+<pre><code>$ git log
+</code></pre>
+
+<p>O resutlado será algo assim:</p>
+
+<p>  <em>commit b0837c9d941a9e9549164aedaeb620d23d9ca6cc</em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#103;&#117;&#105;&#x32;&#56;&#x31;&#49;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x67;&#x75;&#105;&#50;&#56;&#x31;&#49;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></em>
+  <em>Date: Sat Apr 21 19:54:08 2012 -0300</em>
+  <em>teste</em></p>
+
+<p>  <em>commit c5873bf79859688622b29a3d576c12e06cfd793b</em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x67;&#117;&#105;&#50;&#x38;&#49;&#49;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#117;&#105;&#50;&#56;&#x31;&#49;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></em>
+  <em>Date: Sat Apr 21 19:33:41 2012 -0300</em>
+  <em>inclusão do nome Guilherme Kruger Araujo 25</em></p>
+
+<p>  <em>commit 6de3005ccc52f829d10ac78a2c3062796d96a135</em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x67;&#117;&#105;&#x32;&#x38;&#49;&#49;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#103;&#117;&#x69;&#50;&#x38;&#49;&#x31;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
+  <em>Date: Sat Apr 21 19:13:37 2012 -0300</em>
+  <em>criando arquivos para o post</em></p>
+
+<p>  <em>commit c2df99536d815782a34a4bb64789e65aa4790947</em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x67;&#x75;&#x69;&#50;&#x38;&#49;&#49;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#103;&#x75;&#x69;&#50;&#56;&#49;&#x31;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></em>
+  <em>Date: Wed Apr 11 21:37:41 2012 -0300</em>
+  <em>first commit</em></p>
+
+<p>Como padrão o Git coloca os commits em ordem reversa do que foram feitos, de modo que o mais recente apareça no topo. Ele tambem lista cada commit com o nome do autor, email, data, mensagem de commit e um número SHA-1 que serve para validar que os dados não foram corrompidos.</p>
+
+<p>Existem diversas opções para esse comando, algumas que você pode achar interessante são -p para ver as diferenças introduzidas entre cada commit e -2 para limitar a saída para os dois ultimos commits (altere o valor de acordo com sua necessidade).</p>
+
+<h2>Ferramenta grafica</h2>
+
+<p>Digite gitk, divitar-se.</p>
+
+<h2>Mudando o ultimo commit</h2>
+
+<p>Ahh que droga, esqueceu de adicionar um arquivo no ultimo commit ??? Sem problemas, use:</p>
+
+<pre><code>$ git add nome_arquivo
+$ git commit --amend
+</code></pre>
+
+<p>Esta tudo bem agora! Ele altera o commit e o Git trata ele como se você não tivesse esquecido do arquivo.</p>
+
+<h2>Removendo do estado staged</h2>
+
+<p>Digamos que você modificou dois arquivos e gostaria de adiciona-los a diferentes commits, mas sem querer adicionou ambos ao estado staged. Use:</p>
+
+<pre><code>$ git reset HEAD nome_arquivo
+</code></pre>
+
+<p>Assim você remove esse arquivo da área staged e ele passa a ser do estado <em>modified</em>.</p>
+
+<h2>Desfazendo uma modificação</h2>
+
+<p>Bem simples, mas fique alerta, esse é um comando PERIGOSO! Todas as alterações feitas ao arquivos serão perdidas.</p>
+
+<pre><code>$ git checkout -- nome_arquivo
+</code></pre>
+
+<h1>Para um próximo post</h1>
+
+<p>Legal, aprendemos bastante coisa! Mas para um próximo post fico devendo a parte em que trabalhamos com repositórios remotos e assim podemos efetivamente colaborar com qualquer projeto Git.</p>
+
+<p>Até mais!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/17/versionamento-de-codigo-c-git-p1/">Versionamento De Código (C/ Git) P1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-17T13:54:18-03:00" pubdate data-updated="true">Apr 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Se você é um desenvolvedor entusiasta e gosta de estar por dentro das novidades desse mundo, vai encontrar aqui no SamuraiDev uma fonte riquissíma e abrangente sobre tecnologias e ferramentas de desenvolvimento, assim como debates e novidades envolvendo o tema.</p>
+
+<p>Como muitos dos posts serão no estilo <a href="http://pt.wikipedia.org/wiki/DIY">DIY</a>, acredito que não existe uma melhor maneira de começar do que apresentar uma ferramenta que revolucionou a cultura do Desenvolvimento de Software. O <a href="https://github.com/">GitHub</a>! Ele é uma plataforma social para o desenvolvimento de software construido ao redor do <a href="http://pt.wikipedia.org/wiki/Git">Git</a>, e traz uma nova abordagem para a escrita e compartilhamento de código. Enquanto o Git cuida da parte técnica, como fork e merge, o GitHub trata das questões sociais como requisições para pulls e o rastreamento de forks.</p>
+
+<p>É interessante destacar que o Git foi criado por <a href="http://pt.wikipedia.org/wiki/Linus_Torvalds">Linus Trovalds</a>. Em uma divertida palestra para o Google Tech Talk, nomeada <a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Trovalds on git</a>, ele fala sobre as motivações de sua criação. Se por acaso você não deseja assistir aos 110 minutos de palestra, vou resumi-la rapidamente e introduzir o que é, e o que existe, em relação a versionamento de código.</p>
+
+<p>Em um jogo rápido, um sistema de versionamento de código é uma ferramenta que você gostaria de ter caso não desenvolva sozinho e isolado no mundo (e mesmo desenvolvendo sozinho pode fazer bom uso do Git). Ele serve para gerênciar diferentes versões no desenvolvimento de software (ou de um documento qualquer), permitindo guardar históricos de código-fonte e documentação, criar diferentes linhas de desenvolvimento, marcar e resgatar versões estáveis, facilitando especialmente o desenvolvimento em equipes.</p>
+
+<p>Em relação aos tipos de sistemas de versionamentos podemos separa-los em dois tipos: Centralizados e Descentralizados. No primeiro time dois exemplos são <a href="http://pt.wikipedia.org/wiki/CVS">CVS</a> e <a href="http://pt.wikipedia.org/wiki/Subversion">Subversion</a>, muito criticados por Linus. E no outro estão <a href="http://pt.wikipedia.org/wiki/Mercurial">Mercurial</a>, BitKeeper e o Git. Se quiser existe uma <a href="http://en.wikipedia.org/wiki/List_of_revision_control_software">lista na Wiki</a>.</p>
+
+<p>Segundo o próprio Linus, que ainda coordena o desenvolvimento do kernel Linux, o BitKeeper foi o primeiro sistema de versionamento existente que valia a pena usar. Para o criador do Linux, as caracteristicas básicas para tal sistema são necessariamente as seguintes:</p>
+
+<p><strong>Distribuido: </strong>Não é possível depender de um servidor centralizado, por varios motivos, que incluem conectividade, segurança e logistica. Se faltar conexão, ou houver problemas com o servidor central, todo o desenvolvimento é prejudicado. Na computação conhecemos isso como <a href="http://pt.wikipedia.org/wiki/Ponto_%C3%BAnico_de_falha">Ponto Unico de Falha</a>. Por isso um sistema distribuido é muito importante.</p>
+
+<p><strong>Performance: </strong>No Git, cada desenvolvedor possui uma copia local de toda história de desenvolvimento e pode trabalhar offline nessa copia. Isso permite realizar quase todas operações localmente, gerando um ganho enorme de performance. A maioria das operações parecem quase instantâneas.</p>
+
+<p><strong>Confiabilidade</strong>: Além disso, tudo o que é colocado no repositório deve ser confiável, de modo que você saiba, com certeza, que o que deixou nele não foi corrompido ou adulterado. O Git verifica a integridade de tudo que é armazenado com <a href="http://pt.wikipedia.org/wiki/SHA1">SHA-1</a>, o que torna impossível alterar algum dado sem que o Git saiba. Se por acaso forem perdidas informações o Git irá detectar.</p>
+
+<h1>Instalando o Git</h1>
+
+<p>Como essa apresentação ja foi bastante longa, nessa primeira parte vou apenas mostrar como instalar o Git em seu sistema operacional.</p>
+
+<p><strong>Linux</strong></p>
+
+<p>No Fedora:</p>
+
+<pre><code>$ yum install git-core
+</code></pre>
+
+<p>Debian-based (Ubuntu):</p>
+
+<pre><code>$ apt-get install git-core
+</code></pre>
+
+<p><strong>Mac</strong></p>
+
+<p>Faça o download de: <a href="http://code.google.com/p/git-osx-installer">http://code.google.com/p/git-osx-installer</a></p>
+
+<p>Instale!</p>
+
+<p><strong>Windows</strong></p>
+
+<p>Faça o download de: <a href="http://code.google.com/p/msysgit">http://code.google.com/p/msysgit</a></p>
+
+<p>Instale!</p>
+
+<p>Facil né?! Mas antes de terminar, existem algumas configurações que você deve fazer ao menos uma vez (e poderá muda-las depois).</p>
+
+<p><strong>Identidade</strong></p>
+
+<p>A primeira delas é configurar sua identidade, que será incluida permanentemente em cada commit. É preciso realizar isso apenas uma vez se você passar a opção &#8211;global.</p>
+
+<pre><code>$ git config --global user.name "Samurai Dev"
+$ git config --global user.email samurai@samuraidev.com
+</code></pre>
+
+<p><strong>Editor</strong></p>
+
+<p>É bom configurar seu editor padrão, caso contrário, provavelmente utilizará o Vi ou Vim. Digamos que você deseje utilizar o emacs.</p>
+
+<p>   $ git config &#8211;global core.editor emacs</p>
+
+<p><strong>Ferramenta de Diff</strong></p>
+
+<p>Configure também uma ferramenta para resolver os conflitos de merge.</p>
+
+<p>   $ git config &#8211;global merge.tool vimdiff</p>
+
+<p><strong>Finalmente</strong></p>
+
+<p>Verifque as configurações com o comando: git config &#8211;list</p>
+
+<p>Se precisar de ajuda use:</p>
+
+<p>   $ git help comando
+   $ git comando &#8211;help
+   $ man git-comando</p>
+
+<p>Se por acaso precisar de uma ajuda pessoal, um bom lugar para se encontrar é nos canais #git e #github no server Freenode (irc.freenode.net)</p>
+
+<p>Nos próximos posts vou explicar mais detalhadamente o funcionamento do Git.</p>
+
+<p>Se você não quiser esperar, deixo um Quick Start e alguns links interessantes.</p>
+
+<p><strong>Links</strong>:</p>
+
+<p><a href="http://progit.org/">Pro Git</a></p>
+
+<p><a href="http://byte.kde.org/%7Ezrusin/git/git-cheat-sheet-medium.png">Git Cheat Sheet</a></p>
+
+<p><a href="http://git-scm.com/">Git Site Oficial</a></p>
+
+<p><a href="http://schacon.github.com/git/everyday.html">Everyday GIT</a></p>
+
+<p><a href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

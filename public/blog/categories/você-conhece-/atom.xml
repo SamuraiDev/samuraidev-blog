@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Você conhece? | My Octopress Blog]]></title>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/você-conhece-/atom.xml" rel="self"/>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
+  <updated>2012-09-07T18:59:34-03:00</updated>
+  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Ruby?]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby/"/>
+    <updated>2012-07-04T16:30:35-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby</id>
+    <content type="html"><![CDATA[<p>[singlepic id=28]</p>
+
+<p>Em mais um episodio da nossa serie "Voce conhece?",  apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta vez, deixaremos esta tarefa para os proximos posts, hoje iremos focar na historia e no ecossistema Ruby.</p>
+
+<h2>Um pouco de historia</h2>
+
+<p>Ruby nasceu no Japao! Começou a ser escrita por <a href="http://en.wikipedia.org/wiki/Yukihiro_Matsumoto">Yukihiro Matsumoto</a>, mais conhecido como Matz, em 24 de fevereiro de 1993. Matz conhecia muitas linguagens, mas nao estava completamente satisfeito com elas. Achava-as feias, difices e complexas, entao resolveu criar sua propria linguagem. Para isso, Matz misturou partes das suas linguagens favoritas (como Perl, Smalltalk, Lisp, Ada e Eiffel), criando uma linguagem que equilibra programaçao funcional com imperativa. Além disso, Ruby é uma linguagem interpretada, puramente orientada a objetos com tipagem forte e dinamica, possui uma poderosa capacidade de <a href="http://pt.wikipedia.org/wiki/Metaprograma%C3%A7%C3%A3o">metaprogramaçao</a> e pode facilmente ser usada para criaçao de DSLs (<a href="http://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Language</a>). Com todas essas caracteristicas, Matz conseguiu criar uma linguagem simples, pratica e muito expressiva!</p>
+
+<p>CURIOSIDADE: Matz ganhou em 2011 o <a href="https://www.fsf.org/news/2011-free-software-awards-announced">FSF Free Software Awards</a> pelo sua dedicaçao ao software livre nos ultimos 20 anos, contribuindo com o Ruby, projeto GNU e outros projetos open source.</p>
+
+<h2>Interpretadores</h2>
+
+<p>O primeiro interpretador de Ruby foi o MRI (Matz Ruby Interpretr ou CRuby, pois e escrito em C). Com a popularizaçao da linguagem (que se deve em grande parte ao <a href="http://rubyonrails.org/">Rails</a>), começaram a surgir outras  implementaçoes do interpretador, que deixaram de ser simples interpretadores e passaram a basear-se, na maioria, em Maquinas virtuais. Gostaria de destacar aqui o <a href="http://jruby.org/">JRuby</a> e o <a href="http://www.ironruby.net/">IronRuby</a>, implementaçao da linguagem para rodar na JVM (maquina virtual do Java) e plataforma Microsoft (.Net), respectivamente. O fato curioso e que o JRuby e considerado por muitos a implementaçao mais rapida da linguagem. O IronRuby e mantido pela propria Microsoft (e e um dos primeiros projetos verdadeiramente open source da empresa).</p>
+
+<h2>RVM</h2>
+
+<p>Em uma explicaçao minimalista podemos dizer que o <a href="https://rvm.io/">RMV</a> (Ruby Version Manager) e uma ferramenta de linha de comando para gerenciamento de versoes Ruby. Com ele podemos ter varias versoes do Ruby (chamadas de Rubies pelo RVM) instaladas e alterar a que estamos utilizando muito facilmente. Podemos tambem criar gemsets, que sao ambientes separadas para organizarmos nossos projetos. Por exemplo, se eu tiver o ruby 1.8.6 e o jruby instalados, havera dois gemsets (um para cada um), entao posso ter uma versao diferente do rails em cada um. No caso tambem poderiamos criar um gemset para trabalhar com Rails 2 e outro para Rails 3, bastando assim uma rapida alteraçao via RVM para trocarmos de ambiente. Se voce ainda nao tem o Ruby instalado sugiro que ja comece instalando via rvm.</p>
+
+<ul>
+<li><p><a href="http://akitaonrails.com/2010/01/01/limpando-meu-ambiente-de-desenvolvimento">Post interessante do Akita (um dos primeiros evangelistas de Ruby no Brasil) sobre o RVM</a></p></li>
+<li><p><a href="http://codificando.com/2010/07/gerencie-ambiente-ruby-rvm/">Post do Emerson Macedo (do Globo.com) sobre o gerenciamento do ambiente com RVM.</a></p></li>
+</ul>
+
+
+<p>OBS: O RVM nao roda em Windows. Nesse caso a alternativa e utilizar o           <a href="https://github.com/vertiginous/pik/">pik</a>. <a href="https://rvm.io/os/">Aqui</a> voce pode encontrar a lista de sistemas suportados pelo RVM.
+[editado] Achei na própria documentação do Ruby este link para <a href="http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/">instalar RVM no Windows com Cygwin</a>.</p>
+
+<h2>IRB</h2>
+
+<p>O IRB (Interactive Ruby Shell) e um console interativo onde podemos fazer alguns testes com a linguagem. Tendo um ambiente corretamente configurado, basta digitar irb no terminal para inicia-lo.</p>
+
+<p>[singlepic id=27]</p>
+
+<h2>RubyGems</h2>
+
+<p>As RubyGems, ou simplesmente Gems, sao pacotes que contem uma biblioteca ou aplicaçao Ruby. Existe tambem a aplicaçao RubyGems (ferramenta de linha de comando) que e um gerenciador de pacotes e foi amplamente adotado pela comunidade Ruby. Com ele podemos de maneira muito simples baixar, instalar e manipular uma gem em nosso sistema.</p>
+
+<ol>
+<li><p><a href="http://docs.rubygems.org/read/chapter/3">Instalaçao do RubyGems</a></p></li>
+<li><p><a href="http://simplesideias.com.br/criando-sua-propria-rubygem/">Post do Nando Vieira sobre como criar uma RubyGem</a></p></li>
+<li><a href="http://akitaonrails.com/2009/02/02/entendendo-rubygems">Post do Akita falando sobre RubyGems</a></li>
+</ol>
+
+
+<h2>Algumas Gems</h2>
+
+<ul>
+<li><p><a href="http://gembundler.com/">Bundler</a>: Gerenciador de dependencias.</p></li>
+<li><p><a href="https://github.com/capistrano/capistrano/">Capistrano</a>: Ferramenta para executar comandos/scripts paralelamente em maquinas remotas (via SSH).</p></li>
+<li><p><a href="http://rake.rubyforge.org/">Rake</a>: Ferramenta para automatizar a construçao da aplicaçao.</p></li>
+<li><p><a href="http://rack.github.com/">Rack</a>: Simples interface entre um servidor Web (com suporte a Ruby) e um framework Web Ruby. O <a href="http://www.sinatrarb.com/">Sinatra</a> e o <a href="http://rubyonrails.org/">Rails</a> sao exemplos de framework que o utilizam.</p></li>
+<li><p><a href="http://cukes.info/">Cucumber</a> e <a href="http://rspec.info/">RSpec</a>: Ambos sao frameworks para testes que seguem o <a href="http://pt.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a>.</p></li>
+<li><p><a href="https://github.com/eventmachine/eventmachine/wiki/">EventMachine</a>:Biblioteca que fornece operaçoes de entrada e saida orientada a eventos. Feito para combater o problema <a href="http://en.wikipedia.org/wiki/C10k_problem">C10k</a>.</p></li>
+<li><p><a href="http://datamapper.org/">DataMapper</a> e <a href="http://ar.rubyonrails.org/">ActiveRecord</a>: Dois frameworks <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a>.</p></li>
+<li><p><a href="http://torquebox.org/">TorqueBox</a>: Servidor de aplicaçao Ruby escrito em cima do <a href="http://www.jboss.org/jbossas">JBoss AS</a> com suporte para qualquer aplicaçao Rack.</p></li>
+</ul>
+
+
+<p>[singlepic id=25]</p>
+
+<h2>IDE</h2>
+
+<p>Ate existem algumas <a href="http://pt.wikipedia.org/wiki/Ambiente_de_Desenvolvimento_Integrado">IDEs</a> para Ruby, mas a comunidade nao e muito fa. Confesso que a pouco tempo atras tentei montar novamente um ambiente com <a href="http://www.eclipse.org/">Eclipse</a> e o <a href="http://www.eclipse.org/dltk/">DLTK</a>, porem, com a simplicidade de Ruby ficamos livre de uma ferramenta como essa, podendo adotar apenas um editor de texto simples (como o <a href="http://samuraidev.com/tutoriais/dica-de-editor-simples-sublimetext/">Sublime Text</a>) e o terminal. Na verdade o Sublime é uma alternativa mais user-friendly, o comum mesmo é vermos o pessoal utilizando <a href="http://en.wikipedia.org/wiki/Vi">VI</a> ou <a href="http://www.gnu.org/software/emacs/">Emacs</a> no Linux e <a href="http://macromates.com/">TextMate</a> no Mac.</p>
+
+<h2>Finalizando...</h2>
+
+<p>Entao, tentei fazer uma introduçao rapida ao mundo Ruby de uma forma que eu gostaria de visto quando comecei. Logo que iniciamos o estudo de uma nova linguagem/plataforma somos bombardeados com nomes de aplicaçoes e frameworks, nessa hora paramos para pensar pra qual lado devemos correr primeiro. Espero que tenham gostado e ate a proxima!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Tipografía? Utilizando fontes ricas na web.]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
+    <updated>2012-06-25T16:43:34-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
+    <content type="html"><![CDATA[<p>Acredite ou não, a tipografía é um campo enorme, de grande interesse e pode ter um efeito profundo no resultado do seu trabalho. Até pouco tempo a web esteve um tanto limitada quanto ao uso de fontes, ficando restrito às que o usuário possuía em seu sistema. Agora as coisas estão um pouco melhor, porém antes mostrar como utilizar fontes mais ricas em sistemas web veremos um pouco mais sobre tipografía.</p>
+
+<p>[singlepic id=20 w=320 h=240 float=right]É importante saber que um dos princípios teóricos por traz do Design Gráfico é o Equilibrio, no entanto ele nem sempre é alcançado pela uniformidade. A fonte Gill Sans possui a caracteristica de ser perceptivelmente equilibrada, mas se você perceber a espessura de suas linhas variam em diferentes pontos dos seus traços. Veja imagem ao lado.</p>
+
+<p>Para avaliar uma fonte é preciso saber qual é a sua anatomia e terminologia, na imagem estão algumas delas. Não vou discutir cada detalhe, vou me restringir a abordar algumas questões que são importantes e que podem fazer grande diferença no seu trabalho.</p>
+
+<p>[singlepic id=21 w=480 h=360 float=center]</p>
+
+<p>Começando pelo fato de que o tamanho da fonte não é consistente entre diferentes fontes, podendo variar consideravelmente. Já a Altura-x é um parâmetro muito importante em relação a legibilidade. Costuma-se utilizar fontes com alta Altura-x (Lucida Bright ou Georgia) para paragrafos e textos mais densos pois é mais fácil de ler em tamanhos de fonte menores e em dispositivos com telas de menor resolução. Já uma Altura-x baixa (Baskerville) costuma ser usada para passar percepção de elegância, dando uma sensação de Belle Époch. Fontes com Ascendentes e Descendentes baixos tendem a ter alta Altura-x e vice e versa. Se eles forem excessivos podem atrapalhar a visualização em dispositivos de menores resolução, pois alem de comprometer a Altura-x, exigem maiores espaçamentos entre linhas.</p>
+
+<p>[singlepic id=23 w=320 h=240 float=left]Tambem existem duas importantes distinções de tipos de fontes, serifs e sans serifs (sem serifs). Há quem diga que serifs devem ser utilizadas para longos blocos de texto por ajudarem a distinguir as letras, porem não existem evidências concretas disso. Já para dispositivos móveis, serifs podem ficar borradas ou não ter resolução suficiente para ficarem legíveis, por isso indica-se utilizar sans serif ou as chamadas square serifs. A maior influência em questão de legibilidade esta relacionado ao comportamento de nosso cérebro que é treinado a reconhecer as letras e portanto, aquela fonte mais comum e difundida será mais legível devido ao treinamento do cérebro.</p>
+
+<p>Veja essa imagem por exemplo:</p>
+
+<p>[singlepic id=22 w=320 h=240 float=]</p>
+
+<p>Você leu The Cat certo? Por que não Tae cht? Tae cat? Você ja sabe a resposta.</p>
+
+<p>E essa você conhecia?</p>
+
+<blockquote><p>“De aorcdo com uma psqueisa da Unvireisadde de Cmabrigde, não ipmrota a odrem em que as lteras em uma plavara etsão, a úcina cisoa ipmotratne é que a piremira e a útimla ltreas etseajm no lguar ctreo. O rseto pdoe etasr uma ttaol bnauguça e vcoê adnia pdoreá ler sem perolbmea. Itso pruqoe a mtene haunma não lê cdaa lreta idnvidailuemtne, mas a pvrlaaa cmoo um tdoo.”</p></blockquote>
+
+<p>Acredito que essa breve apresentação sobre essas curiosidades da tipografia são suficientes para te fazer encarar as fontes de uma forma totalmente diferente e espero que para melhor (e não vá bagunçar as letras).</p>
+
+<p>Agora vamos para a parte prática. Como utilizar fontes ricas em sistemas web? A maneira atualmente mais segura é utilizar o método de CSS chamado @font-face. Ela permite baixar uma determinada fonte de seu servidor para ser mostrada em uma página web mesmo que o usuário não possua a fonte instalada. A sintaxe básica é bastante simples. A propriedade font-family dentro de @font-face irá definir como você utilizará a fonte no restante do css (veja utilização em .exemplo). Além disso você precisa do arquivo da fonte e declarar de onde ele será carregado, fornecendo opcionalmente o formato.</p>
+
+<p>[gist id=2990412]</p>
+
+<p>Deve-se sempre considerar a possibilidade de não haver suporte para o formato da fonte. Quando desenvolvemos para a web devemos lembrar que ela é universal, pode ser acessada não apenas de seu smartphone ou desktop, mas de geladeiras, carros, etc. Note que após declarar a fonte “TK4F” na classe .exemplo, temos outras fontes separadas por virgula, elas são fallbacks e substituirão em ordem a fonte antecessora caso ela não possa ser carregada. Mesmo nos desktops há dores de cabeça, especialmente quanto ao formato e licensas das fontes. No final do post você encontra links para mais informações sobre os tipos e suportes cross-browsers. Além disso, você pode ver um exemplo de utilização de fontes e tambem experimentar e verificar os conceitos aprendidos nesse post em <a href="http://samuraiplayground.appspot.com/tipografia">um site que construí como exercicio</a> enquanto aprendia jQuery.</p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p>Opções de Fontes:</p>
+
+<ul>
+<li><p><a href="http://www.fontsquirrel.com/">http://www.fontsquirrel.com/</a></p></li>
+<li><p><a href="http://www.fontex.org/">http://www.fontex.org/</a></p></li>
+<li><p><a href="http://www.google.com/webfonts/">http://www.google.com/webfonts/</a></p></li>
+<li><p><a href="http://www.fonts.com/web-fonts">http://www.fonts.com/web-fonts</a></p></li>
+</ul>
+</li>
+<li><p>Suporte dos browsers aos tipos de fontes: <a href="http://webfonts.info/wiki/index.php?title=@font-face_browser_support">http://webfonts.info/wiki/index.php?title=@font-face_browser_support</a></p></li>
+<li><p>Bulletproof @font-face: <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

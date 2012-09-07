@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Primeiros passos com Groovy - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Primeiros Passos Com Groovy</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T18:44:28-03:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
+Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
+
+<h2>Instalação e configuração&#8230;</h2>
+
+<p>Para começar precisamos fazer o download no site do <a href="http://groovy.codehaus.org/Download">Groovy</a>. Se você já passou pelos passos de configuração de uma JDK, não encontrará dificuldades. Devemos descompactar o pacote num diretório qualquer (no caso do pacote binário) e adicionar o endereço completo deste diretório na variável de ambiente PATH do seu sistema. Para verificar se está tudo certo, podemos testar o seguinte comando (no Console do Linux, ou prompt do Windows) que irá apresentar a versão do Groovy que configuramos:</p>
+
+<pre><code>[bsouza@bsouza ~]$ groovy -version
+Groovy Version: 1.8.4 JVM: 1.7.0_03
+</code></pre>
+
+<h2>Mão na massa!</h2>
+
+<p>Agora é a hora da diversão! Iremos codar nossos primeiros fontes Groovy. Uma facilidade, para quem é familiarizado com Java, é que você pode continuar utilizando a sintaxe Java e ir melhorando suas habilidades em Groovy aos poucos e assim, incorporar as facilidades do Groovy conforme vai evoluindo em seus estudos.
+Iniciaremos nossos testes com o Groovy Console, que é um editor simples onde podemos codar e testar a execução dos nossos primeiros códigos:</p>
+
+<p><img src="/wp-content/gallery/groovy/groovyconsole.png" alt="Editor simples com um console que acompanha a sdk do Groovy" /></p>
+
+<p>Para executar o Groovy Console devemos digitar no Console o comando groovyConsole.</p>
+
+<p>DICA: Java importa automaticamente todas as classes que estão no package java.lang. Groovy por sua vez, extende este comportamento incluindo os pacotes abaixo:
+- java.io
+- java.math
+- java.net    <br/>
+- java.util
+- groovy.lang
+- groovy.util</p>
+
+<p>Em Groovy utilizamos a palavra reservada def para definir algo, essa definição pode ser um método, variáveis com tipagem dinâmica e até closures. Veremos a utilização desta e outras keywords principais da linguagem. Mãos à obra&#8230;</p>
+
+<p>DICA: Para limpar a saida do console utilize o atalho ctrl+w e para rodar o seu script utilize ctrl+r.</p>
+
+<pre><code>// definição de um tipo Integer do Java
+int numero = 5
+println numero.class
+
+// definição de uma String do Java
+String nome = "Bruno"
+println nome.class
+
+/** **************************************************************************
+ * Note que em Groovy, quando temos um método que recebe apenas um parâmetro,
+ * podemos ocultar os parenteses, favorecendo assim a legibilidade do código 
+ * ***************************************************************************/
+
+// Define uma String em tempo de execução através do seu comportamente,o chamado 
+// Duck Typing, ou seja, se o objeto se comporta de uma pato, então ele é um pato.
+def duck = "Bruno Moraes Souza"
+println duck.class
+
+/** ****************************************************************************
+ * Agora iremos definir duas classes com um relacionamento entre elas, e iremos
+ * fazer mais alguns testes para ver como o Duck Typing se comporta
+ * *****************************************************************************/
+
+// classe mutavel que representará um produto
+class Produto {        
+    String name
+    String descricao
+}
+
+/* OBS: Não estamos declarando os getters e os setters
+   pois o próprio Groovy faz esse trabalho sujo para nós,
+   estes são os chamados Groovy Beans. 
+
+   OBS 2: Repare também, que em Groovy podemos omitir o 
+   ponto e vírgula ao final de cada linha */
+
+println "" // simples quebra de linha para facilitar a visualização dos novos resultados
+
+// Instancia um objeto Tipo e popula seus dados através de setters
+def produto = new Produto() 
+produto.name = "Sistema1"
+produto.descricao = "E-Commerce escrito em Grails \\o/"
+
+// Em Groovy, podemos utilizar interpolação de Strings conforme abaixo,
+// que é prático e mais legível que uma concatenação
+println "Produto: ${produto.name}\nDescrição: ${produto.descricao}\n"
+println "${produto.class}"
+println produto
+
+/* Note que como não sobrescrevemos o método toString da classe Produto,
+ * em nosso print foi retornada a implementação da classe Object. 
+ * Isso mesmo, os objetos Groovy também herdam de Object! */
+
+// Vamos agora utilizar o suporte a lista de Groovy e adicionar todas os 
+// objetos que instanciamos até agora
+
+def lista = [ numero, nome, duck, produto ]
+
+// Faremos uso agora de uma das facilidades do Groovy para 
+// trabalharmos com coleções, que é o método each
+
+println "" // quebra de linha
+lista.each { println it }
+
+// note que pela chamada do método, ele recebe apenas um parâmetro, e por isso
+// não precisamos dos parênteses. Ele recebe uma closure/delegate como parâmetro 
+// que será executada para cada um dos seus elementos e a keyword it representa o elemento atual
+
+println "" // quebra de linha
+lista.each { println ((it.class == Produto) ? it.name : it) }
+
+// Para testar a real utilização do it, colocamos um operador ternário, 
+// para imprimirmos o nome do tipo, caso o elemento seja um Tipo
+
+/** 
+ * Os Groovy Beans, como mencionados anteriormente, criam os getters
+ * e setters para o nosso bean, porém em muitos casos gostariamos privar o acesso
+ * de um setter para criarmos objetos imutáveis. Em Groovy podemos criar objetos
+ * totalmente imutáveis com a anotação @Immutable antes da definição da classe */
+
+@Immutable class ProdutoImutavel {
+
+    String nome
+    String descricao
+
+    String toString() { nome } // Sobrescrita do método toString
+}
+
+/* Na classe acima, declaramos os mesmos atributos da classe anterior, porém
+ * estes são read only, e nos obrigam a utiliza um recurso bem bacana do Groovy,
+ * que é um construtor dinâmico. */
+
+println ""
+
+def imutavel = new ProdutoImutavel(nome: "Mouse", descricao: "Mouse wireless")
+println "${imutavel.nome} - ${imutavel.descricao}"
+
+// Para verifica se o comportamento é mesmo o esperado, tentaremos renomear o produto
+try { imutavel.nome = "novo" } catch (Exception ex) { println ex.message }
+
+println "${imutavel.nome} - ${imutavel.descricao}"
+println imutavel // teste do toString sobrescrito
+
+println ""
+
+// Por fim um teste com um atributo dinamicamente tipado
+class Dinamico {
+    def algo
+}
+
+def d = new Dinamico()
+
+// Popula algo com uma string
+d.algo = "String"
+println d.algo
+
+// Setamos uma closure que recebe dois argumentos
+d.algo = { x, y -&gt; (x * y / 2) }
+println d.algo(3, 6)
+</code></pre>
+
+<p>Na versão estável, 1.8.6 até a presente data, há um bug relacionado ao modificador de acesso private, permitindo que métodos e atributos que utilizem o modificador continuem expostos.</p>
+
+<p>Bom, é isso! Acredito que toda a explicação necessária para o nosso primeiro exemplo está em forma de comentário no código e basta copiá-lo e executá-lo no console.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T18:44:28-03:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linguagens-e-frameworks/'>Linguagens e frameworks</a>, <a class='category' href='/blog/categories/tutoriais/'>Tutoriais</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/07/css-inteligente-use-sass/" title="Previous Post: CSS inteligente, use SASS!">&laquo; CSS inteligente, use SASS!</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/" title="Next Post: Dica de editor simples - SublimeText">Dica de editor simples - SublimeText &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

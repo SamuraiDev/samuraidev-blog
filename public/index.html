@@ -1,0 +1,1094 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="[singlepic id=28] Em mais um episodio da nossa serie &#8220;Voce conhece?&#8221;, apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/04/voce-conhece-ruby/">Você Conhece Ruby?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-04T16:30:35-03:00" pubdate data-updated="true">Jul 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>[singlepic id=28]</p>
+
+<p>Em mais um episodio da nossa serie &#8220;Voce conhece?&#8221;,  apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta vez, deixaremos esta tarefa para os proximos posts, hoje iremos focar na historia e no ecossistema Ruby.</p>
+
+<h2>Um pouco de historia</h2>
+
+<p>Ruby nasceu no Japao! Começou a ser escrita por <a href="http://en.wikipedia.org/wiki/Yukihiro_Matsumoto">Yukihiro Matsumoto</a>, mais conhecido como Matz, em 24 de fevereiro de 1993. Matz conhecia muitas linguagens, mas nao estava completamente satisfeito com elas. Achava-as feias, difices e complexas, entao resolveu criar sua propria linguagem. Para isso, Matz misturou partes das suas linguagens favoritas (como Perl, Smalltalk, Lisp, Ada e Eiffel), criando uma linguagem que equilibra programaçao funcional com imperativa. Além disso, Ruby é uma linguagem interpretada, puramente orientada a objetos com tipagem forte e dinamica, possui uma poderosa capacidade de <a href="http://pt.wikipedia.org/wiki/Metaprograma%C3%A7%C3%A3o">metaprogramaçao</a> e pode facilmente ser usada para criaçao de DSLs (<a href="http://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Language</a>). Com todas essas caracteristicas, Matz conseguiu criar uma linguagem simples, pratica e muito expressiva!</p>
+
+<p>CURIOSIDADE: Matz ganhou em 2011 o <a href="https://www.fsf.org/news/2011-free-software-awards-announced">FSF Free Software Awards</a> pelo sua dedicaçao ao software livre nos ultimos 20 anos, contribuindo com o Ruby, projeto GNU e outros projetos open source.</p>
+
+<h2>Interpretadores</h2>
+
+<p>O primeiro interpretador de Ruby foi o MRI (Matz Ruby Interpretr ou CRuby, pois e escrito em C). Com a popularizaçao da linguagem (que se deve em grande parte ao <a href="http://rubyonrails.org/">Rails</a>), começaram a surgir outras  implementaçoes do interpretador, que deixaram de ser simples interpretadores e passaram a basear-se, na maioria, em Maquinas virtuais. Gostaria de destacar aqui o <a href="http://jruby.org/">JRuby</a> e o <a href="http://www.ironruby.net/">IronRuby</a>, implementaçao da linguagem para rodar na JVM (maquina virtual do Java) e plataforma Microsoft (.Net), respectivamente. O fato curioso e que o JRuby e considerado por muitos a implementaçao mais rapida da linguagem. O IronRuby e mantido pela propria Microsoft (e e um dos primeiros projetos verdadeiramente open source da empresa).</p>
+
+<h2>RVM</h2>
+
+<p>Em uma explicaçao minimalista podemos dizer que o <a href="https://rvm.io/">RMV</a> (Ruby Version Manager) e uma ferramenta de linha de comando para gerenciamento de versoes Ruby. Com ele podemos ter varias versoes do Ruby (chamadas de Rubies pelo RVM) instaladas e alterar a que estamos utilizando muito facilmente. Podemos tambem criar gemsets, que sao ambientes separadas para organizarmos nossos projetos. Por exemplo, se eu tiver o ruby 1.8.6 e o jruby instalados, havera dois gemsets (um para cada um), entao posso ter uma versao diferente do rails em cada um. No caso tambem poderiamos criar um gemset para trabalhar com Rails 2 e outro para Rails 3, bastando assim uma rapida alteraçao via RVM para trocarmos de ambiente. Se voce ainda nao tem o Ruby instalado sugiro que ja comece instalando via rvm.</p>
+
+<ul>
+<li><p><a href="http://akitaonrails.com/2010/01/01/limpando-meu-ambiente-de-desenvolvimento">Post interessante do Akita (um dos primeiros evangelistas de Ruby no Brasil) sobre o RVM</a></p></li>
+<li><p><a href="http://codificando.com/2010/07/gerencie-ambiente-ruby-rvm/">Post do Emerson Macedo (do Globo.com) sobre o gerenciamento do ambiente com RVM.</a></p></li>
+</ul>
+
+
+<p>OBS: O RVM nao roda em Windows. Nesse caso a alternativa e utilizar o           <a href="https://github.com/vertiginous/pik/">pik</a>. <a href="https://rvm.io/os/">Aqui</a> voce pode encontrar a lista de sistemas suportados pelo RVM.
+[editado] Achei na própria documentação do Ruby este link para <a href="http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/">instalar RVM no Windows com Cygwin</a>.</p>
+
+<h2>IRB</h2>
+
+<p>O IRB (Interactive Ruby Shell) e um console interativo onde podemos fazer alguns testes com a linguagem. Tendo um ambiente corretamente configurado, basta digitar irb no terminal para inicia-lo.</p>
+
+<p>[singlepic id=27]</p>
+
+<h2>RubyGems</h2>
+
+<p>As RubyGems, ou simplesmente Gems, sao pacotes que contem uma biblioteca ou aplicaçao Ruby. Existe tambem a aplicaçao RubyGems (ferramenta de linha de comando) que e um gerenciador de pacotes e foi amplamente adotado pela comunidade Ruby. Com ele podemos de maneira muito simples baixar, instalar e manipular uma gem em nosso sistema.</p>
+
+<ol>
+<li><p><a href="http://docs.rubygems.org/read/chapter/3">Instalaçao do RubyGems</a></p></li>
+<li><p><a href="http://simplesideias.com.br/criando-sua-propria-rubygem/">Post do Nando Vieira sobre como criar uma RubyGem</a></p></li>
+<li><a href="http://akitaonrails.com/2009/02/02/entendendo-rubygems">Post do Akita falando sobre RubyGems</a></li>
+</ol>
+
+
+<h2>Algumas Gems</h2>
+
+<ul>
+<li><p><a href="http://gembundler.com/">Bundler</a>: Gerenciador de dependencias.</p></li>
+<li><p><a href="https://github.com/capistrano/capistrano/">Capistrano</a>: Ferramenta para executar comandos/scripts paralelamente em maquinas remotas (via SSH).</p></li>
+<li><p><a href="http://rake.rubyforge.org/">Rake</a>: Ferramenta para automatizar a construçao da aplicaçao.</p></li>
+<li><p><a href="http://rack.github.com/">Rack</a>: Simples interface entre um servidor Web (com suporte a Ruby) e um framework Web Ruby. O <a href="http://www.sinatrarb.com/">Sinatra</a> e o <a href="http://rubyonrails.org/">Rails</a> sao exemplos de framework que o utilizam.</p></li>
+<li><p><a href="http://cukes.info/">Cucumber</a> e <a href="http://rspec.info/">RSpec</a>: Ambos sao frameworks para testes que seguem o <a href="http://pt.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a>.</p></li>
+<li><p><a href="https://github.com/eventmachine/eventmachine/wiki/">EventMachine</a>:Biblioteca que fornece operaçoes de entrada e saida orientada a eventos. Feito para combater o problema <a href="http://en.wikipedia.org/wiki/C10k_problem">C10k</a>.</p></li>
+<li><p><a href="http://datamapper.org/">DataMapper</a> e <a href="http://ar.rubyonrails.org/">ActiveRecord</a>: Dois frameworks <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a>.</p></li>
+<li><p><a href="http://torquebox.org/">TorqueBox</a>: Servidor de aplicaçao Ruby escrito em cima do <a href="http://www.jboss.org/jbossas">JBoss AS</a> com suporte para qualquer aplicaçao Rack.</p></li>
+</ul>
+
+
+<p>[singlepic id=25]</p>
+
+<h2>IDE</h2>
+
+<p>Ate existem algumas <a href="http://pt.wikipedia.org/wiki/Ambiente_de_Desenvolvimento_Integrado">IDEs</a> para Ruby, mas a comunidade nao e muito fa. Confesso que a pouco tempo atras tentei montar novamente um ambiente com <a href="http://www.eclipse.org/">Eclipse</a> e o <a href="http://www.eclipse.org/dltk/">DLTK</a>, porem, com a simplicidade de Ruby ficamos livre de uma ferramenta como essa, podendo adotar apenas um editor de texto simples (como o <a href="http://samuraidev.com/tutoriais/dica-de-editor-simples-sublimetext/">Sublime Text</a>) e o terminal. Na verdade o Sublime é uma alternativa mais user-friendly, o comum mesmo é vermos o pessoal utilizando <a href="http://en.wikipedia.org/wiki/Vi">VI</a> ou <a href="http://www.gnu.org/software/emacs/">Emacs</a> no Linux e <a href="http://macromates.com/">TextMate</a> no Mac.</p>
+
+<h2>Finalizando&#8230;</h2>
+
+<p>Entao, tentei fazer uma introduçao rapida ao mundo Ruby de uma forma que eu gostaria de visto quando comecei. Logo que iniciamos o estudo de uma nova linguagem/plataforma somos bombardeados com nomes de aplicaçoes e frameworks, nessa hora paramos para pensar pra qual lado devemos correr primeiro. Espero que tenham gostado e ate a proxima!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você Conhece Tipografía? Utilizando Fontes Ricas Na Web.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-25T16:43:34-03:00" pubdate data-updated="true">Jun 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Acredite ou não, a tipografía é um campo enorme, de grande interesse e pode ter um efeito profundo no resultado do seu trabalho. Até pouco tempo a web esteve um tanto limitada quanto ao uso de fontes, ficando restrito às que o usuário possuía em seu sistema. Agora as coisas estão um pouco melhor, porém antes mostrar como utilizar fontes mais ricas em sistemas web veremos um pouco mais sobre tipografía.</p>
+
+<p>[singlepic id=20 w=320 h=240 float=right]É importante saber que um dos princípios teóricos por traz do Design Gráfico é o Equilibrio, no entanto ele nem sempre é alcançado pela uniformidade. A fonte Gill Sans possui a caracteristica de ser perceptivelmente equilibrada, mas se você perceber a espessura de suas linhas variam em diferentes pontos dos seus traços. Veja imagem ao lado.</p>
+
+<p>Para avaliar uma fonte é preciso saber qual é a sua anatomia e terminologia, na imagem estão algumas delas. Não vou discutir cada detalhe, vou me restringir a abordar algumas questões que são importantes e que podem fazer grande diferença no seu trabalho.</p>
+
+<p>[singlepic id=21 w=480 h=360 float=center]</p>
+
+<p>Começando pelo fato de que o tamanho da fonte não é consistente entre diferentes fontes, podendo variar consideravelmente. Já a Altura-x é um parâmetro muito importante em relação a legibilidade. Costuma-se utilizar fontes com alta Altura-x (Lucida Bright ou Georgia) para paragrafos e textos mais densos pois é mais fácil de ler em tamanhos de fonte menores e em dispositivos com telas de menor resolução. Já uma Altura-x baixa (Baskerville) costuma ser usada para passar percepção de elegância, dando uma sensação de Belle Époch. Fontes com Ascendentes e Descendentes baixos tendem a ter alta Altura-x e vice e versa. Se eles forem excessivos podem atrapalhar a visualização em dispositivos de menores resolução, pois alem de comprometer a Altura-x, exigem maiores espaçamentos entre linhas.</p>
+
+<p>[singlepic id=23 w=320 h=240 float=left]Tambem existem duas importantes distinções de tipos de fontes, serifs e sans serifs (sem serifs). Há quem diga que serifs devem ser utilizadas para longos blocos de texto por ajudarem a distinguir as letras, porem não existem evidências concretas disso. Já para dispositivos móveis, serifs podem ficar borradas ou não ter resolução suficiente para ficarem legíveis, por isso indica-se utilizar sans serif ou as chamadas square serifs. A maior influência em questão de legibilidade esta relacionado ao comportamento de nosso cérebro que é treinado a reconhecer as letras e portanto, aquela fonte mais comum e difundida será mais legível devido ao treinamento do cérebro.</p>
+
+<p>Veja essa imagem por exemplo:</p>
+
+<p>[singlepic id=22 w=320 h=240 float=]</p>
+
+<p>Você leu The Cat certo? Por que não Tae cht? Tae cat? Você ja sabe a resposta.</p>
+
+<p>E essa você conhecia?</p>
+
+<blockquote><p>“De aorcdo com uma psqueisa da Unvireisadde de Cmabrigde, não ipmrota a odrem em que as lteras em uma plavara etsão, a úcina cisoa ipmotratne é que a piremira e a útimla ltreas etseajm no lguar ctreo. O rseto pdoe etasr uma ttaol bnauguça e vcoê adnia pdoreá ler sem perolbmea. Itso pruqoe a mtene haunma não lê cdaa lreta idnvidailuemtne, mas a pvrlaaa cmoo um tdoo.”</p></blockquote>
+
+<p>Acredito que essa breve apresentação sobre essas curiosidades da tipografia são suficientes para te fazer encarar as fontes de uma forma totalmente diferente e espero que para melhor (e não vá bagunçar as letras).</p>
+
+<p>Agora vamos para a parte prática. Como utilizar fontes ricas em sistemas web? A maneira atualmente mais segura é utilizar o método de CSS chamado @font-face. Ela permite baixar uma determinada fonte de seu servidor para ser mostrada em uma página web mesmo que o usuário não possua a fonte instalada. A sintaxe básica é bastante simples. A propriedade font-family dentro de @font-face irá definir como você utilizará a fonte no restante do css (veja utilização em .exemplo). Além disso você precisa do arquivo da fonte e declarar de onde ele será carregado, fornecendo opcionalmente o formato.</p>
+
+<p>[gist id=2990412]</p>
+
+<p>Deve-se sempre considerar a possibilidade de não haver suporte para o formato da fonte. Quando desenvolvemos para a web devemos lembrar que ela é universal, pode ser acessada não apenas de seu smartphone ou desktop, mas de geladeiras, carros, etc. Note que após declarar a fonte “TK4F” na classe .exemplo, temos outras fontes separadas por virgula, elas são fallbacks e substituirão em ordem a fonte antecessora caso ela não possa ser carregada. Mesmo nos desktops há dores de cabeça, especialmente quanto ao formato e licensas das fontes. No final do post você encontra links para mais informações sobre os tipos e suportes cross-browsers. Além disso, você pode ver um exemplo de utilização de fontes e tambem experimentar e verificar os conceitos aprendidos nesse post em <a href="http://samuraiplayground.appspot.com/tipografia">um site que construí como exercicio</a> enquanto aprendia jQuery.</p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p>Opções de Fontes:</p>
+
+<ul>
+<li><p><a href="http://www.fontsquirrel.com/">http://www.fontsquirrel.com/</a></p></li>
+<li><p><a href="http://www.fontex.org/">http://www.fontex.org/</a></p></li>
+<li><p><a href="http://www.google.com/webfonts/">http://www.google.com/webfonts/</a></p></li>
+<li><p><a href="http://www.fonts.com/web-fonts">http://www.fonts.com/web-fonts</a></p></li>
+</ul>
+</li>
+<li><p>Suporte dos browsers aos tipos de fontes: <a href="http://webfonts.info/wiki/index.php?title=@font-face_browser_support">http://webfonts.info/wiki/index.php?title=@font-face_browser_support</a></p></li>
+<li><p>Bulletproof @font-face: <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/16/voce-conhece-memcached/">Você Conhece Memcached?!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-16T16:17:21-03:00" pubdate data-updated="true">Jun 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>[singlepic id=18 w=160 h=120 float=left]</p>
+
+<p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
+
+<ul>
+<li><p>a criação de cache para páginas populares, como uma página principal ou em que os dados sejam os mesmos para todos usuários;</p></li>
+<li><p>salvar dados transientes e frequentementes atualizados, como um contador em uma página. Isso evita atingir o banco de dados a cada requisição, incrementando o contador no Memcache e atualizando o banco de tempo em tempo*;</p></li>
+<li><p>dados frequentemente requisitados, como por exemplo o resultado de uma consulta ao banco.</p></li>
+</ul>
+
+
+<p>[singlepic id=19 w=640 h=480 float=right]Com apenas algumas linhas extras no seu código essas utilizações acima podem melhorar a escalabilidade de seu aplicativo. Memcached nada mais é que uma cache RAM distribuida que utiliza um modelo chave, valor. Escritas na memcache nunca atingem o disco e são muito mais rápidas que acessos ao banco de dados (aproximadamente 10x mais rápido que escrever no banco de dados do Google App Engine e 5x para leituras). O tradeoff é que os dados guardados na memcache são transientes e podem ser descartados quando o espaço se aproximar do limite. Alguns exemplos de sistemas que utilizam Memcache são YouTube, Reddit, Zynga, Facebook, Orange e Twitter.</p>
+
+<p>Um uso bem simples que fiz com esse sistema foi criar uma cache para os anuncios de vagas de emprego no <a href="http://www.tweetvagas.com.br">Tweet Vagas</a>. Nele as pessoas podem anunciar vagas de modo muito descomplicado, apenas preenchendo a descrição. Ao clicar em anunciar o Tweet Vagas cria um link permanente para esse descrição e prepara um tweet contendo esse link e um resumo do anuncio para ser tweetado pelo proprio twitter do usuário. Nesse momento a descrição é gravada no banco de dados do Google App Engine e ao mesmo tempo colocada na Memcache. Assim cada anuncio só acessa o banco de dados na sua escrita, e todas as requisições para essa vaga buscam os dados diretamente da Memcache. Como as vagas tem uma relação direta com sua idade, aquelas mais antigas e menos acessadas são as que tendem a serem limpas da cache, enquanto as mais recentes e acessadas tendem a se manter. Essa arquitetura permite fazer uso muito inteligente do banco de dados, o que é muito importante em uma plataforma SaaS, ja que o custo é proporcional a utilização do serviço.</p>
+
+<p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
+
+<p>[gist id=2941459]</p>
+
+<p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
+
+<p>Você utiliza Memcache como se lógicamente fosse uma única memória para todo seu sistema. Independente de quantos servidores você possua, Memcache permite que você faça uso da Memória de cada um desses servidores de modo distribuido, sem que haja necessidade de se responsabilizar pelo gerênciamento complicado que existe por traz disso e permitindo adicionar mais servidores sem se preocupar com complicações em reestruturar a cache. E mais, pela sua filosofia todas as operações tem complexidade O(1), ou seja, toda operação tem tempo de execução constante independente de sua entrada.</p>
+
+<p>Alem de tudo Memcached é Livre e de Código Aberto (Free &amp; Open-source). Você pode pegar o código fonte no GitHub do Memcached, e se não souber utilizar o Git pode ver o tutorial sobre ele <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">aqui no blog</a>. Espero que tenha gostado.</p>
+
+<p><em>*os dados podem ser limpos da memcache a qualquer momento e sua aplicação deve levar isso em conta para lidar com a situação em que os dados foram limpos da cache.</em></p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p><a href="http://memcached.org/">http://memcached.org/</a></p></li>
+<li><p><a href="http://code.google.com/p/memcached/">http://code.google.com/p/memcached/</a></p></li>
+<li><p><a href="https://github.com/memcached/memcached">https://github.com/memcached/memcached</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/articles/scaling/memcache">https://developers.google.com/appengine/articles/scaling/memcache</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br">https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br</a></p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS Do Registro.br + Google App Engine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-10T18:34:40-03:00" pubdate data-updated="true">Jun 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
+
+<p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
+
+<p>O processo é meio tortuoso se você não sabe por onde começar, por isso resolvi fazer esse post. Você tem que ir até o painel de administração do Google App Engine, no menu Application Setting e Clicar no botão Add Domain em Domain Setup. Digitar o seu dominio e seguir para a página do Google Apps, onde fará o cadastro se ainda não tiver conta para esse dominio. Ao fim você deve chegar na página do seu aplicativo e adicionar a url correspondente (Veja algumas imagens abaixo)</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;614&#8221; caption=&#8221;Encontra-se no menu Administration Settings do seu aplicativo no Google App Engine&#8221;]<img src="https://lh6.googleusercontent.com/GUZ9mQFRcyufitezcinlUYH3uGM1_LpluFS0h0zCWPDY8rEiHYuvJk997cKJPxXbfjJt_3Ud9kKTXqEQA8WX7e82Xm_HL1jLeSZpnP3UodwAR9OlcaQ" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;622&#8221; caption=&#8221;Após clicar em Add Domain, deve preencher seu dominio e será encaminhado para o Google Apps.&#8221;]<img src="https://lh6.googleusercontent.com/XAAqmu4uL7UeaoYgRTkFJMaTxuRL0TUHM_oxHfXlcenFIPsKeGPHlbEoyYl3YRC5gSNhVBDHkCJxNP6FNFpaPMoTzz9g8gBtlN_805TD_v7q5vHUNFA" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;394&#8221; caption=&#8221;Página do seu aplicativo (no meu caso tweetvagas) onde você deve adicionar a url do seu dominio.&#8221;]<img src="https://lh6.googleusercontent.com/5s53_VmweH1GVXpdvJNikUMggE8emaMYtTlQvQqYjc5kpNHkApMSds2UFqxzJh1U7uJAJjNR2PTLXUA3DrGQbTghtNFrBHRgUUugaCmOJpZhbxVsOQo" alt="" />[/caption]</p>
+
+<p>Depois de se cadastrar e adicionar a url do seu dominio para a aplicação, você terá que criar um CNAME no servidor DNS (provavelmente será necessário marcar uma opção para validar seu dominio em outro momento no Google Apps). Então vá para Registro.br na página de administração do seu domínio, marque a opção “Utilizar os servidores DNS do Registro.br”, clique em Salvar &amp; Editar, selecione o Modo Avançado. Agora você deve configurar CNAME do seu dominio para ghs.google.com.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;385&#8221; caption=&#8221;Na página de administração do seu domínio.&#8221;]<img src="https://lh6.googleusercontent.com/SCejf5vYJgdfk5GfRx7Z6cb2yfgw_xoLE5sOicdTNvuU9O6xsaOufdwK0aMZrpNRAZMYfBx52XempYuSIfUCoYaX-WAVOFJxe1qOeozKFvTgBymdayw" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;684&#8221; caption=&#8221;Modo Avançado.&#8221;]<strong><img src="https://lh5.googleusercontent.com/fnzxfDS4uOdMC_mtphfqxQBVWfWyWJrHoro7ZusJHh3Dz_6pk0cy4DM40aHj5Ak6lOdoIvnrs81evVPn3FHQlS8nr1MnR7JxgYGCZzOth7ipLPRHibI" alt="" /></strong>[/caption]</p>
+
+<p>ATENÇÃO: Os servidores DNS demoram cerca de 30 min para refletirem a configuração.</p>
+
+<p>Agora o seu dominio deve estar funcionando, mas ele só é acessível através do www. Para você validar o seu dominio no Google Apps pelo método padrão, ainda é preciso fazer uma configuração para que seu site seja acessivel sem o www. Vá para o menu Domain Setting do Google Apps, em Domain Names, clique no link “Change de A record”, onde você encontra os endereços IPs que você deve adicionar lá no Registro.br conforme imagens.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;647&#8221; caption=&#8221;Clique no Link “change the A record&#8221;]<img src="https://lh4.googleusercontent.com/t452VMAVkKBE1jB9U6E8FTFhNUK6JB1UCO2Bb-qtsU1Mu7jUg-tUWBJZGqOmzlRmdpRZ-wY4kjMIYaEIST1LeLbJgzGrmY_niMFQACoBvo4Us-JDUn0" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;alignnone&#8221; width=&#8221;648&#8221; caption=&#8221;Adicione A record no DNS do Registro.br&#8221;]<img src="https://lh3.googleusercontent.com/Xz70cn1vI4pPVK44DNNvC-CdhmdwZv77JqQkfA4XRWiicpe1ycMiRSQ5gXrSUS2QIb_VymIp-xrBPQ6HNFHAvahI55dIlogqyKqw3pw7C9AQJ2BPGME" alt="" />[/caption]</p>
+
+<p>Depois disso você terá configurado tudo, seu site estará acessível pelo dominio e ainda terá todos os recursos fornecidos pelo Google, sem nenhum custo além do registro de domínio.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica De Editor Simples - SublimeText</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-27T15:13:46-03:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Olá pessoal, hoje viemos dar a dica de um editor de código simples, ágil e o mais próximo do TextMate (hehehe). Os novos frameworks, e até mesmo linguagens mais novas, trazem uma simplicidade que nos induz a trabalhar livre de uma IDE, como é o caso do Rails, Grails, Play, etc&#8230;</p>
+
+<p>[singlepic id=16]</p>
+
+<p>A comunidade de Ruby, que em grande parte utiliza Mac, trabalha com o TextMate e convenhamos, é uma ferramenta que a primeira vista nos convida para trabalhar. Nós (Guilherme e eu), como usuários de Linux (e com muito orgulho hehehe), ficamos algum tempo procurando uma ferramenta parecida com o TextMate. Testamos algumas, mas a que chamou atenção (e fez valer a busca) foi o SublimeText. O SublimeText é um editor simples, leve, prático, possui suporte a syntax highlighting para a maioria das linguagens, extensível através de plugins, aceita bundles para TextMate e é multiplataforma (com versões para Windows, Linux e Mac). Inicialmente, eu Bruno, tive a idéia de fazer um post sobre suas funcionalidades e configurações, mas o Guilherme me passou um vídeo muito bom e acredito que com mais dois links que utilizei são o bastante para nos entregarmos a essa ferramenta.</p>
+
+<p>O SublimeText é pago, porém possui uma versão de testes com tempo ilimitado.</p>
+
+<h4>Atenção desenvolvedor python:</h4>
+
+<p>Ao utilizar o sublime com código fonte python criado em outro editor, o interpretador se perdeu no parser. Identifiquei que era por causa da identação, que apesar de parecer correta no sublime estava tratando o TAB de forma diferente que o gedit. Então mesmo estando alinhado no sublime, o interpretador do python considerava uma identação diferente. Pra solucionar basta selecionar o código e ver que ele diferenciava a identação, assim é só substituir esses locais por tab.
+(Veja exemplo na figura abaixo)</p>
+
+<p>[singlepic id=17]</p>
+
+<p>Além das dicas do vídeo acima, decidimos postar esses dois links também, que possuem materiais complementares:</p>
+
+<ul>
+<li><p><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Atalhos e dicas</a></p></li>
+<li><p><a href="http://www.sublimetext.com/docs/2/indentation.html">Dica de indentação, mas dá ideia de como personalizar outras coisas.</a></p></li>
+</ul>
+
+
+<p>Então é isso! Esperamos que tenham gostado e até o próximo post!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/10/primeiros-passos-com-groovy/">Primeiros Passos Com Groovy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T18:44:28-03:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
+Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
+
+<h2>Instalação e configuração&#8230;</h2>
+
+<p>Para começar precisamos fazer o download no site do <a href="http://groovy.codehaus.org/Download">Groovy</a>. Se você já passou pelos passos de configuração de uma JDK, não encontrará dificuldades. Devemos descompactar o pacote num diretório qualquer (no caso do pacote binário) e adicionar o endereço completo deste diretório na variável de ambiente PATH do seu sistema. Para verificar se está tudo certo, podemos testar o seguinte comando (no Console do Linux, ou prompt do Windows) que irá apresentar a versão do Groovy que configuramos:</p>
+
+<pre><code>[bsouza@bsouza ~]$ groovy -version
+Groovy Version: 1.8.4 JVM: 1.7.0_03
+</code></pre>
+
+<h2>Mão na massa!</h2>
+
+<p>Agora é a hora da diversão! Iremos codar nossos primeiros fontes Groovy. Uma facilidade, para quem é familiarizado com Java, é que você pode continuar utilizando a sintaxe Java e ir melhorando suas habilidades em Groovy aos poucos e assim, incorporar as facilidades do Groovy conforme vai evoluindo em seus estudos.
+Iniciaremos nossos testes com o Groovy Console, que é um editor simples onde podemos codar e testar a execução dos nossos primeiros códigos:</p>
+
+<p><img src="/wp-content/gallery/groovy/groovyconsole.png" alt="Editor simples com um console que acompanha a sdk do Groovy" /></p>
+
+<p>Para executar o Groovy Console devemos digitar no Console o comando groovyConsole.</p>
+
+<p>DICA: Java importa automaticamente todas as classes que estão no package java.lang. Groovy por sua vez, extende este comportamento incluindo os pacotes abaixo:
+- java.io
+- java.math
+- java.net    <br/>
+- java.util
+- groovy.lang
+- groovy.util</p>
+
+<p>Em Groovy utilizamos a palavra reservada def para definir algo, essa definição pode ser um método, variáveis com tipagem dinâmica e até closures. Veremos a utilização desta e outras keywords principais da linguagem. Mãos à obra&#8230;</p>
+
+<p>DICA: Para limpar a saida do console utilize o atalho ctrl+w e para rodar o seu script utilize ctrl+r.</p>
+
+<pre><code>// definição de um tipo Integer do Java
+int numero = 5
+println numero.class
+
+// definição de uma String do Java
+String nome = "Bruno"
+println nome.class
+
+/** **************************************************************************
+ * Note que em Groovy, quando temos um método que recebe apenas um parâmetro,
+ * podemos ocultar os parenteses, favorecendo assim a legibilidade do código 
+ * ***************************************************************************/
+
+// Define uma String em tempo de execução através do seu comportamente,o chamado 
+// Duck Typing, ou seja, se o objeto se comporta de uma pato, então ele é um pato.
+def duck = "Bruno Moraes Souza"
+println duck.class
+
+/** ****************************************************************************
+ * Agora iremos definir duas classes com um relacionamento entre elas, e iremos
+ * fazer mais alguns testes para ver como o Duck Typing se comporta
+ * *****************************************************************************/
+
+// classe mutavel que representará um produto
+class Produto {        
+    String name
+    String descricao
+}
+
+/* OBS: Não estamos declarando os getters e os setters
+   pois o próprio Groovy faz esse trabalho sujo para nós,
+   estes são os chamados Groovy Beans. 
+
+   OBS 2: Repare também, que em Groovy podemos omitir o 
+   ponto e vírgula ao final de cada linha */
+
+println "" // simples quebra de linha para facilitar a visualização dos novos resultados
+
+// Instancia um objeto Tipo e popula seus dados através de setters
+def produto = new Produto() 
+produto.name = "Sistema1"
+produto.descricao = "E-Commerce escrito em Grails \\o/"
+
+// Em Groovy, podemos utilizar interpolação de Strings conforme abaixo,
+// que é prático e mais legível que uma concatenação
+println "Produto: ${produto.name}\nDescrição: ${produto.descricao}\n"
+println "${produto.class}"
+println produto
+
+/* Note que como não sobrescrevemos o método toString da classe Produto,
+ * em nosso print foi retornada a implementação da classe Object. 
+ * Isso mesmo, os objetos Groovy também herdam de Object! */
+
+// Vamos agora utilizar o suporte a lista de Groovy e adicionar todas os 
+// objetos que instanciamos até agora
+
+def lista = [ numero, nome, duck, produto ]
+
+// Faremos uso agora de uma das facilidades do Groovy para 
+// trabalharmos com coleções, que é o método each
+
+println "" // quebra de linha
+lista.each { println it }
+
+// note que pela chamada do método, ele recebe apenas um parâmetro, e por isso
+// não precisamos dos parênteses. Ele recebe uma closure/delegate como parâmetro 
+// que será executada para cada um dos seus elementos e a keyword it representa o elemento atual
+
+println "" // quebra de linha
+lista.each { println ((it.class == Produto) ? it.name : it) }
+
+// Para testar a real utilização do it, colocamos um operador ternário, 
+// para imprimirmos o nome do tipo, caso o elemento seja um Tipo
+
+/** 
+ * Os Groovy Beans, como mencionados anteriormente, criam os getters
+ * e setters para o nosso bean, porém em muitos casos gostariamos privar o acesso
+ * de um setter para criarmos objetos imutáveis. Em Groovy podemos criar objetos
+ * totalmente imutáveis com a anotação @Immutable antes da definição da classe */
+
+@Immutable class ProdutoImutavel {
+
+    String nome
+    String descricao
+
+    String toString() { nome } // Sobrescrita do método toString
+}
+
+/* Na classe acima, declaramos os mesmos atributos da classe anterior, porém
+ * estes são read only, e nos obrigam a utiliza um recurso bem bacana do Groovy,
+ * que é um construtor dinâmico. */
+
+println ""
+
+def imutavel = new ProdutoImutavel(nome: "Mouse", descricao: "Mouse wireless")
+println "${imutavel.nome} - ${imutavel.descricao}"
+
+// Para verifica se o comportamento é mesmo o esperado, tentaremos renomear o produto
+try { imutavel.nome = "novo" } catch (Exception ex) { println ex.message }
+
+println "${imutavel.nome} - ${imutavel.descricao}"
+println imutavel // teste do toString sobrescrito
+
+println ""
+
+// Por fim um teste com um atributo dinamicamente tipado
+class Dinamico {
+    def algo
+}
+
+def d = new Dinamico()
+
+// Popula algo com uma string
+d.algo = "String"
+println d.algo
+
+// Setamos uma closure que recebe dois argumentos
+d.algo = { x, y -&gt; (x * y / 2) }
+println d.algo(3, 6)
+</code></pre>
+
+<p>Na versão estável, 1.8.6 até a presente data, há um bug relacionado ao modificador de acesso private, permitindo que métodos e atributos que utilizem o modificador continuem expostos.</p>
+
+<p>Bom, é isso! Acredito que toda a explicação necessária para o nosso primeiro exemplo está em forma de comentário no código e basta copiá-lo e executá-lo no console.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/07/css-inteligente-use-sass/">CSS Inteligente, Use SASS!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-07T05:15:20-03:00" pubdate data-updated="true">May 7<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bom, o post de hoje é uma dica referente a desenvolvimento web, mais especificamente de CSS. Atualmente atuo como desenvolvedor mobile e já fazia algum tempo que não desenvolvia nada web, até o final do ano passado, quando nosso cliente teve a necessidade da reescrita de um sistema web. Em nosso time não há alguém responsável somente pelo layout, mas todos tínhamos conhecimento em CSS. Logo no início do projeto sentamos e discutimos alguns padrões para o layout do sistema, mas algo me incomodava na organização do CSS. O CSS, em sua criação, veio com a intenção de padronizar o layout do seu sistema/site, fazendo um controle centralizado dos estilos evitando assim a duplicação de código que torna simples alterações em tarefas custosas. Minha incomodação era justamente com essa centralização, ela ainda não estava correta, o CSS não cumpre totalmente o seu papel de evitar repetição de código e centralizar as mudanças, pois há muitas classes com comportamentos parecidos e que na maioria das vezes quando precisamos alterá-las gostaríamos que essas alterações afetassem todos esses padrões duplicados em nossas classes, e.g. uma cor padrão ou tamanho de margens. Foi nesse instante que um colega mencionou o SASS que traz todas essas melhorias que eu queria e o CSS não me proporcionava.</p>
+
+<h2>Iniciando&#8230;</h2>
+
+<p>O SASS é uma ferramenta desenvolvida em Ruby, por isso devemos te-lo previamente instalado. Ele utiliza basicamente um arquivo com extensão .scss e a através deste arquivo ele irá gerar o CSS comum (aquele chato que faziamos antigamente) e a partir deste momento iremos dar manutenção apenas no arquivo .scss. SASS trabalha com quatro características principais: variáveis, aninhamento (nesting), mesclas (mixins) e herança.</p>
+
+<p>Depois de instalado, devemos utilizar o comando abaixo para gerar nosso CSS:</p>
+
+<pre><code>/* style é o nome do arquivo */
+sass --watch style.scss:style.css
+</code></pre>
+
+<h2>Variáveis</h2>
+
+<p>Utilizamos as variáveis para declarar atributos que podem ser utilizados em várias propriedades de diferentes classes. Por exemplo, podemos criar uma cor padrão que será utilizada em vários dos nossos estilos, e assim centralizamos a mudança, caso ela seja necessária ao decorrer do projeto:</p>
+
+<pre><code>$color: #cccccc;
+.box { background-color: $color; }
+</code></pre>
+
+<h2>Nesting</h2>
+
+<p>Permite que façamos alterações somente a partir de determinado seletor, vejamos um exemplo abaixo de como fariamos sem SASS e como fica com SASS:</p>
+
+<pre><code>/* CSS */
+.box { background-color: #cccccc; }
+.box img { size: 50px; }
+
+/* SASS */
+$icon-size: 50px;
+.box { background-color: $color; img { size: $icon-size; } }
+</code></pre>
+
+<h2>Mixins</h2>
+
+<p>Utilizamos para criar estilos que podem ser aproveitados em várias classes, e assim evitamos repetição:</p>
+
+<pre><code>$default-border-color: #000000;
+@mixin default-box { border: 1px solid $default-border-color; background-color: $color; }
+.box { @include: default-box; color: #300; }
+</code></pre>
+
+<h2>Herança</h2>
+
+<p>A partir de uma classe já definida, podemos herdar todo o seu estilo e extendê-lo para criar outra classe customizada:</p>
+
+<pre><code>.bold-box { @extend .box; font-weight: bold; }
+</code></pre>
+
+<h2>Exemplo completo&#8230;</h2>
+
+<p>Fiz um outro exemplo, agora com todos os passos. Primeiro naveguei até um diretório que criei para o exemplo, depois criei um arquivo e o editei:</p>
+
+<pre><code>vim teste.scss
+</code></pre>
+
+<p>Dentro deste arquivo criei os seguintes estilos:</p>
+
+<pre><code>$color: #CCC;
+$font: #003;
+$padding: 5px;
+
+@mixin borders { border: 2px solid #000; }
+@mixin default-box { height: 50px; padding: $padding; background-color: $color; }
+
+.box { @include borders; @include default-box; }
+.custom-box { @extend .box; color: $font; a { color: #fff; } }
+</code></pre>
+
+<p>Para gerar o meu css utilizei o comando:</p>
+
+<pre><code>sass --watch teste.scss:style.css
+</code></pre>
+
+<p>No meu caso, o meu SASS teve o nome de teste.sass e dei o nome de style.css ao arquivo que gerei. O meu css &#8220;compilado&#8221; ficou assim:</p>
+
+<pre><code>.box, .custom-box {
+  border: 2px solid #000;
+  height: 50px;
+  padding: 5px;
+  background-color: #cccccc; }
+
+.custom-box {
+  color: #000033; }
+  .custom-box a {
+    color: #fff; }
+</code></pre>
+
+<p>Outra coisa que eu não havia mencionado é que você pode utilizar essa sintaxe que mostramos até agora ou uma outra bastante familiar a quem já trabalhou com YAML. Para utilizar essa outra sintaxe a extensão do nosso arquivo deve ser .sass, e o mesmo exemplo ficaria assim:</p>
+
+<pre><code>$color: #CCC
+$font: #003
+$padding: 5px
+
+@mixin borders
+        border: 2px solid #000
+
+@mixin default-box
+        height: 50px
+        padding: $padding
+        background-color: $color
+
+.box
+        @include borders
+        @include default-box
+
+.custom-box
+        @extend .box
+        color: $font
+        a
+               color: #fff
+</code></pre>
+
+<h2>Encerrando&#8230;</h2>
+
+<p>O SASS possui outras características e vantagens, mas acredito que essas já são o suficiente para lhe convencer a não escrever mais o CSS de forma tradicional. Para ir mais afundo você pode consultar o tutorial do <a href="http://sass-lang.com/tutorial.html">site</a>.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/">Instalando node.js No Fedora a Partir Do Código Fonte</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-26T16:21:09-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>[singlepic id=12 w=320 h=240 float=left]</p>
+
+<p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
+
+<pre><code># yum install openssl-devel
+# yum install gcc
+# yum install gcc-c++
+</code></pre>
+
+<p>Para pegar o código fonte você pode clonar pelo git ou buscar no site <a href="http://nodejs.org/">http://nodejs.org/</a>
+Pelo git:</p>
+
+<pre><code>$ git clone git://github.com/joyent/node.git
+</code></pre>
+
+<p>É importante destacar que você estará pegando a mais recente versão do código no repositório. Se quiser uma versão anterior (provavelmente mais estável) busque pelas tags do programa e faça um checkout dessa tag.</p>
+
+<pre><code>$ git tag
+$ git checkout [nome_da_tag]
+</code></pre>
+
+<p>Agora que você tem o código, navegue até a pasta node e prossiga com a instalação:</p>
+
+<pre><code>$ cd node
+# ./configure
+# make -j2
+</code></pre>
+
+<p>Se você se deparar com o erro: &#8220;fatal error: gnu/stubs-64.h: No such file or directory&#8221; execute o seguinte comando:</p>
+
+<pre><code># yum install glibc-devel.x86_64
+</code></pre>
+
+<p>Termine a instalação:</p>
+
+<pre><code># make install
+</code></pre>
+
+<p>Adicione usr local ao PATH</p>
+
+<pre><code># export PATH=$PATH:/usr/local/bin:/usr/local
+</code></pre>
+
+<p>Execute o comando visudo para editar /etc/sudoers</p>
+
+<pre><code># visudo
+</code></pre>
+
+<p>Procure a linha que contem &#8220;Defaults secure_path=/sbin:/bin:/usr/sbin:/usr/bin&#8221; e adicione ao fim da linha &#8220;:/usr/local/bin&#8221; sem os parenteses. Você faz isso indo com cursor até o fim da linha, digite &#8220;i&#8221;, escreva &#8220;:/usr/local/bin&#8221; e então, para salvar, aperte ESC e digite &#8220;wq&#8221;, ENTER.</p>
+
+<p>[singlepic id=13 w=320 h=240 float=center]</p>
+
+<p>Para verificar a versão instalada:</p>
+
+<pre><code>$ node -v
+</code></pre>
+
+<p>Pronto!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/24/eventos-fim-de-abril/">Eventos Fim De Abril</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-24T15:18:29-03:00" pubdate data-updated="true">Apr 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Pessoal, esse post é meramente informativo, vou citar alguns eventos que vão ocorrer agora nesse fim de abril, aqui em Porto Alegre ou na Web.</p>
+
+<p>25/04: Webinar - Reduce Your IT Risks by Using Continuous Delivery by Joanne Molesky, evento organizado pela ThoughtWorks, as 19h. Gratuito via Web com duração de 1h. Exige registrar-se com antecedência <a href="https://thoughtworks.webex.com/mw0306ld/mywebex/default.do?nomenu=true&amp;siteurl=thoughtworks&amp;service=6&amp;rnd=0.22434889546550585&amp;main_url=https%3A%2F%2Fthoughtworks.webex.com%2Fec0605ld%2Feventcenter%2Fevent%2FeventAction.do%3FtheAction%3Ddetail%26confViewID%3D909461151%26%26%26%26siteurl%3Dthoughtworks">aqui</a>.</p>
+
+<p>26/04: Dojo de JavaScript na Gri.fo, empresa localizada na Cidade Baixa. Havia a circulação de um <a href="http://www.doodle.com/uqi8qcpiucifpdei">Doodle</a> para marcar o melhor dia e parece que dia 26 às 19h venceu. Procure colocar seu nome no doodle ou contate algum dos participantes para mais informações.</p>
+
+<p>26/04: <a href="http://forms.apigee.com/acton/form/549/0046:d-0002/0/index.htm?">Webcast: Big Data - Beyond the &#8216;Bigness&#8217; and the Technology</a> às 15h horário de Brasília.</p>
+
+<p>27/04: <a href="http://www.debian-rs.org/node/87">Debian Day</a> na ESADE, unidade Cidade Baixa, à Rua Luis Afonso, 84 das 9h as 19h. Incrições <a href="https://spreadsheets.google.com/spreadsheet/viewform?formkey=dG1LWHRXV3lBczZaUDBTVzBpa0owRFE6MQ">aqui</a> e é encorajado a doação de 1kg de alimento nao perecível.</p>
+
+<p>28/04: <a href="http://flisol.info/FLISOL2012/Brasil/PortoAlegre">FLISOL</a> - O Festival Latino-Americano de Instalação de Software Livre, terá duas salas, uma para palestras e outra para o <a href="http://pt.wikipedia.org/wiki/Installfest#Installfest">Installfest</a>. Ocorrerá na ESADE, Rua Riachuelo, 1257 das 09h as 17h e inscrições vão até dia 27. Como entrada é encorajado a doação de 2kg de alimentos não pereciveis. Convido especialmente para participar da palestra do meu amigo <a href="http://blog.lfzawacki.com/">Lucas Zawacki</a> as 10:30h sobre Wine - Rodando aplicativos Windows em *nix.</p>
+
+<p>30/04: Esse é o ultimo dia para realizar as inscrições com o maior desconto possível para o FISL. Estudantes R$ 50,00 e individual R$ 100,00. Faça sua inscrição <a href="http://fisl.org.br/13/greve/">aqui</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/24/prince-of-persia-no-github/">Prince of Persia No GitHub</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-24T09:26:08-03:00" pubdate data-updated="true">Apr 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Eu me lembro do inicio dos anos 90, quando vi pela primeira vez essa máquina chamada computador. Causou tal admiração que uma decada depois resolvi iniciar meus estudos em Ciência da Computação. Quem &#8220;operava&#8221; a máquina era meu primo, enquanto meu tio falava entusiasmado dos grandes beneficios que ela traria para trabalho, estudos e diversão. Na tela eu via algo muito semelhante a essa imagem:</p>
+
+<p>[singlepic id=9 w=320 h=240 float=center]</p>
+
+<p>Ela é do jogo Prince of Persia, desenvolvido por  <a href="http://pt.wikipedia.org/wiki/Jordan_Mechner">Jordam Mechner</a> em 1989 e que teve grande repecursão por revolucionar os jogos criando movimentos mais realistas. Recentemente Jordam conseguiu recuperar o código fonto do jogo feito para Apple II e o colocou no GitHub para quem quiser acessar <a href="https://github.com/jmechner/Prince-of-Persia-Apple-II">https://github.com/jmechner/Prince-of-Persia-Apple-II</a>. Conseguir modificar ou mesmo executar o sistema será para poucos, o código esta em assembler 6502, mas ao menos a história esta preservada. Para aqueles que quiserem se aprofundar e estão em busca de um grande desafio, Jordam tambem disponibilizou uma <a href="http://jordanmechner.com/wp-content/uploads/1989/10/popsource009.pdf">documentação tecnica</a>.</p>
+
+<p>Além disso, ele conta em um livro a jornada da criação desse jogo, que começou no porão de sua casa e culminou na vanguarda da industria de games dos anos 80 e na casa de milhões de pessoas ao redor do mundo. Ele esta disponível no site <a href="http://jordanmechner.com/ebook/">http://jordanmechner.com/ebook/</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

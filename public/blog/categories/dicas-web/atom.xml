@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Dicas web | My Octopress Blog]]></title>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/dicas-web/atom.xml" rel="self"/>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
+  <updated>2012-09-07T18:59:34-03:00</updated>
+  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Tipografía? Utilizando fontes ricas na web.]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
+    <updated>2012-06-25T16:43:34-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
+    <content type="html"><![CDATA[<p>Acredite ou não, a tipografía é um campo enorme, de grande interesse e pode ter um efeito profundo no resultado do seu trabalho. Até pouco tempo a web esteve um tanto limitada quanto ao uso de fontes, ficando restrito às que o usuário possuía em seu sistema. Agora as coisas estão um pouco melhor, porém antes mostrar como utilizar fontes mais ricas em sistemas web veremos um pouco mais sobre tipografía.</p>
+
+<p>[singlepic id=20 w=320 h=240 float=right]É importante saber que um dos princípios teóricos por traz do Design Gráfico é o Equilibrio, no entanto ele nem sempre é alcançado pela uniformidade. A fonte Gill Sans possui a caracteristica de ser perceptivelmente equilibrada, mas se você perceber a espessura de suas linhas variam em diferentes pontos dos seus traços. Veja imagem ao lado.</p>
+
+<p>Para avaliar uma fonte é preciso saber qual é a sua anatomia e terminologia, na imagem estão algumas delas. Não vou discutir cada detalhe, vou me restringir a abordar algumas questões que são importantes e que podem fazer grande diferença no seu trabalho.</p>
+
+<p>[singlepic id=21 w=480 h=360 float=center]</p>
+
+<p>Começando pelo fato de que o tamanho da fonte não é consistente entre diferentes fontes, podendo variar consideravelmente. Já a Altura-x é um parâmetro muito importante em relação a legibilidade. Costuma-se utilizar fontes com alta Altura-x (Lucida Bright ou Georgia) para paragrafos e textos mais densos pois é mais fácil de ler em tamanhos de fonte menores e em dispositivos com telas de menor resolução. Já uma Altura-x baixa (Baskerville) costuma ser usada para passar percepção de elegância, dando uma sensação de Belle Époch. Fontes com Ascendentes e Descendentes baixos tendem a ter alta Altura-x e vice e versa. Se eles forem excessivos podem atrapalhar a visualização em dispositivos de menores resolução, pois alem de comprometer a Altura-x, exigem maiores espaçamentos entre linhas.</p>
+
+<p>[singlepic id=23 w=320 h=240 float=left]Tambem existem duas importantes distinções de tipos de fontes, serifs e sans serifs (sem serifs). Há quem diga que serifs devem ser utilizadas para longos blocos de texto por ajudarem a distinguir as letras, porem não existem evidências concretas disso. Já para dispositivos móveis, serifs podem ficar borradas ou não ter resolução suficiente para ficarem legíveis, por isso indica-se utilizar sans serif ou as chamadas square serifs. A maior influência em questão de legibilidade esta relacionado ao comportamento de nosso cérebro que é treinado a reconhecer as letras e portanto, aquela fonte mais comum e difundida será mais legível devido ao treinamento do cérebro.</p>
+
+<p>Veja essa imagem por exemplo:</p>
+
+<p>[singlepic id=22 w=320 h=240 float=]</p>
+
+<p>Você leu The Cat certo? Por que não Tae cht? Tae cat? Você ja sabe a resposta.</p>
+
+<p>E essa você conhecia?</p>
+
+<blockquote><p>“De aorcdo com uma psqueisa da Unvireisadde de Cmabrigde, não ipmrota a odrem em que as lteras em uma plavara etsão, a úcina cisoa ipmotratne é que a piremira e a útimla ltreas etseajm no lguar ctreo. O rseto pdoe etasr uma ttaol bnauguça e vcoê adnia pdoreá ler sem perolbmea. Itso pruqoe a mtene haunma não lê cdaa lreta idnvidailuemtne, mas a pvrlaaa cmoo um tdoo.”</p></blockquote>
+
+<p>Acredito que essa breve apresentação sobre essas curiosidades da tipografia são suficientes para te fazer encarar as fontes de uma forma totalmente diferente e espero que para melhor (e não vá bagunçar as letras).</p>
+
+<p>Agora vamos para a parte prática. Como utilizar fontes ricas em sistemas web? A maneira atualmente mais segura é utilizar o método de CSS chamado @font-face. Ela permite baixar uma determinada fonte de seu servidor para ser mostrada em uma página web mesmo que o usuário não possua a fonte instalada. A sintaxe básica é bastante simples. A propriedade font-family dentro de @font-face irá definir como você utilizará a fonte no restante do css (veja utilização em .exemplo). Além disso você precisa do arquivo da fonte e declarar de onde ele será carregado, fornecendo opcionalmente o formato.</p>
+
+<p>[gist id=2990412]</p>
+
+<p>Deve-se sempre considerar a possibilidade de não haver suporte para o formato da fonte. Quando desenvolvemos para a web devemos lembrar que ela é universal, pode ser acessada não apenas de seu smartphone ou desktop, mas de geladeiras, carros, etc. Note que após declarar a fonte “TK4F” na classe .exemplo, temos outras fontes separadas por virgula, elas são fallbacks e substituirão em ordem a fonte antecessora caso ela não possa ser carregada. Mesmo nos desktops há dores de cabeça, especialmente quanto ao formato e licensas das fontes. No final do post você encontra links para mais informações sobre os tipos e suportes cross-browsers. Além disso, você pode ver um exemplo de utilização de fontes e tambem experimentar e verificar os conceitos aprendidos nesse post em <a href="http://samuraiplayground.appspot.com/tipografia">um site que construí como exercicio</a> enquanto aprendia jQuery.</p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p>Opções de Fontes:</p>
+
+<ul>
+<li><p><a href="http://www.fontsquirrel.com/">http://www.fontsquirrel.com/</a></p></li>
+<li><p><a href="http://www.fontex.org/">http://www.fontex.org/</a></p></li>
+<li><p><a href="http://www.google.com/webfonts/">http://www.google.com/webfonts/</a></p></li>
+<li><p><a href="http://www.fonts.com/web-fonts">http://www.fonts.com/web-fonts</a></p></li>
+</ul>
+</li>
+<li><p>Suporte dos browsers aos tipos de fontes: <a href="http://webfonts.info/wiki/index.php?title=@font-face_browser_support">http://webfonts.info/wiki/index.php?title=@font-face_browser_support</a></p></li>
+<li><p>Bulletproof @font-face: <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <updated>2012-06-16T16:17:21-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
+
+<p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
+
+<ul>
+<li><p>a criação de cache para páginas populares, como uma página principal ou em que os dados sejam os mesmos para todos usuários;</p></li>
+<li><p>salvar dados transientes e frequentementes atualizados, como um contador em uma página. Isso evita atingir o banco de dados a cada requisição, incrementando o contador no Memcache e atualizando o banco de tempo em tempo*;</p></li>
+<li><p>dados frequentemente requisitados, como por exemplo o resultado de uma consulta ao banco.</p></li>
+</ul>
+
+
+<p>[singlepic id=19 w=640 h=480 float=right]Com apenas algumas linhas extras no seu código essas utilizações acima podem melhorar a escalabilidade de seu aplicativo. Memcached nada mais é que uma cache RAM distribuida que utiliza um modelo chave, valor. Escritas na memcache nunca atingem o disco e são muito mais rápidas que acessos ao banco de dados (aproximadamente 10x mais rápido que escrever no banco de dados do Google App Engine e 5x para leituras). O tradeoff é que os dados guardados na memcache são transientes e podem ser descartados quando o espaço se aproximar do limite. Alguns exemplos de sistemas que utilizam Memcache são YouTube, Reddit, Zynga, Facebook, Orange e Twitter.</p>
+
+<p>Um uso bem simples que fiz com esse sistema foi criar uma cache para os anuncios de vagas de emprego no <a href="http://www.tweetvagas.com.br">Tweet Vagas</a>. Nele as pessoas podem anunciar vagas de modo muito descomplicado, apenas preenchendo a descrição. Ao clicar em anunciar o Tweet Vagas cria um link permanente para esse descrição e prepara um tweet contendo esse link e um resumo do anuncio para ser tweetado pelo proprio twitter do usuário. Nesse momento a descrição é gravada no banco de dados do Google App Engine e ao mesmo tempo colocada na Memcache. Assim cada anuncio só acessa o banco de dados na sua escrita, e todas as requisições para essa vaga buscam os dados diretamente da Memcache. Como as vagas tem uma relação direta com sua idade, aquelas mais antigas e menos acessadas são as que tendem a serem limpas da cache, enquanto as mais recentes e acessadas tendem a se manter. Essa arquitetura permite fazer uso muito inteligente do banco de dados, o que é muito importante em uma plataforma SaaS, ja que o custo é proporcional a utilização do serviço.</p>
+
+<p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
+
+<p>[gist id=2941459]</p>
+
+<p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
+
+<p>Você utiliza Memcache como se lógicamente fosse uma única memória para todo seu sistema. Independente de quantos servidores você possua, Memcache permite que você faça uso da Memória de cada um desses servidores de modo distribuido, sem que haja necessidade de se responsabilizar pelo gerênciamento complicado que existe por traz disso e permitindo adicionar mais servidores sem se preocupar com complicações em reestruturar a cache. E mais, pela sua filosofia todas as operações tem complexidade O(1), ou seja, toda operação tem tempo de execução constante independente de sua entrada.</p>
+
+<p>Alem de tudo Memcached é Livre e de Código Aberto (Free &amp; Open-source). Você pode pegar o código fonte no GitHub do Memcached, e se não souber utilizar o Git pode ver o tutorial sobre ele <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">aqui no blog</a>. Espero que tenha gostado.</p>
+
+<p><em>*os dados podem ser limpos da memcache a qualquer momento e sua aplicação deve levar isso em conta para lidar com a situação em que os dados foram limpos da cache.</em></p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p><a href="http://memcached.org/">http://memcached.org/</a></p></li>
+<li><p><a href="http://code.google.com/p/memcached/">http://code.google.com/p/memcached/</a></p></li>
+<li><p><a href="https://github.com/memcached/memcached">https://github.com/memcached/memcached</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/articles/scaling/memcache">https://developers.google.com/appengine/articles/scaling/memcache</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br">https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DNS do Registro.br + Google App Engine]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
+    <updated>2012-06-10T18:34:40-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
+    <content type="html"><![CDATA[<p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
+
+<p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
+
+<p>O processo é meio tortuoso se você não sabe por onde começar, por isso resolvi fazer esse post. Você tem que ir até o painel de administração do Google App Engine, no menu Application Setting e Clicar no botão Add Domain em Domain Setup. Digitar o seu dominio e seguir para a página do Google Apps, onde fará o cadastro se ainda não tiver conta para esse dominio. Ao fim você deve chegar na página do seu aplicativo e adicionar a url correspondente (Veja algumas imagens abaixo)</p>
+
+<p>[caption id="" align="aligncenter" width="614" caption="Encontra-se no menu Administration Settings do seu aplicativo no Google App Engine"]<img src="https://lh6.googleusercontent.com/GUZ9mQFRcyufitezcinlUYH3uGM1_LpluFS0h0zCWPDY8rEiHYuvJk997cKJPxXbfjJt_3Ud9kKTXqEQA8WX7e82Xm_HL1jLeSZpnP3UodwAR9OlcaQ" alt="" />[/caption]</p>
+
+<p>[caption id="" align="aligncenter" width="622" caption="Após clicar em Add Domain, deve preencher seu dominio e será encaminhado para o Google Apps."]<img src="https://lh6.googleusercontent.com/XAAqmu4uL7UeaoYgRTkFJMaTxuRL0TUHM_oxHfXlcenFIPsKeGPHlbEoyYl3YRC5gSNhVBDHkCJxNP6FNFpaPMoTzz9g8gBtlN_805TD_v7q5vHUNFA" alt="" />[/caption]</p>
+
+<p>[caption id="" align="aligncenter" width="394" caption="Página do seu aplicativo (no meu caso tweetvagas) onde você deve adicionar a url do seu dominio."]<img src="https://lh6.googleusercontent.com/5s53_VmweH1GVXpdvJNikUMggE8emaMYtTlQvQqYjc5kpNHkApMSds2UFqxzJh1U7uJAJjNR2PTLXUA3DrGQbTghtNFrBHRgUUugaCmOJpZhbxVsOQo" alt="" />[/caption]</p>
+
+<p>Depois de se cadastrar e adicionar a url do seu dominio para a aplicação, você terá que criar um CNAME no servidor DNS (provavelmente será necessário marcar uma opção para validar seu dominio em outro momento no Google Apps). Então vá para Registro.br na página de administração do seu domínio, marque a opção “Utilizar os servidores DNS do Registro.br”, clique em Salvar &amp; Editar, selecione o Modo Avançado. Agora você deve configurar CNAME do seu dominio para ghs.google.com.</p>
+
+<p>[caption id="" align="aligncenter" width="385" caption="Na página de administração do seu domínio."]<img src="https://lh6.googleusercontent.com/SCejf5vYJgdfk5GfRx7Z6cb2yfgw_xoLE5sOicdTNvuU9O6xsaOufdwK0aMZrpNRAZMYfBx52XempYuSIfUCoYaX-WAVOFJxe1qOeozKFvTgBymdayw" alt="" />[/caption]</p>
+
+<p>[caption id="" align="aligncenter" width="684" caption="Modo Avançado."]<strong><img src="https://lh5.googleusercontent.com/fnzxfDS4uOdMC_mtphfqxQBVWfWyWJrHoro7ZusJHh3Dz_6pk0cy4DM40aHj5Ak6lOdoIvnrs81evVPn3FHQlS8nr1MnR7JxgYGCZzOth7ipLPRHibI" alt="" /></strong>[/caption]</p>
+
+<p>ATENÇÃO: Os servidores DNS demoram cerca de 30 min para refletirem a configuração.</p>
+
+<p>Agora o seu dominio deve estar funcionando, mas ele só é acessível através do www. Para você validar o seu dominio no Google Apps pelo método padrão, ainda é preciso fazer uma configuração para que seu site seja acessivel sem o www. Vá para o menu Domain Setting do Google Apps, em Domain Names, clique no link “Change de A record”, onde você encontra os endereços IPs que você deve adicionar lá no Registro.br conforme imagens.</p>
+
+<p>[caption id="" align="aligncenter" width="647" caption="Clique no Link “change the A record"]<img src="https://lh4.googleusercontent.com/t452VMAVkKBE1jB9U6E8FTFhNUK6JB1UCO2Bb-qtsU1Mu7jUg-tUWBJZGqOmzlRmdpRZ-wY4kjMIYaEIST1LeLbJgzGrmY_niMFQACoBvo4Us-JDUn0" alt="" />[/caption]</p>
+
+<p>[caption id="" align="alignnone" width="648" caption="Adicione A record no DNS do Registro.br"]<img src="https://lh3.googleusercontent.com/Xz70cn1vI4pPVK44DNNvC-CdhmdwZv77JqQkfA4XRWiicpe1ycMiRSQ5gXrSUS2QIb_VymIp-xrBPQ6HNFHAvahI55dIlogqyKqw3pw7C9AQJ2BPGME" alt="" />[/caption]</p>
+
+<p>Depois disso você terá configurado tudo, seu site estará acessível pelo dominio e ainda terá todos os recursos fornecidos pelo Google, sem nenhum custo além do registro de domínio.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS inteligente, use SASS!]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass/"/>
+    <updated>2012-05-07T05:15:20-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass</id>
+    <content type="html"><![CDATA[<p>Bom, o post de hoje é uma dica referente a desenvolvimento web, mais especificamente de CSS. Atualmente atuo como desenvolvedor mobile e já fazia algum tempo que não desenvolvia nada web, até o final do ano passado, quando nosso cliente teve a necessidade da reescrita de um sistema web. Em nosso time não há alguém responsável somente pelo layout, mas todos tínhamos conhecimento em CSS. Logo no início do projeto sentamos e discutimos alguns padrões para o layout do sistema, mas algo me incomodava na organização do CSS. O CSS, em sua criação, veio com a intenção de padronizar o layout do seu sistema/site, fazendo um controle centralizado dos estilos evitando assim a duplicação de código que torna simples alterações em tarefas custosas. Minha incomodação era justamente com essa centralização, ela ainda não estava correta, o CSS não cumpre totalmente o seu papel de evitar repetição de código e centralizar as mudanças, pois há muitas classes com comportamentos parecidos e que na maioria das vezes quando precisamos alterá-las gostaríamos que essas alterações afetassem todos esses padrões duplicados em nossas classes, e.g. uma cor padrão ou tamanho de margens. Foi nesse instante que um colega mencionou o SASS que traz todas essas melhorias que eu queria e o CSS não me proporcionava.</p>
+
+<h2>Iniciando...</h2>
+
+<p>O SASS é uma ferramenta desenvolvida em Ruby, por isso devemos te-lo previamente instalado. Ele utiliza basicamente um arquivo com extensão .scss e a através deste arquivo ele irá gerar o CSS comum (aquele chato que faziamos antigamente) e a partir deste momento iremos dar manutenção apenas no arquivo .scss. SASS trabalha com quatro características principais: variáveis, aninhamento (nesting), mesclas (mixins) e herança.</p>
+
+<p>Depois de instalado, devemos utilizar o comando abaixo para gerar nosso CSS:</p>
+
+<pre><code>/* style é o nome do arquivo */
+sass --watch style.scss:style.css
+</code></pre>
+
+<h2>Variáveis</h2>
+
+<p>Utilizamos as variáveis para declarar atributos que podem ser utilizados em várias propriedades de diferentes classes. Por exemplo, podemos criar uma cor padrão que será utilizada em vários dos nossos estilos, e assim centralizamos a mudança, caso ela seja necessária ao decorrer do projeto:</p>
+
+<pre><code>$color: #cccccc;
+.box { background-color: $color; }
+</code></pre>
+
+<h2>Nesting</h2>
+
+<p>Permite que façamos alterações somente a partir de determinado seletor, vejamos um exemplo abaixo de como fariamos sem SASS e como fica com SASS:</p>
+
+<pre><code>/* CSS */
+.box { background-color: #cccccc; }
+.box img { size: 50px; }
+
+/* SASS */
+$icon-size: 50px;
+.box { background-color: $color; img { size: $icon-size; } }
+</code></pre>
+
+<h2>Mixins</h2>
+
+<p>Utilizamos para criar estilos que podem ser aproveitados em várias classes, e assim evitamos repetição:</p>
+
+<pre><code>$default-border-color: #000000;
+@mixin default-box { border: 1px solid $default-border-color; background-color: $color; }
+.box { @include: default-box; color: #300; }
+</code></pre>
+
+<h2>Herança</h2>
+
+<p>A partir de uma classe já definida, podemos herdar todo o seu estilo e extendê-lo para criar outra classe customizada:</p>
+
+<pre><code>.bold-box { @extend .box; font-weight: bold; }
+</code></pre>
+
+<h2>Exemplo completo...</h2>
+
+<p>Fiz um outro exemplo, agora com todos os passos. Primeiro naveguei até um diretório que criei para o exemplo, depois criei um arquivo e o editei:</p>
+
+<pre><code>vim teste.scss
+</code></pre>
+
+<p>Dentro deste arquivo criei os seguintes estilos:</p>
+
+<pre><code>$color: #CCC;
+$font: #003;
+$padding: 5px;
+
+@mixin borders { border: 2px solid #000; }
+@mixin default-box { height: 50px; padding: $padding; background-color: $color; }
+
+.box { @include borders; @include default-box; }
+.custom-box { @extend .box; color: $font; a { color: #fff; } }
+</code></pre>
+
+<p>Para gerar o meu css utilizei o comando:</p>
+
+<pre><code>sass --watch teste.scss:style.css
+</code></pre>
+
+<p>No meu caso, o meu SASS teve o nome de teste.sass e dei o nome de style.css ao arquivo que gerei. O meu css "compilado" ficou assim:</p>
+
+<pre><code>.box, .custom-box {
+  border: 2px solid #000;
+  height: 50px;
+  padding: 5px;
+  background-color: #cccccc; }
+
+.custom-box {
+  color: #000033; }
+  .custom-box a {
+    color: #fff; }
+</code></pre>
+
+<p>Outra coisa que eu não havia mencionado é que você pode utilizar essa sintaxe que mostramos até agora ou uma outra bastante familiar a quem já trabalhou com YAML. Para utilizar essa outra sintaxe a extensão do nosso arquivo deve ser .sass, e o mesmo exemplo ficaria assim:</p>
+
+<pre><code>$color: #CCC
+$font: #003
+$padding: 5px
+
+@mixin borders
+        border: 2px solid #000
+
+@mixin default-box
+        height: 50px
+        padding: $padding
+        background-color: $color
+
+.box
+        @include borders
+        @include default-box
+
+.custom-box
+        @extend .box
+        color: $font
+        a
+               color: #fff
+</code></pre>
+
+<h2>Encerrando...</h2>
+
+<p>O SASS possui outras características e vantagens, mas acredito que essas já são o suficiente para lhe convencer a não escrever mais o CSS de forma tradicional. Para ir mais afundo você pode consultar o tutorial do <a href="http://sass-lang.com/tutorial.html">site</a>.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+]]></content>
+  </entry>
+  
+</feed>

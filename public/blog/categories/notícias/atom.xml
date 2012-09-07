@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Notícias | My Octopress Blog]]></title>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/notícias/atom.xml" rel="self"/>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
+  <updated>2012-09-07T18:59:34-03:00</updated>
+  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Eventos fim de abril]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril/"/>
+    <updated>2012-04-24T15:18:29-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril</id>
+    <content type="html"><![CDATA[<p>Pessoal, esse post é meramente informativo, vou citar alguns eventos que vão ocorrer agora nesse fim de abril, aqui em Porto Alegre ou na Web.</p>
+
+<p>25/04: Webinar - Reduce Your IT Risks by Using Continuous Delivery by Joanne Molesky, evento organizado pela ThoughtWorks, as 19h. Gratuito via Web com duração de 1h. Exige registrar-se com antecedência <a href="https://thoughtworks.webex.com/mw0306ld/mywebex/default.do?nomenu=true&amp;siteurl=thoughtworks&amp;service=6&amp;rnd=0.22434889546550585&amp;main_url=https%3A%2F%2Fthoughtworks.webex.com%2Fec0605ld%2Feventcenter%2Fevent%2FeventAction.do%3FtheAction%3Ddetail%26confViewID%3D909461151%26%26%26%26siteurl%3Dthoughtworks">aqui</a>.</p>
+
+<p>26/04: Dojo de JavaScript na Gri.fo, empresa localizada na Cidade Baixa. Havia a circulação de um <a href="http://www.doodle.com/uqi8qcpiucifpdei">Doodle</a> para marcar o melhor dia e parece que dia 26 às 19h venceu. Procure colocar seu nome no doodle ou contate algum dos participantes para mais informações.</p>
+
+<p>26/04: <a href="http://forms.apigee.com/acton/form/549/0046:d-0002/0/index.htm?">Webcast: Big Data - Beyond the 'Bigness' and the Technology</a> às 15h horário de Brasília.</p>
+
+<p>27/04: <a href="http://www.debian-rs.org/node/87">Debian Day</a> na ESADE, unidade Cidade Baixa, à Rua Luis Afonso, 84 das 9h as 19h. Incrições <a href="https://spreadsheets.google.com/spreadsheet/viewform?formkey=dG1LWHRXV3lBczZaUDBTVzBpa0owRFE6MQ">aqui</a> e é encorajado a doação de 1kg de alimento nao perecível.</p>
+
+<p>28/04: <a href="http://flisol.info/FLISOL2012/Brasil/PortoAlegre">FLISOL</a> - O Festival Latino-Americano de Instalação de Software Livre, terá duas salas, uma para palestras e outra para o <a href="http://pt.wikipedia.org/wiki/Installfest#Installfest">Installfest</a>. Ocorrerá na ESADE, Rua Riachuelo, 1257 das 09h as 17h e inscrições vão até dia 27. Como entrada é encorajado a doação de 2kg de alimentos não pereciveis. Convido especialmente para participar da palestra do meu amigo <a href="http://blog.lfzawacki.com/">Lucas Zawacki</a> as 10:30h sobre Wine - Rodando aplicativos Windows em *nix.</p>
+
+<p>30/04: Esse é o ultimo dia para realizar as inscrições com o maior desconto possível para o FISL. Estudantes R$ 50,00 e individual R$ 100,00. Faça sua inscrição <a href="http://fisl.org.br/13/greve/">aqui</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Prince of Persia no GitHub]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github/"/>
+    <updated>2012-04-24T09:26:08-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github</id>
+    <content type="html"><![CDATA[<p>Eu me lembro do inicio dos anos 90, quando vi pela primeira vez essa máquina chamada computador. Causou tal admiração que uma decada depois resolvi iniciar meus estudos em Ciência da Computação. Quem "operava" a máquina era meu primo, enquanto meu tio falava entusiasmado dos grandes beneficios que ela traria para trabalho, estudos e diversão. Na tela eu via algo muito semelhante a essa imagem:</p>
+
+<p>[singlepic id=9 w=320 h=240 float=center]</p>
+
+<p>Ela é do jogo Prince of Persia, desenvolvido por  <a href="http://pt.wikipedia.org/wiki/Jordan_Mechner">Jordam Mechner</a> em 1989 e que teve grande repecursão por revolucionar os jogos criando movimentos mais realistas. Recentemente Jordam conseguiu recuperar o código fonto do jogo feito para Apple II e o colocou no GitHub para quem quiser acessar <a href="https://github.com/jmechner/Prince-of-Persia-Apple-II">https://github.com/jmechner/Prince-of-Persia-Apple-II</a>. Conseguir modificar ou mesmo executar o sistema será para poucos, o código esta em assembler 6502, mas ao menos a história esta preservada. Para aqueles que quiserem se aprofundar e estão em busca de um grande desafio, Jordam tambem disponibilizou uma <a href="http://jordanmechner.com/wp-content/uploads/1989/10/popsource009.pdf">documentação tecnica</a>.</p>
+
+<p>Além disso, ele conta em um livro a jornada da criação desse jogo, que começou no porão de sua casa e culminou na vanguarda da industria de games dos anos 80 e na casa de milhões de pessoas ao redor do mundo. Ele esta disponível no site <a href="http://jordanmechner.com/ebook/">http://jordanmechner.com/ebook/</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

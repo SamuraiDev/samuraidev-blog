@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tutoriais | My Octopress Blog]]></title>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/tutoriais/atom.xml" rel="self"/>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
+  <updated>2012-09-07T18:59:34-03:00</updated>
+  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <updated>2012-06-16T16:17:21-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
+
+<p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
+
+<ul>
+<li><p>a criação de cache para páginas populares, como uma página principal ou em que os dados sejam os mesmos para todos usuários;</p></li>
+<li><p>salvar dados transientes e frequentementes atualizados, como um contador em uma página. Isso evita atingir o banco de dados a cada requisição, incrementando o contador no Memcache e atualizando o banco de tempo em tempo*;</p></li>
+<li><p>dados frequentemente requisitados, como por exemplo o resultado de uma consulta ao banco.</p></li>
+</ul>
+
+
+<p>[singlepic id=19 w=640 h=480 float=right]Com apenas algumas linhas extras no seu código essas utilizações acima podem melhorar a escalabilidade de seu aplicativo. Memcached nada mais é que uma cache RAM distribuida que utiliza um modelo chave, valor. Escritas na memcache nunca atingem o disco e são muito mais rápidas que acessos ao banco de dados (aproximadamente 10x mais rápido que escrever no banco de dados do Google App Engine e 5x para leituras). O tradeoff é que os dados guardados na memcache são transientes e podem ser descartados quando o espaço se aproximar do limite. Alguns exemplos de sistemas que utilizam Memcache são YouTube, Reddit, Zynga, Facebook, Orange e Twitter.</p>
+
+<p>Um uso bem simples que fiz com esse sistema foi criar uma cache para os anuncios de vagas de emprego no <a href="http://www.tweetvagas.com.br">Tweet Vagas</a>. Nele as pessoas podem anunciar vagas de modo muito descomplicado, apenas preenchendo a descrição. Ao clicar em anunciar o Tweet Vagas cria um link permanente para esse descrição e prepara um tweet contendo esse link e um resumo do anuncio para ser tweetado pelo proprio twitter do usuário. Nesse momento a descrição é gravada no banco de dados do Google App Engine e ao mesmo tempo colocada na Memcache. Assim cada anuncio só acessa o banco de dados na sua escrita, e todas as requisições para essa vaga buscam os dados diretamente da Memcache. Como as vagas tem uma relação direta com sua idade, aquelas mais antigas e menos acessadas são as que tendem a serem limpas da cache, enquanto as mais recentes e acessadas tendem a se manter. Essa arquitetura permite fazer uso muito inteligente do banco de dados, o que é muito importante em uma plataforma SaaS, ja que o custo é proporcional a utilização do serviço.</p>
+
+<p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
+
+<p>[gist id=2941459]</p>
+
+<p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
+
+<p>Você utiliza Memcache como se lógicamente fosse uma única memória para todo seu sistema. Independente de quantos servidores você possua, Memcache permite que você faça uso da Memória de cada um desses servidores de modo distribuido, sem que haja necessidade de se responsabilizar pelo gerênciamento complicado que existe por traz disso e permitindo adicionar mais servidores sem se preocupar com complicações em reestruturar a cache. E mais, pela sua filosofia todas as operações tem complexidade O(1), ou seja, toda operação tem tempo de execução constante independente de sua entrada.</p>
+
+<p>Alem de tudo Memcached é Livre e de Código Aberto (Free &amp; Open-source). Você pode pegar o código fonte no GitHub do Memcached, e se não souber utilizar o Git pode ver o tutorial sobre ele <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">aqui no blog</a>. Espero que tenha gostado.</p>
+
+<p><em>*os dados podem ser limpos da memcache a qualquer momento e sua aplicação deve levar isso em conta para lidar com a situação em que os dados foram limpos da cache.</em></p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p><a href="http://memcached.org/">http://memcached.org/</a></p></li>
+<li><p><a href="http://code.google.com/p/memcached/">http://code.google.com/p/memcached/</a></p></li>
+<li><p><a href="https://github.com/memcached/memcached">https://github.com/memcached/memcached</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/articles/scaling/memcache">https://developers.google.com/appengine/articles/scaling/memcache</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br">https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DNS do Registro.br + Google App Engine]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
+    <updated>2012-06-10T18:34:40-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
+    <content type="html"><![CDATA[<p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
+
+<p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
+
+<p>O processo é meio tortuoso se você não sabe por onde começar, por isso resolvi fazer esse post. Você tem que ir até o painel de administração do Google App Engine, no menu Application Setting e Clicar no botão Add Domain em Domain Setup. Digitar o seu dominio e seguir para a página do Google Apps, onde fará o cadastro se ainda não tiver conta para esse dominio. Ao fim você deve chegar na página do seu aplicativo e adicionar a url correspondente (Veja algumas imagens abaixo)</p>
+
+<p>[caption id="" align="aligncenter" width="614" caption="Encontra-se no menu Administration Settings do seu aplicativo no Google App Engine"]<img src="https://lh6.googleusercontent.com/GUZ9mQFRcyufitezcinlUYH3uGM1_LpluFS0h0zCWPDY8rEiHYuvJk997cKJPxXbfjJt_3Ud9kKTXqEQA8WX7e82Xm_HL1jLeSZpnP3UodwAR9OlcaQ" alt="" />[/caption]</p>
+
+<p>[caption id="" align="aligncenter" width="622" caption="Após clicar em Add Domain, deve preencher seu dominio e será encaminhado para o Google Apps."]<img src="https://lh6.googleusercontent.com/XAAqmu4uL7UeaoYgRTkFJMaTxuRL0TUHM_oxHfXlcenFIPsKeGPHlbEoyYl3YRC5gSNhVBDHkCJxNP6FNFpaPMoTzz9g8gBtlN_805TD_v7q5vHUNFA" alt="" />[/caption]</p>
+
+<p>[caption id="" align="aligncenter" width="394" caption="Página do seu aplicativo (no meu caso tweetvagas) onde você deve adicionar a url do seu dominio."]<img src="https://lh6.googleusercontent.com/5s53_VmweH1GVXpdvJNikUMggE8emaMYtTlQvQqYjc5kpNHkApMSds2UFqxzJh1U7uJAJjNR2PTLXUA3DrGQbTghtNFrBHRgUUugaCmOJpZhbxVsOQo" alt="" />[/caption]</p>
+
+<p>Depois de se cadastrar e adicionar a url do seu dominio para a aplicação, você terá que criar um CNAME no servidor DNS (provavelmente será necessário marcar uma opção para validar seu dominio em outro momento no Google Apps). Então vá para Registro.br na página de administração do seu domínio, marque a opção “Utilizar os servidores DNS do Registro.br”, clique em Salvar &amp; Editar, selecione o Modo Avançado. Agora você deve configurar CNAME do seu dominio para ghs.google.com.</p>
+
+<p>[caption id="" align="aligncenter" width="385" caption="Na página de administração do seu domínio."]<img src="https://lh6.googleusercontent.com/SCejf5vYJgdfk5GfRx7Z6cb2yfgw_xoLE5sOicdTNvuU9O6xsaOufdwK0aMZrpNRAZMYfBx52XempYuSIfUCoYaX-WAVOFJxe1qOeozKFvTgBymdayw" alt="" />[/caption]</p>
+
+<p>[caption id="" align="aligncenter" width="684" caption="Modo Avançado."]<strong><img src="https://lh5.googleusercontent.com/fnzxfDS4uOdMC_mtphfqxQBVWfWyWJrHoro7ZusJHh3Dz_6pk0cy4DM40aHj5Ak6lOdoIvnrs81evVPn3FHQlS8nr1MnR7JxgYGCZzOth7ipLPRHibI" alt="" /></strong>[/caption]</p>
+
+<p>ATENÇÃO: Os servidores DNS demoram cerca de 30 min para refletirem a configuração.</p>
+
+<p>Agora o seu dominio deve estar funcionando, mas ele só é acessível através do www. Para você validar o seu dominio no Google Apps pelo método padrão, ainda é preciso fazer uma configuração para que seu site seja acessivel sem o www. Vá para o menu Domain Setting do Google Apps, em Domain Names, clique no link “Change de A record”, onde você encontra os endereços IPs que você deve adicionar lá no Registro.br conforme imagens.</p>
+
+<p>[caption id="" align="aligncenter" width="647" caption="Clique no Link “change the A record"]<img src="https://lh4.googleusercontent.com/t452VMAVkKBE1jB9U6E8FTFhNUK6JB1UCO2Bb-qtsU1Mu7jUg-tUWBJZGqOmzlRmdpRZ-wY4kjMIYaEIST1LeLbJgzGrmY_niMFQACoBvo4Us-JDUn0" alt="" />[/caption]</p>
+
+<p>[caption id="" align="alignnone" width="648" caption="Adicione A record no DNS do Registro.br"]<img src="https://lh3.googleusercontent.com/Xz70cn1vI4pPVK44DNNvC-CdhmdwZv77JqQkfA4XRWiicpe1ycMiRSQ5gXrSUS2QIb_VymIp-xrBPQ6HNFHAvahI55dIlogqyKqw3pw7C9AQJ2BPGME" alt="" />[/caption]</p>
+
+<p>Depois disso você terá configurado tudo, seu site estará acessível pelo dominio e ainda terá todos os recursos fornecidos pelo Google, sem nenhum custo além do registro de domínio.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica de editor simples - SublimeText]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
+    <updated>2012-05-27T15:13:46-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
+    <content type="html"><![CDATA[<p>Olá pessoal, hoje viemos dar a dica de um editor de código simples, ágil e o mais próximo do TextMate (hehehe). Os novos frameworks, e até mesmo linguagens mais novas, trazem uma simplicidade que nos induz a trabalhar livre de uma IDE, como é o caso do Rails, Grails, Play, etc...</p>
+
+<p>[singlepic id=16]</p>
+
+<p>A comunidade de Ruby, que em grande parte utiliza Mac, trabalha com o TextMate e convenhamos, é uma ferramenta que a primeira vista nos convida para trabalhar. Nós (Guilherme e eu), como usuários de Linux (e com muito orgulho hehehe), ficamos algum tempo procurando uma ferramenta parecida com o TextMate. Testamos algumas, mas a que chamou atenção (e fez valer a busca) foi o SublimeText. O SublimeText é um editor simples, leve, prático, possui suporte a syntax highlighting para a maioria das linguagens, extensível através de plugins, aceita bundles para TextMate e é multiplataforma (com versões para Windows, Linux e Mac). Inicialmente, eu Bruno, tive a idéia de fazer um post sobre suas funcionalidades e configurações, mas o Guilherme me passou um vídeo muito bom e acredito que com mais dois links que utilizei são o bastante para nos entregarmos a essa ferramenta.</p>
+
+<p>O SublimeText é pago, porém possui uma versão de testes com tempo ilimitado.</p>
+
+<h4>Atenção desenvolvedor python:</h4>
+
+<p>Ao utilizar o sublime com código fonte python criado em outro editor, o interpretador se perdeu no parser. Identifiquei que era por causa da identação, que apesar de parecer correta no sublime estava tratando o TAB de forma diferente que o gedit. Então mesmo estando alinhado no sublime, o interpretador do python considerava uma identação diferente. Pra solucionar basta selecionar o código e ver que ele diferenciava a identação, assim é só substituir esses locais por tab.
+(Veja exemplo na figura abaixo)</p>
+
+<p>[singlepic id=17]</p>
+
+<p>Além das dicas do vídeo acima, decidimos postar esses dois links também, que possuem materiais complementares:</p>
+
+<ul>
+<li><p><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Atalhos e dicas</a></p></li>
+<li><p><a href="http://www.sublimetext.com/docs/2/indentation.html">Dica de indentação, mas dá ideia de como personalizar outras coisas.</a></p></li>
+</ul>
+
+
+<p>Então é isso! Esperamos que tenham gostado e até o próximo post!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Primeiros passos com Groovy]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/"/>
+    <updated>2012-05-10T18:44:28-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy</id>
+    <content type="html"><![CDATA[<p><img src="/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
+Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
+
+<h2>Instalação e configuração...</h2>
+
+<p>Para começar precisamos fazer o download no site do <a href="http://groovy.codehaus.org/Download">Groovy</a>. Se você já passou pelos passos de configuração de uma JDK, não encontrará dificuldades. Devemos descompactar o pacote num diretório qualquer (no caso do pacote binário) e adicionar o endereço completo deste diretório na variável de ambiente PATH do seu sistema. Para verificar se está tudo certo, podemos testar o seguinte comando (no Console do Linux, ou prompt do Windows) que irá apresentar a versão do Groovy que configuramos:</p>
+
+<pre><code>[bsouza@bsouza ~]$ groovy -version
+Groovy Version: 1.8.4 JVM: 1.7.0_03
+</code></pre>
+
+<h2>Mão na massa!</h2>
+
+<p>Agora é a hora da diversão! Iremos codar nossos primeiros fontes Groovy. Uma facilidade, para quem é familiarizado com Java, é que você pode continuar utilizando a sintaxe Java e ir melhorando suas habilidades em Groovy aos poucos e assim, incorporar as facilidades do Groovy conforme vai evoluindo em seus estudos.
+Iniciaremos nossos testes com o Groovy Console, que é um editor simples onde podemos codar e testar a execução dos nossos primeiros códigos:</p>
+
+<p><img src="/wp-content/gallery/groovy/groovyconsole.png" alt="Editor simples com um console que acompanha a sdk do Groovy" /></p>
+
+<p>Para executar o Groovy Console devemos digitar no Console o comando groovyConsole.</p>
+
+<p>DICA: Java importa automaticamente todas as classes que estão no package java.lang. Groovy por sua vez, extende este comportamento incluindo os pacotes abaixo:
+- java.io
+- java.math
+- java.net    <br/>
+- java.util
+- groovy.lang
+- groovy.util</p>
+
+<p>Em Groovy utilizamos a palavra reservada def para definir algo, essa definição pode ser um método, variáveis com tipagem dinâmica e até closures. Veremos a utilização desta e outras keywords principais da linguagem. Mãos à obra...</p>
+
+<p>DICA: Para limpar a saida do console utilize o atalho ctrl+w e para rodar o seu script utilize ctrl+r.</p>
+
+<pre><code>// definição de um tipo Integer do Java
+int numero = 5
+println numero.class
+
+// definição de uma String do Java
+String nome = "Bruno"
+println nome.class
+
+/** **************************************************************************
+ * Note que em Groovy, quando temos um método que recebe apenas um parâmetro,
+ * podemos ocultar os parenteses, favorecendo assim a legibilidade do código 
+ * ***************************************************************************/
+
+// Define uma String em tempo de execução através do seu comportamente,o chamado 
+// Duck Typing, ou seja, se o objeto se comporta de uma pato, então ele é um pato.
+def duck = "Bruno Moraes Souza"
+println duck.class
+
+/** ****************************************************************************
+ * Agora iremos definir duas classes com um relacionamento entre elas, e iremos
+ * fazer mais alguns testes para ver como o Duck Typing se comporta
+ * *****************************************************************************/
+
+// classe mutavel que representará um produto
+class Produto {        
+    String name
+    String descricao
+}
+
+/* OBS: Não estamos declarando os getters e os setters
+   pois o próprio Groovy faz esse trabalho sujo para nós,
+   estes são os chamados Groovy Beans. 
+
+   OBS 2: Repare também, que em Groovy podemos omitir o 
+   ponto e vírgula ao final de cada linha */
+
+println "" // simples quebra de linha para facilitar a visualização dos novos resultados
+
+// Instancia um objeto Tipo e popula seus dados através de setters
+def produto = new Produto() 
+produto.name = "Sistema1"
+produto.descricao = "E-Commerce escrito em Grails \\o/"
+
+// Em Groovy, podemos utilizar interpolação de Strings conforme abaixo,
+// que é prático e mais legível que uma concatenação
+println "Produto: ${produto.name}\nDescrição: ${produto.descricao}\n"
+println "${produto.class}"
+println produto
+
+/* Note que como não sobrescrevemos o método toString da classe Produto,
+ * em nosso print foi retornada a implementação da classe Object. 
+ * Isso mesmo, os objetos Groovy também herdam de Object! */
+
+// Vamos agora utilizar o suporte a lista de Groovy e adicionar todas os 
+// objetos que instanciamos até agora
+
+def lista = [ numero, nome, duck, produto ]
+
+// Faremos uso agora de uma das facilidades do Groovy para 
+// trabalharmos com coleções, que é o método each
+
+println "" // quebra de linha
+lista.each { println it }
+
+// note que pela chamada do método, ele recebe apenas um parâmetro, e por isso
+// não precisamos dos parênteses. Ele recebe uma closure/delegate como parâmetro 
+// que será executada para cada um dos seus elementos e a keyword it representa o elemento atual
+
+println "" // quebra de linha
+lista.each { println ((it.class == Produto) ? it.name : it) }
+
+// Para testar a real utilização do it, colocamos um operador ternário, 
+// para imprimirmos o nome do tipo, caso o elemento seja um Tipo
+
+/** 
+ * Os Groovy Beans, como mencionados anteriormente, criam os getters
+ * e setters para o nosso bean, porém em muitos casos gostariamos privar o acesso
+ * de um setter para criarmos objetos imutáveis. Em Groovy podemos criar objetos
+ * totalmente imutáveis com a anotação @Immutable antes da definição da classe */
+
+@Immutable class ProdutoImutavel {
+
+    String nome
+    String descricao
+
+    String toString() { nome } // Sobrescrita do método toString
+}
+
+/* Na classe acima, declaramos os mesmos atributos da classe anterior, porém
+ * estes são read only, e nos obrigam a utiliza um recurso bem bacana do Groovy,
+ * que é um construtor dinâmico. */
+
+println ""
+
+def imutavel = new ProdutoImutavel(nome: "Mouse", descricao: "Mouse wireless")
+println "${imutavel.nome} - ${imutavel.descricao}"
+
+// Para verifica se o comportamento é mesmo o esperado, tentaremos renomear o produto
+try { imutavel.nome = "novo" } catch (Exception ex) { println ex.message }
+
+println "${imutavel.nome} - ${imutavel.descricao}"
+println imutavel // teste do toString sobrescrito
+
+println ""
+
+// Por fim um teste com um atributo dinamicamente tipado
+class Dinamico {
+    def algo
+}
+
+def d = new Dinamico()
+
+// Popula algo com uma string
+d.algo = "String"
+println d.algo
+
+// Setamos uma closure que recebe dois argumentos
+d.algo = { x, y -&gt; (x * y / 2) }
+println d.algo(3, 6)
+</code></pre>
+
+<p>Na versão estável, 1.8.6 até a presente data, há um bug relacionado ao modificador de acesso private, permitindo que métodos e atributos que utilizem o modificador continuem expostos.</p>
+
+<p>Bom, é isso! Acredito que toda a explicação necessária para o nosso primeiro exemplo está em forma de comentário no código e basta copiá-lo e executá-lo no console.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS inteligente, use SASS!]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass/"/>
+    <updated>2012-05-07T05:15:20-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass</id>
+    <content type="html"><![CDATA[<p>Bom, o post de hoje é uma dica referente a desenvolvimento web, mais especificamente de CSS. Atualmente atuo como desenvolvedor mobile e já fazia algum tempo que não desenvolvia nada web, até o final do ano passado, quando nosso cliente teve a necessidade da reescrita de um sistema web. Em nosso time não há alguém responsável somente pelo layout, mas todos tínhamos conhecimento em CSS. Logo no início do projeto sentamos e discutimos alguns padrões para o layout do sistema, mas algo me incomodava na organização do CSS. O CSS, em sua criação, veio com a intenção de padronizar o layout do seu sistema/site, fazendo um controle centralizado dos estilos evitando assim a duplicação de código que torna simples alterações em tarefas custosas. Minha incomodação era justamente com essa centralização, ela ainda não estava correta, o CSS não cumpre totalmente o seu papel de evitar repetição de código e centralizar as mudanças, pois há muitas classes com comportamentos parecidos e que na maioria das vezes quando precisamos alterá-las gostaríamos que essas alterações afetassem todos esses padrões duplicados em nossas classes, e.g. uma cor padrão ou tamanho de margens. Foi nesse instante que um colega mencionou o SASS que traz todas essas melhorias que eu queria e o CSS não me proporcionava.</p>
+
+<h2>Iniciando...</h2>
+
+<p>O SASS é uma ferramenta desenvolvida em Ruby, por isso devemos te-lo previamente instalado. Ele utiliza basicamente um arquivo com extensão .scss e a através deste arquivo ele irá gerar o CSS comum (aquele chato que faziamos antigamente) e a partir deste momento iremos dar manutenção apenas no arquivo .scss. SASS trabalha com quatro características principais: variáveis, aninhamento (nesting), mesclas (mixins) e herança.</p>
+
+<p>Depois de instalado, devemos utilizar o comando abaixo para gerar nosso CSS:</p>
+
+<pre><code>/* style é o nome do arquivo */
+sass --watch style.scss:style.css
+</code></pre>
+
+<h2>Variáveis</h2>
+
+<p>Utilizamos as variáveis para declarar atributos que podem ser utilizados em várias propriedades de diferentes classes. Por exemplo, podemos criar uma cor padrão que será utilizada em vários dos nossos estilos, e assim centralizamos a mudança, caso ela seja necessária ao decorrer do projeto:</p>
+
+<pre><code>$color: #cccccc;
+.box { background-color: $color; }
+</code></pre>
+
+<h2>Nesting</h2>
+
+<p>Permite que façamos alterações somente a partir de determinado seletor, vejamos um exemplo abaixo de como fariamos sem SASS e como fica com SASS:</p>
+
+<pre><code>/* CSS */
+.box { background-color: #cccccc; }
+.box img { size: 50px; }
+
+/* SASS */
+$icon-size: 50px;
+.box { background-color: $color; img { size: $icon-size; } }
+</code></pre>
+
+<h2>Mixins</h2>
+
+<p>Utilizamos para criar estilos que podem ser aproveitados em várias classes, e assim evitamos repetição:</p>
+
+<pre><code>$default-border-color: #000000;
+@mixin default-box { border: 1px solid $default-border-color; background-color: $color; }
+.box { @include: default-box; color: #300; }
+</code></pre>
+
+<h2>Herança</h2>
+
+<p>A partir de uma classe já definida, podemos herdar todo o seu estilo e extendê-lo para criar outra classe customizada:</p>
+
+<pre><code>.bold-box { @extend .box; font-weight: bold; }
+</code></pre>
+
+<h2>Exemplo completo...</h2>
+
+<p>Fiz um outro exemplo, agora com todos os passos. Primeiro naveguei até um diretório que criei para o exemplo, depois criei um arquivo e o editei:</p>
+
+<pre><code>vim teste.scss
+</code></pre>
+
+<p>Dentro deste arquivo criei os seguintes estilos:</p>
+
+<pre><code>$color: #CCC;
+$font: #003;
+$padding: 5px;
+
+@mixin borders { border: 2px solid #000; }
+@mixin default-box { height: 50px; padding: $padding; background-color: $color; }
+
+.box { @include borders; @include default-box; }
+.custom-box { @extend .box; color: $font; a { color: #fff; } }
+</code></pre>
+
+<p>Para gerar o meu css utilizei o comando:</p>
+
+<pre><code>sass --watch teste.scss:style.css
+</code></pre>
+
+<p>No meu caso, o meu SASS teve o nome de teste.sass e dei o nome de style.css ao arquivo que gerei. O meu css "compilado" ficou assim:</p>
+
+<pre><code>.box, .custom-box {
+  border: 2px solid #000;
+  height: 50px;
+  padding: 5px;
+  background-color: #cccccc; }
+
+.custom-box {
+  color: #000033; }
+  .custom-box a {
+    color: #fff; }
+</code></pre>
+
+<p>Outra coisa que eu não havia mencionado é que você pode utilizar essa sintaxe que mostramos até agora ou uma outra bastante familiar a quem já trabalhou com YAML. Para utilizar essa outra sintaxe a extensão do nosso arquivo deve ser .sass, e o mesmo exemplo ficaria assim:</p>
+
+<pre><code>$color: #CCC
+$font: #003
+$padding: 5px
+
+@mixin borders
+        border: 2px solid #000
+
+@mixin default-box
+        height: 50px
+        padding: $padding
+        background-color: $color
+
+.box
+        @include borders
+        @include default-box
+
+.custom-box
+        @extend .box
+        color: $font
+        a
+               color: #fff
+</code></pre>
+
+<h2>Encerrando...</h2>
+
+<p>O SASS possui outras características e vantagens, mas acredito que essas já são o suficiente para lhe convencer a não escrever mais o CSS de forma tradicional. Para ir mais afundo você pode consultar o tutorial do <a href="http://sass-lang.com/tutorial.html">site</a>.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+]]></content>
+  </entry>
+  
+</feed>
