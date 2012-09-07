@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Você conhece Memcached?! - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="[singlepic id=18 w=160 h=120 float=left] Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Você Conhece Memcached?!</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-16T16:17:21-03:00" pubdate data-updated="true">Jun 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>[singlepic id=18 w=160 h=120 float=left]</p>
+
+<p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
+
+<ul>
+<li><p>a criação de cache para páginas populares, como uma página principal ou em que os dados sejam os mesmos para todos usuários;</p></li>
+<li><p>salvar dados transientes e frequentementes atualizados, como um contador em uma página. Isso evita atingir o banco de dados a cada requisição, incrementando o contador no Memcache e atualizando o banco de tempo em tempo*;</p></li>
+<li><p>dados frequentemente requisitados, como por exemplo o resultado de uma consulta ao banco.</p></li>
+</ul>
+
+
+<p>[singlepic id=19 w=640 h=480 float=right]Com apenas algumas linhas extras no seu código essas utilizações acima podem melhorar a escalabilidade de seu aplicativo. Memcached nada mais é que uma cache RAM distribuida que utiliza um modelo chave, valor. Escritas na memcache nunca atingem o disco e são muito mais rápidas que acessos ao banco de dados (aproximadamente 10x mais rápido que escrever no banco de dados do Google App Engine e 5x para leituras). O tradeoff é que os dados guardados na memcache são transientes e podem ser descartados quando o espaço se aproximar do limite. Alguns exemplos de sistemas que utilizam Memcache são YouTube, Reddit, Zynga, Facebook, Orange e Twitter.</p>
+
+<p>Um uso bem simples que fiz com esse sistema foi criar uma cache para os anuncios de vagas de emprego no <a href="http://www.tweetvagas.com.br">Tweet Vagas</a>. Nele as pessoas podem anunciar vagas de modo muito descomplicado, apenas preenchendo a descrição. Ao clicar em anunciar o Tweet Vagas cria um link permanente para esse descrição e prepara um tweet contendo esse link e um resumo do anuncio para ser tweetado pelo proprio twitter do usuário. Nesse momento a descrição é gravada no banco de dados do Google App Engine e ao mesmo tempo colocada na Memcache. Assim cada anuncio só acessa o banco de dados na sua escrita, e todas as requisições para essa vaga buscam os dados diretamente da Memcache. Como as vagas tem uma relação direta com sua idade, aquelas mais antigas e menos acessadas são as que tendem a serem limpas da cache, enquanto as mais recentes e acessadas tendem a se manter. Essa arquitetura permite fazer uso muito inteligente do banco de dados, o que é muito importante em uma plataforma SaaS, ja que o custo é proporcional a utilização do serviço.</p>
+
+<p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
+
+<p>[gist id=2941459]</p>
+
+<p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
+
+<p>Você utiliza Memcache como se lógicamente fosse uma única memória para todo seu sistema. Independente de quantos servidores você possua, Memcache permite que você faça uso da Memória de cada um desses servidores de modo distribuido, sem que haja necessidade de se responsabilizar pelo gerênciamento complicado que existe por traz disso e permitindo adicionar mais servidores sem se preocupar com complicações em reestruturar a cache. E mais, pela sua filosofia todas as operações tem complexidade O(1), ou seja, toda operação tem tempo de execução constante independente de sua entrada.</p>
+
+<p>Alem de tudo Memcached é Livre e de Código Aberto (Free &amp; Open-source). Você pode pegar o código fonte no GitHub do Memcached, e se não souber utilizar o Git pode ver o tutorial sobre ele <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">aqui no blog</a>. Espero que tenha gostado.</p>
+
+<p><em>*os dados podem ser limpos da memcache a qualquer momento e sua aplicação deve levar isso em conta para lidar com a situação em que os dados foram limpos da cache.</em></p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p><a href="http://memcached.org/">http://memcached.org/</a></p></li>
+<li><p><a href="http://code.google.com/p/memcached/">http://code.google.com/p/memcached/</a></p></li>
+<li><p><a href="https://github.com/memcached/memcached">https://github.com/memcached/memcached</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/articles/scaling/memcache">https://developers.google.com/appengine/articles/scaling/memcache</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br">https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br</a></p></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">guilherme</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-16T16:17:21-03:00" pubdate data-updated="true">Jun 16<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/dicas-web/'>Dicas web</a>, <a class='category' href='/blog/categories/ferramentas/'>Ferramentas</a>, <a class='category' href='/blog/categories/linguagens-e-frameworks/'>Linguagens e frameworks</a>, <a class='category' href='/blog/categories/tutoriais/'>Tutoriais</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/" title="Previous Post: DNS do Registro.br + Google App Engine">&laquo; DNS do Registro.br + Google App Engine</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/" title="Next Post: Você conhece Tipografía? Utilizando fontes ricas na web.">Você conhece Tipografía? Utilizando fontes ricas na web. &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Instalando node.js no Fedora a partir do código fonte - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="[singlepic id=12 w=320 h=240 float=left] O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Instalando node.js No Fedora a Partir Do Código Fonte</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-26T16:21:09-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>[singlepic id=12 w=320 h=240 float=left]</p>
+
+<p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
+
+<pre><code># yum install openssl-devel
+# yum install gcc
+# yum install gcc-c++
+</code></pre>
+
+<p>Para pegar o código fonte você pode clonar pelo git ou buscar no site <a href="http://nodejs.org/">http://nodejs.org/</a>
+Pelo git:</p>
+
+<pre><code>$ git clone git://github.com/joyent/node.git
+</code></pre>
+
+<p>É importante destacar que você estará pegando a mais recente versão do código no repositório. Se quiser uma versão anterior (provavelmente mais estável) busque pelas tags do programa e faça um checkout dessa tag.</p>
+
+<pre><code>$ git tag
+$ git checkout [nome_da_tag]
+</code></pre>
+
+<p>Agora que você tem o código, navegue até a pasta node e prossiga com a instalação:</p>
+
+<pre><code>$ cd node
+# ./configure
+# make -j2
+</code></pre>
+
+<p>Se você se deparar com o erro: &#8220;fatal error: gnu/stubs-64.h: No such file or directory&#8221; execute o seguinte comando:</p>
+
+<pre><code># yum install glibc-devel.x86_64
+</code></pre>
+
+<p>Termine a instalação:</p>
+
+<pre><code># make install
+</code></pre>
+
+<p>Adicione usr local ao PATH</p>
+
+<pre><code># export PATH=$PATH:/usr/local/bin:/usr/local
+</code></pre>
+
+<p>Execute o comando visudo para editar /etc/sudoers</p>
+
+<pre><code># visudo
+</code></pre>
+
+<p>Procure a linha que contem &#8220;Defaults secure_path=/sbin:/bin:/usr/sbin:/usr/bin&#8221; e adicione ao fim da linha &#8220;:/usr/local/bin&#8221; sem os parenteses. Você faz isso indo com cursor até o fim da linha, digite &#8220;i&#8221;, escreva &#8220;:/usr/local/bin&#8221; e então, para salvar, aperte ESC e digite &#8220;wq&#8221;, ENTER.</p>
+
+<p>[singlepic id=13 w=320 h=240 float=center]</p>
+
+<p>Para verificar a versão instalada:</p>
+
+<pre><code>$ node -v
+</code></pre>
+
+<p>Pronto!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-26T16:21:09-03:00" pubdate data-updated="true">Apr 26<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linguagens-e-frameworks/'>Linguagens e frameworks</a>, <a class='category' href='/blog/categories/tutoriais/'>Tutoriais</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/24/eventos-fim-de-abril/" title="Previous Post: Eventos fim de abril">&laquo; Eventos fim de abril</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/07/css-inteligente-use-sass/" title="Next Post: CSS inteligente, use SASS!">CSS inteligente, use SASS! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/">Você conhece Tipografía? Utilizando fontes ricas na web.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/16/voce-conhece-memcached/">Você conhece Memcached?!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'guilhermeka',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("gkrugeraraujo", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

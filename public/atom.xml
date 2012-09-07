@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/atom.xml" rel="self"/>
+  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
+  <updated>2012-09-07T18:59:34-03:00</updated>
+  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Ruby?]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby/"/>
+    <updated>2012-07-04T16:30:35-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby</id>
+    <content type="html"><![CDATA[<p>[singlepic id=28]</p>
+
+<p>Em mais um episodio da nossa serie &#8220;Voce conhece?&#8221;,  apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta vez, deixaremos esta tarefa para os proximos posts, hoje iremos focar na historia e no ecossistema Ruby.</p>
+
+<h2>Um pouco de historia</h2>
+
+<p>Ruby nasceu no Japao! Começou a ser escrita por <a href="http://en.wikipedia.org/wiki/Yukihiro_Matsumoto">Yukihiro Matsumoto</a>, mais conhecido como Matz, em 24 de fevereiro de 1993. Matz conhecia muitas linguagens, mas nao estava completamente satisfeito com elas. Achava-as feias, difices e complexas, entao resolveu criar sua propria linguagem. Para isso, Matz misturou partes das suas linguagens favoritas (como Perl, Smalltalk, Lisp, Ada e Eiffel), criando uma linguagem que equilibra programaçao funcional com imperativa. Além disso, Ruby é uma linguagem interpretada, puramente orientada a objetos com tipagem forte e dinamica, possui uma poderosa capacidade de <a href="http://pt.wikipedia.org/wiki/Metaprograma%C3%A7%C3%A3o">metaprogramaçao</a> e pode facilmente ser usada para criaçao de DSLs (<a href="http://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Language</a>). Com todas essas caracteristicas, Matz conseguiu criar uma linguagem simples, pratica e muito expressiva!</p>
+
+<p>CURIOSIDADE: Matz ganhou em 2011 o <a href="https://www.fsf.org/news/2011-free-software-awards-announced">FSF Free Software Awards</a> pelo sua dedicaçao ao software livre nos ultimos 20 anos, contribuindo com o Ruby, projeto GNU e outros projetos open source.</p>
+
+<h2>Interpretadores</h2>
+
+<p>O primeiro interpretador de Ruby foi o MRI (Matz Ruby Interpretr ou CRuby, pois e escrito em C). Com a popularizaçao da linguagem (que se deve em grande parte ao <a href="http://rubyonrails.org/">Rails</a>), começaram a surgir outras  implementaçoes do interpretador, que deixaram de ser simples interpretadores e passaram a basear-se, na maioria, em Maquinas virtuais. Gostaria de destacar aqui o <a href="http://jruby.org/">JRuby</a> e o <a href="http://www.ironruby.net/">IronRuby</a>, implementaçao da linguagem para rodar na JVM (maquina virtual do Java) e plataforma Microsoft (.Net), respectivamente. O fato curioso e que o JRuby e considerado por muitos a implementaçao mais rapida da linguagem. O IronRuby e mantido pela propria Microsoft (e e um dos primeiros projetos verdadeiramente open source da empresa).</p>
+
+<h2>RVM</h2>
+
+<p>Em uma explicaçao minimalista podemos dizer que o <a href="https://rvm.io/">RMV</a> (Ruby Version Manager) e uma ferramenta de linha de comando para gerenciamento de versoes Ruby. Com ele podemos ter varias versoes do Ruby (chamadas de Rubies pelo RVM) instaladas e alterar a que estamos utilizando muito facilmente. Podemos tambem criar gemsets, que sao ambientes separadas para organizarmos nossos projetos. Por exemplo, se eu tiver o ruby 1.8.6 e o jruby instalados, havera dois gemsets (um para cada um), entao posso ter uma versao diferente do rails em cada um. No caso tambem poderiamos criar um gemset para trabalhar com Rails 2 e outro para Rails 3, bastando assim uma rapida alteraçao via RVM para trocarmos de ambiente. Se voce ainda nao tem o Ruby instalado sugiro que ja comece instalando via rvm.</p>
+
+<ul>
+<li><p><a href="http://akitaonrails.com/2010/01/01/limpando-meu-ambiente-de-desenvolvimento">Post interessante do Akita (um dos primeiros evangelistas de Ruby no Brasil) sobre o RVM</a></p></li>
+<li><p><a href="http://codificando.com/2010/07/gerencie-ambiente-ruby-rvm/">Post do Emerson Macedo (do Globo.com) sobre o gerenciamento do ambiente com RVM.</a></p></li>
+</ul>
+
+
+<p>OBS: O RVM nao roda em Windows. Nesse caso a alternativa e utilizar o           <a href="https://github.com/vertiginous/pik/">pik</a>. <a href="https://rvm.io/os/">Aqui</a> voce pode encontrar a lista de sistemas suportados pelo RVM.
+[editado] Achei na própria documentação do Ruby este link para <a href="http://blog.developwithpassion.com/2012/03/30/installing-rvm-with-cygwin-on-windows/">instalar RVM no Windows com Cygwin</a>.</p>
+
+<h2>IRB</h2>
+
+<p>O IRB (Interactive Ruby Shell) e um console interativo onde podemos fazer alguns testes com a linguagem. Tendo um ambiente corretamente configurado, basta digitar irb no terminal para inicia-lo.</p>
+
+<p>[singlepic id=27]</p>
+
+<h2>RubyGems</h2>
+
+<p>As RubyGems, ou simplesmente Gems, sao pacotes que contem uma biblioteca ou aplicaçao Ruby. Existe tambem a aplicaçao RubyGems (ferramenta de linha de comando) que e um gerenciador de pacotes e foi amplamente adotado pela comunidade Ruby. Com ele podemos de maneira muito simples baixar, instalar e manipular uma gem em nosso sistema.</p>
+
+<ol>
+<li><p><a href="http://docs.rubygems.org/read/chapter/3">Instalaçao do RubyGems</a></p></li>
+<li><p><a href="http://simplesideias.com.br/criando-sua-propria-rubygem/">Post do Nando Vieira sobre como criar uma RubyGem</a></p></li>
+<li><a href="http://akitaonrails.com/2009/02/02/entendendo-rubygems">Post do Akita falando sobre RubyGems</a></li>
+</ol>
+
+
+<h2>Algumas Gems</h2>
+
+<ul>
+<li><p><a href="http://gembundler.com/">Bundler</a>: Gerenciador de dependencias.</p></li>
+<li><p><a href="https://github.com/capistrano/capistrano/">Capistrano</a>: Ferramenta para executar comandos/scripts paralelamente em maquinas remotas (via SSH).</p></li>
+<li><p><a href="http://rake.rubyforge.org/">Rake</a>: Ferramenta para automatizar a construçao da aplicaçao.</p></li>
+<li><p><a href="http://rack.github.com/">Rack</a>: Simples interface entre um servidor Web (com suporte a Ruby) e um framework Web Ruby. O <a href="http://www.sinatrarb.com/">Sinatra</a> e o <a href="http://rubyonrails.org/">Rails</a> sao exemplos de framework que o utilizam.</p></li>
+<li><p><a href="http://cukes.info/">Cucumber</a> e <a href="http://rspec.info/">RSpec</a>: Ambos sao frameworks para testes que seguem o <a href="http://pt.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a>.</p></li>
+<li><p><a href="https://github.com/eventmachine/eventmachine/wiki/">EventMachine</a>:Biblioteca que fornece operaçoes de entrada e saida orientada a eventos. Feito para combater o problema <a href="http://en.wikipedia.org/wiki/C10k_problem">C10k</a>.</p></li>
+<li><p><a href="http://datamapper.org/">DataMapper</a> e <a href="http://ar.rubyonrails.org/">ActiveRecord</a>: Dois frameworks <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a>.</p></li>
+<li><p><a href="http://torquebox.org/">TorqueBox</a>: Servidor de aplicaçao Ruby escrito em cima do <a href="http://www.jboss.org/jbossas">JBoss AS</a> com suporte para qualquer aplicaçao Rack.</p></li>
+</ul>
+
+
+<p>[singlepic id=25]</p>
+
+<h2>IDE</h2>
+
+<p>Ate existem algumas <a href="http://pt.wikipedia.org/wiki/Ambiente_de_Desenvolvimento_Integrado">IDEs</a> para Ruby, mas a comunidade nao e muito fa. Confesso que a pouco tempo atras tentei montar novamente um ambiente com <a href="http://www.eclipse.org/">Eclipse</a> e o <a href="http://www.eclipse.org/dltk/">DLTK</a>, porem, com a simplicidade de Ruby ficamos livre de uma ferramenta como essa, podendo adotar apenas um editor de texto simples (como o <a href="http://samuraidev.com/tutoriais/dica-de-editor-simples-sublimetext/">Sublime Text</a>) e o terminal. Na verdade o Sublime é uma alternativa mais user-friendly, o comum mesmo é vermos o pessoal utilizando <a href="http://en.wikipedia.org/wiki/Vi">VI</a> ou <a href="http://www.gnu.org/software/emacs/">Emacs</a> no Linux e <a href="http://macromates.com/">TextMate</a> no Mac.</p>
+
+<h2>Finalizando&#8230;</h2>
+
+<p>Entao, tentei fazer uma introduçao rapida ao mundo Ruby de uma forma que eu gostaria de visto quando comecei. Logo que iniciamos o estudo de uma nova linguagem/plataforma somos bombardeados com nomes de aplicaçoes e frameworks, nessa hora paramos para pensar pra qual lado devemos correr primeiro. Espero que tenham gostado e ate a proxima!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Tipografía? Utilizando fontes ricas na web.]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
+    <updated>2012-06-25T16:43:34-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
+    <content type="html"><![CDATA[<p>Acredite ou não, a tipografía é um campo enorme, de grande interesse e pode ter um efeito profundo no resultado do seu trabalho. Até pouco tempo a web esteve um tanto limitada quanto ao uso de fontes, ficando restrito às que o usuário possuía em seu sistema. Agora as coisas estão um pouco melhor, porém antes mostrar como utilizar fontes mais ricas em sistemas web veremos um pouco mais sobre tipografía.</p>
+
+<p>[singlepic id=20 w=320 h=240 float=right]É importante saber que um dos princípios teóricos por traz do Design Gráfico é o Equilibrio, no entanto ele nem sempre é alcançado pela uniformidade. A fonte Gill Sans possui a caracteristica de ser perceptivelmente equilibrada, mas se você perceber a espessura de suas linhas variam em diferentes pontos dos seus traços. Veja imagem ao lado.</p>
+
+<p>Para avaliar uma fonte é preciso saber qual é a sua anatomia e terminologia, na imagem estão algumas delas. Não vou discutir cada detalhe, vou me restringir a abordar algumas questões que são importantes e que podem fazer grande diferença no seu trabalho.</p>
+
+<p>[singlepic id=21 w=480 h=360 float=center]</p>
+
+<p>Começando pelo fato de que o tamanho da fonte não é consistente entre diferentes fontes, podendo variar consideravelmente. Já a Altura-x é um parâmetro muito importante em relação a legibilidade. Costuma-se utilizar fontes com alta Altura-x (Lucida Bright ou Georgia) para paragrafos e textos mais densos pois é mais fácil de ler em tamanhos de fonte menores e em dispositivos com telas de menor resolução. Já uma Altura-x baixa (Baskerville) costuma ser usada para passar percepção de elegância, dando uma sensação de Belle Époch. Fontes com Ascendentes e Descendentes baixos tendem a ter alta Altura-x e vice e versa. Se eles forem excessivos podem atrapalhar a visualização em dispositivos de menores resolução, pois alem de comprometer a Altura-x, exigem maiores espaçamentos entre linhas.</p>
+
+<p>[singlepic id=23 w=320 h=240 float=left]Tambem existem duas importantes distinções de tipos de fontes, serifs e sans serifs (sem serifs). Há quem diga que serifs devem ser utilizadas para longos blocos de texto por ajudarem a distinguir as letras, porem não existem evidências concretas disso. Já para dispositivos móveis, serifs podem ficar borradas ou não ter resolução suficiente para ficarem legíveis, por isso indica-se utilizar sans serif ou as chamadas square serifs. A maior influência em questão de legibilidade esta relacionado ao comportamento de nosso cérebro que é treinado a reconhecer as letras e portanto, aquela fonte mais comum e difundida será mais legível devido ao treinamento do cérebro.</p>
+
+<p>Veja essa imagem por exemplo:</p>
+
+<p>[singlepic id=22 w=320 h=240 float=]</p>
+
+<p>Você leu The Cat certo? Por que não Tae cht? Tae cat? Você ja sabe a resposta.</p>
+
+<p>E essa você conhecia?</p>
+
+<blockquote><p>“De aorcdo com uma psqueisa da Unvireisadde de Cmabrigde, não ipmrota a odrem em que as lteras em uma plavara etsão, a úcina cisoa ipmotratne é que a piremira e a útimla ltreas etseajm no lguar ctreo. O rseto pdoe etasr uma ttaol bnauguça e vcoê adnia pdoreá ler sem perolbmea. Itso pruqoe a mtene haunma não lê cdaa lreta idnvidailuemtne, mas a pvrlaaa cmoo um tdoo.”</p></blockquote>
+
+<p>Acredito que essa breve apresentação sobre essas curiosidades da tipografia são suficientes para te fazer encarar as fontes de uma forma totalmente diferente e espero que para melhor (e não vá bagunçar as letras).</p>
+
+<p>Agora vamos para a parte prática. Como utilizar fontes ricas em sistemas web? A maneira atualmente mais segura é utilizar o método de CSS chamado @font-face. Ela permite baixar uma determinada fonte de seu servidor para ser mostrada em uma página web mesmo que o usuário não possua a fonte instalada. A sintaxe básica é bastante simples. A propriedade font-family dentro de @font-face irá definir como você utilizará a fonte no restante do css (veja utilização em .exemplo). Além disso você precisa do arquivo da fonte e declarar de onde ele será carregado, fornecendo opcionalmente o formato.</p>
+
+<p>[gist id=2990412]</p>
+
+<p>Deve-se sempre considerar a possibilidade de não haver suporte para o formato da fonte. Quando desenvolvemos para a web devemos lembrar que ela é universal, pode ser acessada não apenas de seu smartphone ou desktop, mas de geladeiras, carros, etc. Note que após declarar a fonte “TK4F” na classe .exemplo, temos outras fontes separadas por virgula, elas são fallbacks e substituirão em ordem a fonte antecessora caso ela não possa ser carregada. Mesmo nos desktops há dores de cabeça, especialmente quanto ao formato e licensas das fontes. No final do post você encontra links para mais informações sobre os tipos e suportes cross-browsers. Além disso, você pode ver um exemplo de utilização de fontes e tambem experimentar e verificar os conceitos aprendidos nesse post em <a href="http://samuraiplayground.appspot.com/tipografia">um site que construí como exercicio</a> enquanto aprendia jQuery.</p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p>Opções de Fontes:</p>
+
+<ul>
+<li><p><a href="http://www.fontsquirrel.com/">http://www.fontsquirrel.com/</a></p></li>
+<li><p><a href="http://www.fontex.org/">http://www.fontex.org/</a></p></li>
+<li><p><a href="http://www.google.com/webfonts/">http://www.google.com/webfonts/</a></p></li>
+<li><p><a href="http://www.fonts.com/web-fonts">http://www.fonts.com/web-fonts</a></p></li>
+</ul>
+</li>
+<li><p>Suporte dos browsers aos tipos de fontes: <a href="http://webfonts.info/wiki/index.php?title=@font-face_browser_support">http://webfonts.info/wiki/index.php?title=@font-face_browser_support</a></p></li>
+<li><p>Bulletproof @font-face: <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <updated>2012-06-16T16:17:21-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
+
+<p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
+
+<ul>
+<li><p>a criação de cache para páginas populares, como uma página principal ou em que os dados sejam os mesmos para todos usuários;</p></li>
+<li><p>salvar dados transientes e frequentementes atualizados, como um contador em uma página. Isso evita atingir o banco de dados a cada requisição, incrementando o contador no Memcache e atualizando o banco de tempo em tempo*;</p></li>
+<li><p>dados frequentemente requisitados, como por exemplo o resultado de uma consulta ao banco.</p></li>
+</ul>
+
+
+<p>[singlepic id=19 w=640 h=480 float=right]Com apenas algumas linhas extras no seu código essas utilizações acima podem melhorar a escalabilidade de seu aplicativo. Memcached nada mais é que uma cache RAM distribuida que utiliza um modelo chave, valor. Escritas na memcache nunca atingem o disco e são muito mais rápidas que acessos ao banco de dados (aproximadamente 10x mais rápido que escrever no banco de dados do Google App Engine e 5x para leituras). O tradeoff é que os dados guardados na memcache são transientes e podem ser descartados quando o espaço se aproximar do limite. Alguns exemplos de sistemas que utilizam Memcache são YouTube, Reddit, Zynga, Facebook, Orange e Twitter.</p>
+
+<p>Um uso bem simples que fiz com esse sistema foi criar uma cache para os anuncios de vagas de emprego no <a href="http://www.tweetvagas.com.br">Tweet Vagas</a>. Nele as pessoas podem anunciar vagas de modo muito descomplicado, apenas preenchendo a descrição. Ao clicar em anunciar o Tweet Vagas cria um link permanente para esse descrição e prepara um tweet contendo esse link e um resumo do anuncio para ser tweetado pelo proprio twitter do usuário. Nesse momento a descrição é gravada no banco de dados do Google App Engine e ao mesmo tempo colocada na Memcache. Assim cada anuncio só acessa o banco de dados na sua escrita, e todas as requisições para essa vaga buscam os dados diretamente da Memcache. Como as vagas tem uma relação direta com sua idade, aquelas mais antigas e menos acessadas são as que tendem a serem limpas da cache, enquanto as mais recentes e acessadas tendem a se manter. Essa arquitetura permite fazer uso muito inteligente do banco de dados, o que é muito importante em uma plataforma SaaS, ja que o custo é proporcional a utilização do serviço.</p>
+
+<p>A utilização de Memcache é bastante simples e encorajada pelo Google App Engine, fazendo parte de sua API, alem de possuir uma página exclusiva dentro do Admin Console (Data - Memcache Viewer) onde você pode ver estatisticas (hits/miss, tamanho da cache, número de itens), limpar a cache e buscar valores pela sua chave. Abaixo veja o código utilizado no Tweet Vagas que faz uso da Memcache:</p>
+
+<p>[gist id=2941459]</p>
+
+<p>Esse método é chamado nas requisições da página de descrição da vaga. O que ele faz na primeira linha é buscar se existe essa chave (vaga_id) na memcache. Se não estiver presente ela busca do banco de dados e coloca o par (chave,valor) em cache. Se esta presente retorna diretamente o valor. Simples assim. O parametro booleano serve para quando houver alguma alteração no banco de dados. Chamar o método com update = True fará com que a cache seja atualizada.</p>
+
+<p>Você utiliza Memcache como se lógicamente fosse uma única memória para todo seu sistema. Independente de quantos servidores você possua, Memcache permite que você faça uso da Memória de cada um desses servidores de modo distribuido, sem que haja necessidade de se responsabilizar pelo gerênciamento complicado que existe por traz disso e permitindo adicionar mais servidores sem se preocupar com complicações em reestruturar a cache. E mais, pela sua filosofia todas as operações tem complexidade O(1), ou seja, toda operação tem tempo de execução constante independente de sua entrada.</p>
+
+<p>Alem de tudo Memcached é Livre e de Código Aberto (Free &amp; Open-source). Você pode pegar o código fonte no GitHub do Memcached, e se não souber utilizar o Git pode ver o tutorial sobre ele <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">aqui no blog</a>. Espero que tenha gostado.</p>
+
+<p><em>*os dados podem ser limpos da memcache a qualquer momento e sua aplicação deve levar isso em conta para lidar com a situação em que os dados foram limpos da cache.</em></p>
+
+<p><strong>Veja mais:</strong></p>
+
+<ul>
+<li><p><a href="http://memcached.org/">http://memcached.org/</a></p></li>
+<li><p><a href="http://code.google.com/p/memcached/">http://code.google.com/p/memcached/</a></p></li>
+<li><p><a href="https://github.com/memcached/memcached">https://github.com/memcached/memcached</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/articles/scaling/memcache">https://developers.google.com/appengine/articles/scaling/memcache</a></p></li>
+<li><p><a href="https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br">https://developers.google.com/appengine/docs/python/memcache/usingmemcache?hl=pt-br</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DNS do Registro.br + Google App Engine]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
+    <updated>2012-06-10T18:34:40-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
+    <content type="html"><![CDATA[<p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
+
+<p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
+
+<p>O processo é meio tortuoso se você não sabe por onde começar, por isso resolvi fazer esse post. Você tem que ir até o painel de administração do Google App Engine, no menu Application Setting e Clicar no botão Add Domain em Domain Setup. Digitar o seu dominio e seguir para a página do Google Apps, onde fará o cadastro se ainda não tiver conta para esse dominio. Ao fim você deve chegar na página do seu aplicativo e adicionar a url correspondente (Veja algumas imagens abaixo)</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;614&#8221; caption=&#8221;Encontra-se no menu Administration Settings do seu aplicativo no Google App Engine&#8221;]<img src="https://lh6.googleusercontent.com/GUZ9mQFRcyufitezcinlUYH3uGM1_LpluFS0h0zCWPDY8rEiHYuvJk997cKJPxXbfjJt_3Ud9kKTXqEQA8WX7e82Xm_HL1jLeSZpnP3UodwAR9OlcaQ" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;622&#8221; caption=&#8221;Após clicar em Add Domain, deve preencher seu dominio e será encaminhado para o Google Apps.&#8221;]<img src="https://lh6.googleusercontent.com/XAAqmu4uL7UeaoYgRTkFJMaTxuRL0TUHM_oxHfXlcenFIPsKeGPHlbEoyYl3YRC5gSNhVBDHkCJxNP6FNFpaPMoTzz9g8gBtlN_805TD_v7q5vHUNFA" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;394&#8221; caption=&#8221;Página do seu aplicativo (no meu caso tweetvagas) onde você deve adicionar a url do seu dominio.&#8221;]<img src="https://lh6.googleusercontent.com/5s53_VmweH1GVXpdvJNikUMggE8emaMYtTlQvQqYjc5kpNHkApMSds2UFqxzJh1U7uJAJjNR2PTLXUA3DrGQbTghtNFrBHRgUUugaCmOJpZhbxVsOQo" alt="" />[/caption]</p>
+
+<p>Depois de se cadastrar e adicionar a url do seu dominio para a aplicação, você terá que criar um CNAME no servidor DNS (provavelmente será necessário marcar uma opção para validar seu dominio em outro momento no Google Apps). Então vá para Registro.br na página de administração do seu domínio, marque a opção “Utilizar os servidores DNS do Registro.br”, clique em Salvar &amp; Editar, selecione o Modo Avançado. Agora você deve configurar CNAME do seu dominio para ghs.google.com.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;385&#8221; caption=&#8221;Na página de administração do seu domínio.&#8221;]<img src="https://lh6.googleusercontent.com/SCejf5vYJgdfk5GfRx7Z6cb2yfgw_xoLE5sOicdTNvuU9O6xsaOufdwK0aMZrpNRAZMYfBx52XempYuSIfUCoYaX-WAVOFJxe1qOeozKFvTgBymdayw" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;684&#8221; caption=&#8221;Modo Avançado.&#8221;]<strong><img src="https://lh5.googleusercontent.com/fnzxfDS4uOdMC_mtphfqxQBVWfWyWJrHoro7ZusJHh3Dz_6pk0cy4DM40aHj5Ak6lOdoIvnrs81evVPn3FHQlS8nr1MnR7JxgYGCZzOth7ipLPRHibI" alt="" /></strong>[/caption]</p>
+
+<p>ATENÇÃO: Os servidores DNS demoram cerca de 30 min para refletirem a configuração.</p>
+
+<p>Agora o seu dominio deve estar funcionando, mas ele só é acessível através do www. Para você validar o seu dominio no Google Apps pelo método padrão, ainda é preciso fazer uma configuração para que seu site seja acessivel sem o www. Vá para o menu Domain Setting do Google Apps, em Domain Names, clique no link “Change de A record”, onde você encontra os endereços IPs que você deve adicionar lá no Registro.br conforme imagens.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;aligncenter&#8221; width=&#8221;647&#8221; caption=&#8221;Clique no Link “change the A record&#8221;]<img src="https://lh4.googleusercontent.com/t452VMAVkKBE1jB9U6E8FTFhNUK6JB1UCO2Bb-qtsU1Mu7jUg-tUWBJZGqOmzlRmdpRZ-wY4kjMIYaEIST1LeLbJgzGrmY_niMFQACoBvo4Us-JDUn0" alt="" />[/caption]</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;alignnone&#8221; width=&#8221;648&#8221; caption=&#8221;Adicione A record no DNS do Registro.br&#8221;]<img src="https://lh3.googleusercontent.com/Xz70cn1vI4pPVK44DNNvC-CdhmdwZv77JqQkfA4XRWiicpe1ycMiRSQ5gXrSUS2QIb_VymIp-xrBPQ6HNFHAvahI55dIlogqyKqw3pw7C9AQJ2BPGME" alt="" />[/caption]</p>
+
+<p>Depois disso você terá configurado tudo, seu site estará acessível pelo dominio e ainda terá todos os recursos fornecidos pelo Google, sem nenhum custo além do registro de domínio.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dica de editor simples - SublimeText]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
+    <updated>2012-05-27T15:13:46-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
+    <content type="html"><![CDATA[<p>Olá pessoal, hoje viemos dar a dica de um editor de código simples, ágil e o mais próximo do TextMate (hehehe). Os novos frameworks, e até mesmo linguagens mais novas, trazem uma simplicidade que nos induz a trabalhar livre de uma IDE, como é o caso do Rails, Grails, Play, etc&#8230;</p>
+
+<p>[singlepic id=16]</p>
+
+<p>A comunidade de Ruby, que em grande parte utiliza Mac, trabalha com o TextMate e convenhamos, é uma ferramenta que a primeira vista nos convida para trabalhar. Nós (Guilherme e eu), como usuários de Linux (e com muito orgulho hehehe), ficamos algum tempo procurando uma ferramenta parecida com o TextMate. Testamos algumas, mas a que chamou atenção (e fez valer a busca) foi o SublimeText. O SublimeText é um editor simples, leve, prático, possui suporte a syntax highlighting para a maioria das linguagens, extensível através de plugins, aceita bundles para TextMate e é multiplataforma (com versões para Windows, Linux e Mac). Inicialmente, eu Bruno, tive a idéia de fazer um post sobre suas funcionalidades e configurações, mas o Guilherme me passou um vídeo muito bom e acredito que com mais dois links que utilizei são o bastante para nos entregarmos a essa ferramenta.</p>
+
+<p>O SublimeText é pago, porém possui uma versão de testes com tempo ilimitado.</p>
+
+<h4>Atenção desenvolvedor python:</h4>
+
+<p>Ao utilizar o sublime com código fonte python criado em outro editor, o interpretador se perdeu no parser. Identifiquei que era por causa da identação, que apesar de parecer correta no sublime estava tratando o TAB de forma diferente que o gedit. Então mesmo estando alinhado no sublime, o interpretador do python considerava uma identação diferente. Pra solucionar basta selecionar o código e ver que ele diferenciava a identação, assim é só substituir esses locais por tab.
+(Veja exemplo na figura abaixo)</p>
+
+<p>[singlepic id=17]</p>
+
+<p>Além das dicas do vídeo acima, decidimos postar esses dois links também, que possuem materiais complementares:</p>
+
+<ul>
+<li><p><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/">Atalhos e dicas</a></p></li>
+<li><p><a href="http://www.sublimetext.com/docs/2/indentation.html">Dica de indentação, mas dá ideia de como personalizar outras coisas.</a></p></li>
+</ul>
+
+
+<p>Então é isso! Esperamos que tenham gostado e até o próximo post!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Primeiros passos com Groovy]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/"/>
+    <updated>2012-05-10T18:44:28-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy</id>
+    <content type="html"><![CDATA[<p><img src="http://guilhermeka.github.com/samuraidev-blog/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
+Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
+
+<h2>Instalação e configuração&#8230;</h2>
+
+<p>Para começar precisamos fazer o download no site do <a href="http://groovy.codehaus.org/Download">Groovy</a>. Se você já passou pelos passos de configuração de uma JDK, não encontrará dificuldades. Devemos descompactar o pacote num diretório qualquer (no caso do pacote binário) e adicionar o endereço completo deste diretório na variável de ambiente PATH do seu sistema. Para verificar se está tudo certo, podemos testar o seguinte comando (no Console do Linux, ou prompt do Windows) que irá apresentar a versão do Groovy que configuramos:</p>
+
+<pre><code>[bsouza@bsouza ~]$ groovy -version
+Groovy Version: 1.8.4 JVM: 1.7.0_03
+</code></pre>
+
+<h2>Mão na massa!</h2>
+
+<p>Agora é a hora da diversão! Iremos codar nossos primeiros fontes Groovy. Uma facilidade, para quem é familiarizado com Java, é que você pode continuar utilizando a sintaxe Java e ir melhorando suas habilidades em Groovy aos poucos e assim, incorporar as facilidades do Groovy conforme vai evoluindo em seus estudos.
+Iniciaremos nossos testes com o Groovy Console, que é um editor simples onde podemos codar e testar a execução dos nossos primeiros códigos:</p>
+
+<p><img src="http://guilhermeka.github.com/samuraidev-blog/wp-content/gallery/groovy/groovyconsole.png" alt="Editor simples com um console que acompanha a sdk do Groovy" /></p>
+
+<p>Para executar o Groovy Console devemos digitar no Console o comando groovyConsole.</p>
+
+<p>DICA: Java importa automaticamente todas as classes que estão no package java.lang. Groovy por sua vez, extende este comportamento incluindo os pacotes abaixo:
+- java.io
+- java.math
+- java.net    <br/>
+- java.util
+- groovy.lang
+- groovy.util</p>
+
+<p>Em Groovy utilizamos a palavra reservada def para definir algo, essa definição pode ser um método, variáveis com tipagem dinâmica e até closures. Veremos a utilização desta e outras keywords principais da linguagem. Mãos à obra&#8230;</p>
+
+<p>DICA: Para limpar a saida do console utilize o atalho ctrl+w e para rodar o seu script utilize ctrl+r.</p>
+
+<pre><code>// definição de um tipo Integer do Java
+int numero = 5
+println numero.class
+
+// definição de uma String do Java
+String nome = "Bruno"
+println nome.class
+
+/** **************************************************************************
+ * Note que em Groovy, quando temos um método que recebe apenas um parâmetro,
+ * podemos ocultar os parenteses, favorecendo assim a legibilidade do código 
+ * ***************************************************************************/
+
+// Define uma String em tempo de execução através do seu comportamente,o chamado 
+// Duck Typing, ou seja, se o objeto se comporta de uma pato, então ele é um pato.
+def duck = "Bruno Moraes Souza"
+println duck.class
+
+/** ****************************************************************************
+ * Agora iremos definir duas classes com um relacionamento entre elas, e iremos
+ * fazer mais alguns testes para ver como o Duck Typing se comporta
+ * *****************************************************************************/
+
+// classe mutavel que representará um produto
+class Produto {        
+    String name
+    String descricao
+}
+
+/* OBS: Não estamos declarando os getters e os setters
+   pois o próprio Groovy faz esse trabalho sujo para nós,
+   estes são os chamados Groovy Beans. 
+
+   OBS 2: Repare também, que em Groovy podemos omitir o 
+   ponto e vírgula ao final de cada linha */
+
+println "" // simples quebra de linha para facilitar a visualização dos novos resultados
+
+// Instancia um objeto Tipo e popula seus dados através de setters
+def produto = new Produto() 
+produto.name = "Sistema1"
+produto.descricao = "E-Commerce escrito em Grails \\o/"
+
+// Em Groovy, podemos utilizar interpolação de Strings conforme abaixo,
+// que é prático e mais legível que uma concatenação
+println "Produto: ${produto.name}\nDescrição: ${produto.descricao}\n"
+println "${produto.class}"
+println produto
+
+/* Note que como não sobrescrevemos o método toString da classe Produto,
+ * em nosso print foi retornada a implementação da classe Object. 
+ * Isso mesmo, os objetos Groovy também herdam de Object! */
+
+// Vamos agora utilizar o suporte a lista de Groovy e adicionar todas os 
+// objetos que instanciamos até agora
+
+def lista = [ numero, nome, duck, produto ]
+
+// Faremos uso agora de uma das facilidades do Groovy para 
+// trabalharmos com coleções, que é o método each
+
+println "" // quebra de linha
+lista.each { println it }
+
+// note que pela chamada do método, ele recebe apenas um parâmetro, e por isso
+// não precisamos dos parênteses. Ele recebe uma closure/delegate como parâmetro 
+// que será executada para cada um dos seus elementos e a keyword it representa o elemento atual
+
+println "" // quebra de linha
+lista.each { println ((it.class == Produto) ? it.name : it) }
+
+// Para testar a real utilização do it, colocamos um operador ternário, 
+// para imprimirmos o nome do tipo, caso o elemento seja um Tipo
+
+/** 
+ * Os Groovy Beans, como mencionados anteriormente, criam os getters
+ * e setters para o nosso bean, porém em muitos casos gostariamos privar o acesso
+ * de um setter para criarmos objetos imutáveis. Em Groovy podemos criar objetos
+ * totalmente imutáveis com a anotação @Immutable antes da definição da classe */
+
+@Immutable class ProdutoImutavel {
+
+    String nome
+    String descricao
+
+    String toString() { nome } // Sobrescrita do método toString
+}
+
+/* Na classe acima, declaramos os mesmos atributos da classe anterior, porém
+ * estes são read only, e nos obrigam a utiliza um recurso bem bacana do Groovy,
+ * que é um construtor dinâmico. */
+
+println ""
+
+def imutavel = new ProdutoImutavel(nome: "Mouse", descricao: "Mouse wireless")
+println "${imutavel.nome} - ${imutavel.descricao}"
+
+// Para verifica se o comportamento é mesmo o esperado, tentaremos renomear o produto
+try { imutavel.nome = "novo" } catch (Exception ex) { println ex.message }
+
+println "${imutavel.nome} - ${imutavel.descricao}"
+println imutavel // teste do toString sobrescrito
+
+println ""
+
+// Por fim um teste com um atributo dinamicamente tipado
+class Dinamico {
+    def algo
+}
+
+def d = new Dinamico()
+
+// Popula algo com uma string
+d.algo = "String"
+println d.algo
+
+// Setamos uma closure que recebe dois argumentos
+d.algo = { x, y -&gt; (x * y / 2) }
+println d.algo(3, 6)
+</code></pre>
+
+<p>Na versão estável, 1.8.6 até a presente data, há um bug relacionado ao modificador de acesso private, permitindo que métodos e atributos que utilizem o modificador continuem expostos.</p>
+
+<p>Bom, é isso! Acredito que toda a explicação necessária para o nosso primeiro exemplo está em forma de comentário no código e basta copiá-lo e executá-lo no console.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS inteligente, use SASS!]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass/"/>
+    <updated>2012-05-07T05:15:20-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass</id>
+    <content type="html"><![CDATA[<p>Bom, o post de hoje é uma dica referente a desenvolvimento web, mais especificamente de CSS. Atualmente atuo como desenvolvedor mobile e já fazia algum tempo que não desenvolvia nada web, até o final do ano passado, quando nosso cliente teve a necessidade da reescrita de um sistema web. Em nosso time não há alguém responsável somente pelo layout, mas todos tínhamos conhecimento em CSS. Logo no início do projeto sentamos e discutimos alguns padrões para o layout do sistema, mas algo me incomodava na organização do CSS. O CSS, em sua criação, veio com a intenção de padronizar o layout do seu sistema/site, fazendo um controle centralizado dos estilos evitando assim a duplicação de código que torna simples alterações em tarefas custosas. Minha incomodação era justamente com essa centralização, ela ainda não estava correta, o CSS não cumpre totalmente o seu papel de evitar repetição de código e centralizar as mudanças, pois há muitas classes com comportamentos parecidos e que na maioria das vezes quando precisamos alterá-las gostaríamos que essas alterações afetassem todos esses padrões duplicados em nossas classes, e.g. uma cor padrão ou tamanho de margens. Foi nesse instante que um colega mencionou o SASS que traz todas essas melhorias que eu queria e o CSS não me proporcionava.</p>
+
+<h2>Iniciando&#8230;</h2>
+
+<p>O SASS é uma ferramenta desenvolvida em Ruby, por isso devemos te-lo previamente instalado. Ele utiliza basicamente um arquivo com extensão .scss e a através deste arquivo ele irá gerar o CSS comum (aquele chato que faziamos antigamente) e a partir deste momento iremos dar manutenção apenas no arquivo .scss. SASS trabalha com quatro características principais: variáveis, aninhamento (nesting), mesclas (mixins) e herança.</p>
+
+<p>Depois de instalado, devemos utilizar o comando abaixo para gerar nosso CSS:</p>
+
+<pre><code>/* style é o nome do arquivo */
+sass --watch style.scss:style.css
+</code></pre>
+
+<h2>Variáveis</h2>
+
+<p>Utilizamos as variáveis para declarar atributos que podem ser utilizados em várias propriedades de diferentes classes. Por exemplo, podemos criar uma cor padrão que será utilizada em vários dos nossos estilos, e assim centralizamos a mudança, caso ela seja necessária ao decorrer do projeto:</p>
+
+<pre><code>$color: #cccccc;
+.box { background-color: $color; }
+</code></pre>
+
+<h2>Nesting</h2>
+
+<p>Permite que façamos alterações somente a partir de determinado seletor, vejamos um exemplo abaixo de como fariamos sem SASS e como fica com SASS:</p>
+
+<pre><code>/* CSS */
+.box { background-color: #cccccc; }
+.box img { size: 50px; }
+
+/* SASS */
+$icon-size: 50px;
+.box { background-color: $color; img { size: $icon-size; } }
+</code></pre>
+
+<h2>Mixins</h2>
+
+<p>Utilizamos para criar estilos que podem ser aproveitados em várias classes, e assim evitamos repetição:</p>
+
+<pre><code>$default-border-color: #000000;
+@mixin default-box { border: 1px solid $default-border-color; background-color: $color; }
+.box { @include: default-box; color: #300; }
+</code></pre>
+
+<h2>Herança</h2>
+
+<p>A partir de uma classe já definida, podemos herdar todo o seu estilo e extendê-lo para criar outra classe customizada:</p>
+
+<pre><code>.bold-box { @extend .box; font-weight: bold; }
+</code></pre>
+
+<h2>Exemplo completo&#8230;</h2>
+
+<p>Fiz um outro exemplo, agora com todos os passos. Primeiro naveguei até um diretório que criei para o exemplo, depois criei um arquivo e o editei:</p>
+
+<pre><code>vim teste.scss
+</code></pre>
+
+<p>Dentro deste arquivo criei os seguintes estilos:</p>
+
+<pre><code>$color: #CCC;
+$font: #003;
+$padding: 5px;
+
+@mixin borders { border: 2px solid #000; }
+@mixin default-box { height: 50px; padding: $padding; background-color: $color; }
+
+.box { @include borders; @include default-box; }
+.custom-box { @extend .box; color: $font; a { color: #fff; } }
+</code></pre>
+
+<p>Para gerar o meu css utilizei o comando:</p>
+
+<pre><code>sass --watch teste.scss:style.css
+</code></pre>
+
+<p>No meu caso, o meu SASS teve o nome de teste.sass e dei o nome de style.css ao arquivo que gerei. O meu css &#8220;compilado&#8221; ficou assim:</p>
+
+<pre><code>.box, .custom-box {
+  border: 2px solid #000;
+  height: 50px;
+  padding: 5px;
+  background-color: #cccccc; }
+
+.custom-box {
+  color: #000033; }
+  .custom-box a {
+    color: #fff; }
+</code></pre>
+
+<p>Outra coisa que eu não havia mencionado é que você pode utilizar essa sintaxe que mostramos até agora ou uma outra bastante familiar a quem já trabalhou com YAML. Para utilizar essa outra sintaxe a extensão do nosso arquivo deve ser .sass, e o mesmo exemplo ficaria assim:</p>
+
+<pre><code>$color: #CCC
+$font: #003
+$padding: 5px
+
+@mixin borders
+        border: 2px solid #000
+
+@mixin default-box
+        height: 50px
+        padding: $padding
+        background-color: $color
+
+.box
+        @include borders
+        @include default-box
+
+.custom-box
+        @extend .box
+        color: $font
+        a
+               color: #fff
+</code></pre>
+
+<h2>Encerrando&#8230;</h2>
+
+<p>O SASS possui outras características e vantagens, mas acredito que essas já são o suficiente para lhe convencer a não escrever mais o CSS de forma tradicional. Para ir mais afundo você pode consultar o tutorial do <a href="http://sass-lang.com/tutorial.html">site</a>.</p>
+
+<p>Espero que tenham gostado e até a próxima!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Instalando node.js no Fedora a partir do código fonte]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/"/>
+    <updated>2012-04-26T16:21:09-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte</id>
+    <content type="html"><![CDATA[<p>[singlepic id=12 w=320 h=240 float=left]</p>
+
+<p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
+
+<pre><code># yum install openssl-devel
+# yum install gcc
+# yum install gcc-c++
+</code></pre>
+
+<p>Para pegar o código fonte você pode clonar pelo git ou buscar no site <a href="http://nodejs.org/">http://nodejs.org/</a>
+Pelo git:</p>
+
+<pre><code>$ git clone git://github.com/joyent/node.git
+</code></pre>
+
+<p>É importante destacar que você estará pegando a mais recente versão do código no repositório. Se quiser uma versão anterior (provavelmente mais estável) busque pelas tags do programa e faça um checkout dessa tag.</p>
+
+<pre><code>$ git tag
+$ git checkout [nome_da_tag]
+</code></pre>
+
+<p>Agora que você tem o código, navegue até a pasta node e prossiga com a instalação:</p>
+
+<pre><code>$ cd node
+# ./configure
+# make -j2
+</code></pre>
+
+<p>Se você se deparar com o erro: &#8220;fatal error: gnu/stubs-64.h: No such file or directory&#8221; execute o seguinte comando:</p>
+
+<pre><code># yum install glibc-devel.x86_64
+</code></pre>
+
+<p>Termine a instalação:</p>
+
+<pre><code># make install
+</code></pre>
+
+<p>Adicione usr local ao PATH</p>
+
+<pre><code># export PATH=$PATH:/usr/local/bin:/usr/local
+</code></pre>
+
+<p>Execute o comando visudo para editar /etc/sudoers</p>
+
+<pre><code># visudo
+</code></pre>
+
+<p>Procure a linha que contem &#8220;Defaults secure_path=/sbin:/bin:/usr/sbin:/usr/bin&#8221; e adicione ao fim da linha &#8220;:/usr/local/bin&#8221; sem os parenteses. Você faz isso indo com cursor até o fim da linha, digite &#8220;i&#8221;, escreva &#8220;:/usr/local/bin&#8221; e então, para salvar, aperte ESC e digite &#8220;wq&#8221;, ENTER.</p>
+
+<p>[singlepic id=13 w=320 h=240 float=center]</p>
+
+<p>Para verificar a versão instalada:</p>
+
+<pre><code>$ node -v
+</code></pre>
+
+<p>Pronto!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Eventos fim de abril]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril/"/>
+    <updated>2012-04-24T15:18:29-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril</id>
+    <content type="html"><![CDATA[<p>Pessoal, esse post é meramente informativo, vou citar alguns eventos que vão ocorrer agora nesse fim de abril, aqui em Porto Alegre ou na Web.</p>
+
+<p>25/04: Webinar - Reduce Your IT Risks by Using Continuous Delivery by Joanne Molesky, evento organizado pela ThoughtWorks, as 19h. Gratuito via Web com duração de 1h. Exige registrar-se com antecedência <a href="https://thoughtworks.webex.com/mw0306ld/mywebex/default.do?nomenu=true&amp;siteurl=thoughtworks&amp;service=6&amp;rnd=0.22434889546550585&amp;main_url=https%3A%2F%2Fthoughtworks.webex.com%2Fec0605ld%2Feventcenter%2Fevent%2FeventAction.do%3FtheAction%3Ddetail%26confViewID%3D909461151%26%26%26%26siteurl%3Dthoughtworks">aqui</a>.</p>
+
+<p>26/04: Dojo de JavaScript na Gri.fo, empresa localizada na Cidade Baixa. Havia a circulação de um <a href="http://www.doodle.com/uqi8qcpiucifpdei">Doodle</a> para marcar o melhor dia e parece que dia 26 às 19h venceu. Procure colocar seu nome no doodle ou contate algum dos participantes para mais informações.</p>
+
+<p>26/04: <a href="http://forms.apigee.com/acton/form/549/0046:d-0002/0/index.htm?">Webcast: Big Data - Beyond the &#8216;Bigness&#8217; and the Technology</a> às 15h horário de Brasília.</p>
+
+<p>27/04: <a href="http://www.debian-rs.org/node/87">Debian Day</a> na ESADE, unidade Cidade Baixa, à Rua Luis Afonso, 84 das 9h as 19h. Incrições <a href="https://spreadsheets.google.com/spreadsheet/viewform?formkey=dG1LWHRXV3lBczZaUDBTVzBpa0owRFE6MQ">aqui</a> e é encorajado a doação de 1kg de alimento nao perecível.</p>
+
+<p>28/04: <a href="http://flisol.info/FLISOL2012/Brasil/PortoAlegre">FLISOL</a> - O Festival Latino-Americano de Instalação de Software Livre, terá duas salas, uma para palestras e outra para o <a href="http://pt.wikipedia.org/wiki/Installfest#Installfest">Installfest</a>. Ocorrerá na ESADE, Rua Riachuelo, 1257 das 09h as 17h e inscrições vão até dia 27. Como entrada é encorajado a doação de 2kg de alimentos não pereciveis. Convido especialmente para participar da palestra do meu amigo <a href="http://blog.lfzawacki.com/">Lucas Zawacki</a> as 10:30h sobre Wine - Rodando aplicativos Windows em *nix.</p>
+
+<p>30/04: Esse é o ultimo dia para realizar as inscrições com o maior desconto possível para o FISL. Estudantes R$ 50,00 e individual R$ 100,00. Faça sua inscrição <a href="http://fisl.org.br/13/greve/">aqui</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Prince of Persia no GitHub]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github/"/>
+    <updated>2012-04-24T09:26:08-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github</id>
+    <content type="html"><![CDATA[<p>Eu me lembro do inicio dos anos 90, quando vi pela primeira vez essa máquina chamada computador. Causou tal admiração que uma decada depois resolvi iniciar meus estudos em Ciência da Computação. Quem &#8220;operava&#8221; a máquina era meu primo, enquanto meu tio falava entusiasmado dos grandes beneficios que ela traria para trabalho, estudos e diversão. Na tela eu via algo muito semelhante a essa imagem:</p>
+
+<p>[singlepic id=9 w=320 h=240 float=center]</p>
+
+<p>Ela é do jogo Prince of Persia, desenvolvido por  <a href="http://pt.wikipedia.org/wiki/Jordan_Mechner">Jordam Mechner</a> em 1989 e que teve grande repecursão por revolucionar os jogos criando movimentos mais realistas. Recentemente Jordam conseguiu recuperar o código fonto do jogo feito para Apple II e o colocou no GitHub para quem quiser acessar <a href="https://github.com/jmechner/Prince-of-Persia-Apple-II">https://github.com/jmechner/Prince-of-Persia-Apple-II</a>. Conseguir modificar ou mesmo executar o sistema será para poucos, o código esta em assembler 6502, mas ao menos a história esta preservada. Para aqueles que quiserem se aprofundar e estão em busca de um grande desafio, Jordam tambem disponibilizou uma <a href="http://jordanmechner.com/wp-content/uploads/1989/10/popsource009.pdf">documentação tecnica</a>.</p>
+
+<p>Além disso, ele conta em um livro a jornada da criação desse jogo, que começou no porão de sua casa e culminou na vanguarda da industria de games dos anos 80 e na casa de milhões de pessoas ao redor do mundo. Ele esta disponível no site <a href="http://jordanmechner.com/ebook/">http://jordanmechner.com/ebook/</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Versionamento de Código (c/ Git) p2]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2/"/>
+    <updated>2012-04-22T14:28:02-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2</id>
+    <content type="html"><![CDATA[<p>No outro <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">post</a>, fiz uma introdução ao versionamento de código, falei sobre o Git e GitHub. Agora vamos ver mais de perto como essa ferramenta funciona. Ao fim desse post você vai ter visto como configurar e inicializar um repositório, realizar, gravar, desfazer e comparar mudanças, e ver o estado e historico de seus arquivos.</p>
+
+<p>Se você vai utilizar o Git, seria muito legal tambem criar uma conta no <a href="https://github.com/">GitHub</a>. Não só porque ele oferece a hospedagem gratuita para repositórios de código livre, mas também por ser uma espécie de currículo utilizado no mercado de desenvolvimento. Além do GitHub, existem outros sites de hospedagem de repositórios para o Git, veja uma lista deles:</p>
+
+<p><strong> Apenas respositórios públicos: </strong></p>
+
+<ul>
+<li><p><a href="http://repo.or.cz/">repo</a><a href="http://repo.or.cz/">.</a><a href="http://repo.or.cz/">or</a><a href="http://repo.or.cz/">.</a><a href="http://repo.or.cz/">cz</a> é o mais antigo dos repositórios (completamente open source), hospeda apenas projetos de software livre e possui interface Gitweb (interface web padrão do GIT). O tamanho máximo não deve exceder 400M após realizar um repack (quando os dados são comprimidos em um unico arquivo).</p></li>
+<li><p><a href="http://gitorious.org/">Gitorious</a> é outro repositório gratuito com interface web, suporte a multiplos repositórios por projeto, instalação local e open source;</p></li>
+</ul>
+
+
+<p><strong> Repositórios públicos e privados: </strong></p>
+
+<ul>
+<li><p><a href="http://www.assembla.com/">Assembla</a> oferece hospedagem segura e confiável, navegador de código web, onde é possivel navegar pelos changesets (revisões com alguma alteração de código), inclui bug/issue tracking e ferramentas colaborativas. Fornece repositório privado gratuito para até 1GB. Repositórios públicos são gratuitos.</p></li>
+<li><p><a href="https://github.com/">GitHub</a> dispensa apresentação, é o maior site de hospedagem com mais de 1 milhão de repositórios públicos. Ele da ênfase à rede social de desenvolvedores de projetos.</p></li>
+<li><p><a href="https://bitbucket.org/">Bitbucket</a> hospeda repositórios Git e Mercurial. É gratuito para repositórios privados com até 5 usuários (ou ilimitado para estudantes com email .edu), e totalmente gratuito para repositórios públicos. Tem wiki, issue tracking, entre outras funcionalidades.</p></li>
+</ul>
+
+
+<p><strong> Apenas repositórios privados: </strong></p>
+
+<ul>
+<li><p><a href="http://unfuddle.com/">Unfuddle</a> tem diversos planos, inclusive um gratuito. Ele é uma solução de gerenciamento de times de desenvolvedores de software. Oferece sistema de tickets, hospeda projetos com subversion ou Git, entre outras ferramentas para gerênciamento de projetos.</p></li>
+<li><p><a href="http://www.codebasehq.com/">codebase</a> oferede controle de versão, sistema de tickets e acompanhamento de implantação. Possui um pacote gratuito com limitação de um projeto, 50MB, 2 usuários e sem nenhuma das ferramentas.</p></li>
+</ul>
+
+
+<p>No outro post mostramos como instalar o Git, agora você deve criar um repositório e para isso existem basicamente duas maneiras:</p>
+
+<ul>
+<li>Pegar um projeto ou repositório existente e importar para o Git.</li>
+<li>Clonar um repositório Git existente.</li>
+</ul>
+
+
+<h1>Inicializando um repositório em um diretório existente</h1>
+
+<p>Primeiro você deve navegar até o diretório do projeto e digitar o comando:</p>
+
+<pre><code>$ git init
+</code></pre>
+
+<p>Será criado um novo subdiretório .git que contem um esqueleto de um repositório Git. Se o projeto não estava vazio, você deve adicionar todos arquivos no repositório com o comando add e em seguida realizar um commit. Assim todos seus arquivos estarão sendo “rastreados” pelo Git, exemplo:</p>
+
+<pre><code>$ git add *.c
+$ git add README
+$ git commit -m ‘versão inicial do projeto’
+</code></pre>
+
+<h1>Clonando um repositório existente</h1>
+
+<p>Quando você deseja contribuir para um projeto existente o comando que precisará é o git clone. Se você esta familiarizado com outros sistemas de versionamento, note que esse comando se chama clone, e não checkout, porque existe uma importante diferença entre eles. Com o <em>git clone</em>, você recebe uma copia de praticamente todos dados contidos no servidor e se por acaso o disco do servidor for corrompido, é possivel usar qualquer clone de qualquer cliente para configurar o servidor no estado de quando ele foi clonado.</p>
+
+<p>   $ git clone [url]</p>
+
+<p>Exemplos de repositórios interessantes para serem clonados:</p>
+
+<ul>
+<li>Git:  <br/>
+$ git clone https://github.com/gitster/git.git</li>
+<li>Kernel Linux:
+$ git clone https://github.com/torvalds/linux.git</li>
+<li>Ruby on Rails:
+$ git clone https://github.com/rails/rails.git</li>
+<li>Lista de repositórios Android em: <a href="https://github.com/android">https://github.com/android</a></li>
+</ul>
+
+
+<h1>Realizando mudanças no repositório</h1>
+
+<p>Agora que você ja sabe como criar ou clonar um projeto no Git, vamos ver como gravar mudanças no repositório. Cada arquivo do diretório do projeto pode estar em dois estados: <em>tracked</em> ou <em>untracked</em>. <em>Tracked</em> significa que eles estão na ultima “imagem” ou snapshot, e eles podem ser <em>unmodified</em>, <em>modified</em>, ou <em>staged</em>. Quando você clona um repositório, todos os arquivos serão <em>tracked</em> e <em>unmodified</em>, porque você acabou de pega-los e não modificou nada ainda. A medida que você edita os arquivos eles passam a ser <em>modified</em>, porque eles mudaram desde o ultimo commit. Você então muda esses arquivos para estado <em>staged </em>(veja a seguir como fazer isso) para depois fazer um commit. Após o commit os arquivos que estavam anteriormente em staged passam a ser <em>unmodified </em>e o ciclo se reinicia. No entanto, se você criou um novo arquivo dentro do diretório do projeto, ele esta no estado <em>untracked</em> e precisa ser adicionado ao estado <em>staged</em> com o comando:</p>
+
+<pre><code>$ git add [nome_do_arquivo]
+</code></pre>
+
+<p>E então realizar um commit com:</p>
+
+<pre><code>$ git commit -m ‘comentarios do commit’
+</code></pre>
+
+<p>Veja uma imagem ilustrativa:</p>
+
+<p>[singlepic id=8 w=320 h=240 float=center]</p>
+
+<p>Um arquivo <em>untracked</em> é como se o Git desconsiderasse esse arquivo.</p>
+
+<h2>Verificando o estado de seus arquivos</h2>
+
+<p>Primeira coisa que vamos fazer é clonar o seguinte repositório: git@github.com:guilhermeka/Hello-Git.git</p>
+
+<p>Antes de fazer qualquer alteração digite o comando:</p>
+
+<pre><code>$ git status
+</code></pre>
+
+<p>Você deve receber a seguinte resposta do terminal:</p>
+
+<p>_   # On branch master_</p>
+
+<pre><code>_ nothing to commit (working directory clean)_
+</code></pre>
+
+<p>Significa que não há nada para ser comitado. Agora crie um arquivo texto qualquer no diretório e repita o comando, você deve receber o seguinte retorno:</p>
+
+<p>  <em># On branch master</em>
+  <em># Untracked files:</em>
+  <em># (use &#8220;git add <file>&#8230;&#8221; to include in what will be committed)</em>
+  <em>#</em>
+  <em># nome_do_arquivo.txt</em>
+  <em>nothing added to commit but untracked files present (use &#8220;git add&#8221; to track)</em></p>
+
+<p>Agora existe um arquivo que esta no estado <em>untracked</em>. Execute o comando git add no arquivo ($ git add nome_do_arquivo.txt) e veja novamente o estado.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em>#</em></p>
+
+<p>O arquivo agora esta no estado <em>staged </em>(quando esta pronto para o commit). Agora abra o arquivo nomes.txt, adicione seu nome ao fim da lista e salve-o. Verifique o estado do projeto novamente.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em>#</em>
+  <em># Changed but not updated:</em>
+  <em># (use &#8220;git add <file>&#8230;&#8221; to update what will be committed)</em>
+  <em>#</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em></p>
+
+<p>Surgiu um novo arquivo na lista (nomes.txt) que esta no estado <em>modified</em>. Isso significa que ele foi alterado, mas se você realizar um commit agora ele não será incluido nele. Apenas os arquivos no estado <em>staged</em> entram para o commit. Use o comando $ git add nomes.txt e verifique novamente o estado com o comando git status.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em></p>
+
+<p>Digamos que você esqueceu de colocar sua idade junto ao seu nome. Altere o arquivo e verifique novamente o estado.</p>
+
+<p>  <em># On branch master</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># new file: nome_do_arquivo.txt</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em>
+  <em># Changed but not updated:</em>
+  <em># (use &#8220;git add <file>&#8230;&#8221; to update what will be committed)</em>
+  <em>#</em>
+  <em># modified: nomes.txt</em>
+  <em>#</em></p>
+
+<p>Veja que o arquivo nome consta em dois estados, staged e modified. Isso significa que se realizar um commit agora, o commit irá incluir apenas a versão do nomes.txt que não possui a sua idade. Você deve adiciona-lo denovo para o estado staged para incluir esses mudanças no commit. Faça isso e realize um commit.</p>
+
+<pre><code>$ git add nomes.txt
+$ git commit -m ‘inclusão do nome Guilherme Kruger Araujo 25’
+</code></pre>
+
+<p><em>*se você digitar apenas $ git commit, ele irá abrir o editor padrão do git para você inserir a mensagem de commit.</em></p>
+
+<h2>Vendo as mudanças</h2>
+
+<p>Para ver as mudanças entre os arquivos que foram modificados e aqueles que estão <em>staged</em> use o comando:</p>
+
+<pre><code>$ git diff
+</code></pre>
+
+<p>*<em>esse comando usará a ferramenta configurada na <strong><a href="../../../../../tutoriais/versionamento-de-codigo-c-git-p1/">parte</a><a href="../../../../../tutoriais/versionamento-de-codigo-c-git-p1/"> 1</a></strong> desse tutorial.</em></p>
+
+<p>Para ver as mudanças entre os arquivos staged e seu ultimo commit o comando é o seguinte:</p>
+
+<pre><code>$ git diff --cached
+</code></pre>
+
+<p>É muito importante lembrar que o primeiro comando (git diff) não mostra as diferenças desde seu ultimo commit, apenas as diferenças dos seus arquivos que ainda não foram para o estado <em>staged</em>. Se você mudar todos arquivos para <em>staged</em> o comando não irá retornar nada.</p>
+
+<h2>Ignorando o estado staged</h2>
+
+<p>Se você quiser pular esses passos de adicionar arquivos para estado staged você pode simplesmente realizar o comando commit com a opção -a.</p>
+
+<pre><code>$ git commit -a -m ‘Commit pulando a area staged’
+</code></pre>
+
+<p>Desse modo o Git automaticamente adiciona todos arquivos para <em>staged</em> e realiza o commit.</p>
+
+<h2>Removendo arquivos</h2>
+
+<p>Se você remover algum arquivo diretamente do diretorio, ele aparecerá sob status <em>modified</em>. Mas o git só o considera removido se você adiciona-lo para <em>staged </em>e posteriormente comitar.</p>
+
+<p>  <em># On branch master</em>
+  <em>#</em>
+  <em># Changed but not updated:</em>
+  <em># (use &#8220;git add/rm <file>&#8230;&#8221; to update what will be committed)</em>
+  <em>#</em>
+  <em># deleted: nome_do_arquivo</em>
+  <em>#</em></p>
+
+<p>Para remove-lo diretamente utilize o comando:</p>
+
+<pre><code>$ git rm nome_do_arquivo.txt
+</code></pre>
+
+<p>Esse comando irá tornar o arquivo <em>untracked</em> e irá remove-lo. E você irá ve-lo da seguinte maneira no status.</p>
+
+<p>  <em># On branch master</em>
+  <em>#</em>
+  <em># Changes to be committed:</em>
+  <em># (use &#8220;git reset HEAD <file>&#8230;&#8221; to unstage)</em>
+  <em>#</em>
+  <em># deleted: nome_do_arquivo</em>
+  <em>#</em></p>
+
+<p>Se você quiser apenas remover o arquivo da área <em>staged</em> mas mante-lo no diretório use:</p>
+
+<pre><code>$ git rm --cached nome_do_arquivo
+</code></pre>
+
+<p>*<em>o arquivo passará para o estado modificado. Esse comando apenas remove ele do estado staged. Seus arquivos continuam modificados. Considere staged como se fosse uma organização para o commit.</em></p>
+
+<h2>Movendo arquivos</h2>
+
+<p>Se você mover algum arquivo o Git vai considerar que ele foi deletado e incluido um novo arquivo em uma nova localização (o mesmo se tiver renomeado). Se você quiser mover o arquivo ou renomea-lo basta usar o comando:</p>
+
+<pre><code>$ git mv nome_do_arquivo_origem nome_do_arquivo_destino
+</code></pre>
+
+<p>Dessa forma o Git detecta se o arquivo foi renomeado ou movido, colocando-o no estado <em>staged</em> automaticamente. Isso ocorre de forma muito semelhante a remoção de arquivos e pode parecer um pouco confuso.</p>
+
+<h2>Visualizando histórico de commit</h2>
+
+<p>Para ver o histórico de commit execute o comando:</p>
+
+<pre><code>$ git log
+</code></pre>
+
+<p>O resutlado será algo assim:</p>
+
+<p>  <em>commit b0837c9d941a9e9549164aedaeb620d23d9ca6cc</em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#103;&#117;&#105;&#x32;&#56;&#x31;&#49;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x67;&#x75;&#105;&#50;&#56;&#x31;&#49;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></em>
+  <em>Date: Sat Apr 21 19:54:08 2012 -0300</em>
+  <em>teste</em></p>
+
+<p>  <em>commit c5873bf79859688622b29a3d576c12e06cfd793b</em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x67;&#117;&#105;&#50;&#x38;&#49;&#49;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#117;&#105;&#50;&#56;&#x31;&#49;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></em>
+  <em>Date: Sat Apr 21 19:33:41 2012 -0300</em>
+  <em>inclusão do nome Guilherme Kruger Araujo 25</em></p>
+
+<p>  <em>commit 6de3005ccc52f829d10ac78a2c3062796d96a135</em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x67;&#117;&#105;&#x32;&#x38;&#49;&#49;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#103;&#117;&#x69;&#50;&#x38;&#49;&#x31;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
+  <em>Date: Sat Apr 21 19:13:37 2012 -0300</em>
+  <em>criando arquivos para o post</em></p>
+
+<p>  <em>commit c2df99536d815782a34a4bb64789e65aa4790947</em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x67;&#x75;&#x69;&#50;&#x38;&#49;&#49;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;">&#103;&#x75;&#x69;&#50;&#56;&#49;&#x31;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></em>
+  <em>Date: Wed Apr 11 21:37:41 2012 -0300</em>
+  <em>first commit</em></p>
+
+<p>Como padrão o Git coloca os commits em ordem reversa do que foram feitos, de modo que o mais recente apareça no topo. Ele tambem lista cada commit com o nome do autor, email, data, mensagem de commit e um número SHA-1 que serve para validar que os dados não foram corrompidos.</p>
+
+<p>Existem diversas opções para esse comando, algumas que você pode achar interessante são -p para ver as diferenças introduzidas entre cada commit e -2 para limitar a saída para os dois ultimos commits (altere o valor de acordo com sua necessidade).</p>
+
+<h2>Ferramenta grafica</h2>
+
+<p>Digite gitk, divitar-se.</p>
+
+<h2>Mudando o ultimo commit</h2>
+
+<p>Ahh que droga, esqueceu de adicionar um arquivo no ultimo commit ??? Sem problemas, use:</p>
+
+<pre><code>$ git add nome_arquivo
+$ git commit --amend
+</code></pre>
+
+<p>Esta tudo bem agora! Ele altera o commit e o Git trata ele como se você não tivesse esquecido do arquivo.</p>
+
+<h2>Removendo do estado staged</h2>
+
+<p>Digamos que você modificou dois arquivos e gostaria de adiciona-los a diferentes commits, mas sem querer adicionou ambos ao estado staged. Use:</p>
+
+<pre><code>$ git reset HEAD nome_arquivo
+</code></pre>
+
+<p>Assim você remove esse arquivo da área staged e ele passa a ser do estado <em>modified</em>.</p>
+
+<h2>Desfazendo uma modificação</h2>
+
+<p>Bem simples, mas fique alerta, esse é um comando PERIGOSO! Todas as alterações feitas ao arquivos serão perdidas.</p>
+
+<pre><code>$ git checkout -- nome_arquivo
+</code></pre>
+
+<h1>Para um próximo post</h1>
+
+<p>Legal, aprendemos bastante coisa! Mas para um próximo post fico devendo a parte em que trabalhamos com repositórios remotos e assim podemos efetivamente colaborar com qualquer projeto Git.</p>
+
+<p>Até mais!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Versionamento de Código (c/ Git) p1]]></title>
+    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1/"/>
+    <updated>2012-04-17T13:54:18-03:00</updated>
+    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1</id>
+    <content type="html"><![CDATA[<p>Se você é um desenvolvedor entusiasta e gosta de estar por dentro das novidades desse mundo, vai encontrar aqui no SamuraiDev uma fonte riquissíma e abrangente sobre tecnologias e ferramentas de desenvolvimento, assim como debates e novidades envolvendo o tema.</p>
+
+<p>Como muitos dos posts serão no estilo <a href="http://pt.wikipedia.org/wiki/DIY">DIY</a>, acredito que não existe uma melhor maneira de começar do que apresentar uma ferramenta que revolucionou a cultura do Desenvolvimento de Software. O <a href="https://github.com/">GitHub</a>! Ele é uma plataforma social para o desenvolvimento de software construido ao redor do <a href="http://pt.wikipedia.org/wiki/Git">Git</a>, e traz uma nova abordagem para a escrita e compartilhamento de código. Enquanto o Git cuida da parte técnica, como fork e merge, o GitHub trata das questões sociais como requisições para pulls e o rastreamento de forks.</p>
+
+<p>É interessante destacar que o Git foi criado por <a href="http://pt.wikipedia.org/wiki/Linus_Torvalds">Linus Trovalds</a>. Em uma divertida palestra para o Google Tech Talk, nomeada <a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Trovalds on git</a>, ele fala sobre as motivações de sua criação. Se por acaso você não deseja assistir aos 110 minutos de palestra, vou resumi-la rapidamente e introduzir o que é, e o que existe, em relação a versionamento de código.</p>
+
+<p>Em um jogo rápido, um sistema de versionamento de código é uma ferramenta que você gostaria de ter caso não desenvolva sozinho e isolado no mundo (e mesmo desenvolvendo sozinho pode fazer bom uso do Git). Ele serve para gerênciar diferentes versões no desenvolvimento de software (ou de um documento qualquer), permitindo guardar históricos de código-fonte e documentação, criar diferentes linhas de desenvolvimento, marcar e resgatar versões estáveis, facilitando especialmente o desenvolvimento em equipes.</p>
+
+<p>Em relação aos tipos de sistemas de versionamentos podemos separa-los em dois tipos: Centralizados e Descentralizados. No primeiro time dois exemplos são <a href="http://pt.wikipedia.org/wiki/CVS">CVS</a> e <a href="http://pt.wikipedia.org/wiki/Subversion">Subversion</a>, muito criticados por Linus. E no outro estão <a href="http://pt.wikipedia.org/wiki/Mercurial">Mercurial</a>, BitKeeper e o Git. Se quiser existe uma <a href="http://en.wikipedia.org/wiki/List_of_revision_control_software">lista na Wiki</a>.</p>
+
+<p>Segundo o próprio Linus, que ainda coordena o desenvolvimento do kernel Linux, o BitKeeper foi o primeiro sistema de versionamento existente que valia a pena usar. Para o criador do Linux, as caracteristicas básicas para tal sistema são necessariamente as seguintes:</p>
+
+<p><strong>Distribuido: </strong>Não é possível depender de um servidor centralizado, por varios motivos, que incluem conectividade, segurança e logistica. Se faltar conexão, ou houver problemas com o servidor central, todo o desenvolvimento é prejudicado. Na computação conhecemos isso como <a href="http://pt.wikipedia.org/wiki/Ponto_%C3%BAnico_de_falha">Ponto Unico de Falha</a>. Por isso um sistema distribuido é muito importante.</p>
+
+<p><strong>Performance: </strong>No Git, cada desenvolvedor possui uma copia local de toda história de desenvolvimento e pode trabalhar offline nessa copia. Isso permite realizar quase todas operações localmente, gerando um ganho enorme de performance. A maioria das operações parecem quase instantâneas.</p>
+
+<p><strong>Confiabilidade</strong>: Além disso, tudo o que é colocado no repositório deve ser confiável, de modo que você saiba, com certeza, que o que deixou nele não foi corrompido ou adulterado. O Git verifica a integridade de tudo que é armazenado com <a href="http://pt.wikipedia.org/wiki/SHA1">SHA-1</a>, o que torna impossível alterar algum dado sem que o Git saiba. Se por acaso forem perdidas informações o Git irá detectar.</p>
+
+<h1>Instalando o Git</h1>
+
+<p>Como essa apresentação ja foi bastante longa, nessa primeira parte vou apenas mostrar como instalar o Git em seu sistema operacional.</p>
+
+<p><strong>Linux</strong></p>
+
+<p>No Fedora:</p>
+
+<pre><code>$ yum install git-core
+</code></pre>
+
+<p>Debian-based (Ubuntu):</p>
+
+<pre><code>$ apt-get install git-core
+</code></pre>
+
+<p><strong>Mac</strong></p>
+
+<p>Faça o download de: <a href="http://code.google.com/p/git-osx-installer">http://code.google.com/p/git-osx-installer</a></p>
+
+<p>Instale!</p>
+
+<p><strong>Windows</strong></p>
+
+<p>Faça o download de: <a href="http://code.google.com/p/msysgit">http://code.google.com/p/msysgit</a></p>
+
+<p>Instale!</p>
+
+<p>Facil né?! Mas antes de terminar, existem algumas configurações que você deve fazer ao menos uma vez (e poderá muda-las depois).</p>
+
+<p><strong>Identidade</strong></p>
+
+<p>A primeira delas é configurar sua identidade, que será incluida permanentemente em cada commit. É preciso realizar isso apenas uma vez se você passar a opção &#8211;global.</p>
+
+<pre><code>$ git config --global user.name "Samurai Dev"
+$ git config --global user.email samurai@samuraidev.com
+</code></pre>
+
+<p><strong>Editor</strong></p>
+
+<p>É bom configurar seu editor padrão, caso contrário, provavelmente utilizará o Vi ou Vim. Digamos que você deseje utilizar o emacs.</p>
+
+<p>   $ git config &#8211;global core.editor emacs</p>
+
+<p><strong>Ferramenta de Diff</strong></p>
+
+<p>Configure também uma ferramenta para resolver os conflitos de merge.</p>
+
+<p>   $ git config &#8211;global merge.tool vimdiff</p>
+
+<p><strong>Finalmente</strong></p>
+
+<p>Verifque as configurações com o comando: git config &#8211;list</p>
+
+<p>Se precisar de ajuda use:</p>
+
+<p>   $ git help comando
+   $ git comando &#8211;help
+   $ man git-comando</p>
+
+<p>Se por acaso precisar de uma ajuda pessoal, um bom lugar para se encontrar é nos canais #git e #github no server Freenode (irc.freenode.net)</p>
+
+<p>Nos próximos posts vou explicar mais detalhadamente o funcionamento do Git.</p>
+
+<p>Se você não quiser esperar, deixo um Quick Start e alguns links interessantes.</p>
+
+<p><strong>Links</strong>:</p>
+
+<p><a href="http://progit.org/">Pro Git</a></p>
+
+<p><a href="http://byte.kde.org/%7Ezrusin/git/git-cheat-sheet-medium.png">Git Cheat Sheet</a></p>
+
+<p><a href="http://git-scm.com/">Git Site Oficial</a></p>
+
+<p><a href="http://schacon.github.com/git/everyday.html">Everyday GIT</a></p>
+
+<p><a href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></p>
+]]></content>
+  </entry>
+  
+</feed>
