@@ -5,8 +5,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Versionamento de Código (c/ Git) p2 - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Versionamento de Código (c/ Git) p2 - Samurai Dev</title>
+  <meta name="author" content="Samurai Dev">
 
   
   <meta name="description" content="No outro post, fiz uma introdução ao versionamento de código, falei sobre o Git e GitHub. Agora vamos ver mais de perto como essa ferramenta funciona &hellip;">
@@ -18,13 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2/">
+  <link rel="canonical" href="http://samuraidev.herokuapps.com.br/blog/2012/04/22/versionamento-de-codigo-c-git-p2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Samurai Dev" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">Samurai Dev</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>Acompanhe o blog SamuraiDev para trilhar o “caminho do desenvolvedor” ao mais nobre estilo Samurai.</h2>
   
 </hgroup>
 
@@ -49,7 +49,7 @@
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:guilhermeka.github.com/samuraidev-blog" />
+    <input type="hidden" name="q" value="site:samuraidev.herokuapps.com.br" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -57,6 +57,7 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/blog/about">Sobre</a></li>
 </ul>
 
 </nav>
@@ -337,22 +338,22 @@ $ git commit -m ‘inclusão do nome Guilherme Kruger Araujo 25’
 <p>O resutlado será algo assim:</p>
 
 <p>  <em>commit b0837c9d941a9e9549164aedaeb620d23d9ca6cc</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x67;&#x75;&#105;&#50;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#103;&#117;&#105;&#x32;&#x38;&#x31;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x67;&#x75;&#105;&#50;&#x38;&#49;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#103;&#x75;&#105;&#x32;&#x38;&#x31;&#49;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;</a></em>
   <em>Date: Sat Apr 21 19:54:08 2012 -0300</em>
   <em>teste</em></p>
 
 <p>  <em>commit c5873bf79859688622b29a3d576c12e06cfd793b</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x67;&#x75;&#x69;&#x32;&#56;&#x31;&#x31;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#103;&#117;&#x69;&#50;&#56;&#49;&#x31;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x67;&#117;&#x69;&#50;&#56;&#49;&#x31;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x75;&#105;&#x32;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></em>
   <em>Date: Sat Apr 21 19:33:41 2012 -0300</em>
   <em>inclusão do nome Guilherme Kruger Araujo 25</em></p>
 
 <p>  <em>commit 6de3005ccc52f829d10ac78a2c3062796d96a135</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#103;&#x75;&#x69;&#x32;&#x38;&#49;&#x31;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#103;&#x75;&#105;&#x32;&#56;&#49;&#49;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x67;&#117;&#105;&#50;&#x38;&#x31;&#49;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#103;&#x75;&#105;&#x32;&#56;&#x31;&#49;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a></em>
   <em>Date: Sat Apr 21 19:13:37 2012 -0300</em>
   <em>criando arquivos para o post</em></p>
 
 <p>  <em>commit c2df99536d815782a34a4bb64789e65aa4790947</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#103;&#117;&#x69;&#x32;&#x38;&#x31;&#49;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#109;">&#x67;&#x75;&#105;&#50;&#56;&#x31;&#49;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#103;&#117;&#x69;&#x32;&#56;&#x31;&#49;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x67;&#117;&#105;&#x32;&#56;&#x31;&#49;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
   <em>Date: Wed Apr 11 21:37:41 2012 -0300</em>
   <em>first commit</em></p>
 
@@ -403,7 +404,7 @@ $ git commit --amend
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Samurai Dev</span></span>
 
       
 
@@ -431,7 +432,7 @@ $ git commit --amend
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2/" data-via="gkrugeraraujo" data-counturl="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://samuraidev.herokuapps.com.br/blog/2012/04/22/versionamento-de-codigo-c-git-p2/" data-via="" data-counturl="http://samuraidev.herokuapps.com.br/blog/2012/04/22/versionamento-de-codigo-c-git-p2/" >Tweet</a>
   
   
   
@@ -458,10 +459,6 @@ $ git commit --amend
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/09/07/hello-world/">Hello World Post</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2012/07/04/voce-conhece-ruby/">Você conhece Ruby?</a>
       </li>
     
@@ -477,6 +474,10 @@ $ git commit --amend
         <a href="/blog/2012/06/10/dns-do-registro-br-google-app-engine/">DNS do Registro.br + Google App Engine</a>
       </li>
     
+      <li class="post">
+        <a href="/blog/2012/05/27/dica-de-editor-simples-sublimetext/">Dica de editor simples - SublimeText</a>
+      </li>
+    
   </ul>
 </section>
 
@@ -486,7 +487,7 @@ $ git commit --amend
     <li class="loading">Status updating...</li>
   </ul>
   
-  <a href="https://github.com/guilhermeka">@guilhermeka</a> on GitHub
+  <a href="https://github.com/SamuraiDev">@SamuraiDev</a> on GitHub
   
   <script type="text/javascript">
     $.domReady(function(){
@@ -499,7 +500,7 @@ $ git commit --amend
         }
 
         github.showRepos({
-            user: 'guilhermeka',
+            user: 'SamuraiDev',
             count: 4,
             skip_forks: true,
             target: '#gh_repos'
@@ -509,22 +510,6 @@ $ git commit --amend
   <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("gkrugeraraujo", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/gkrugeraraujo" class="twitter-follow-button" data-show-count="false">Follow @gkrugeraraujo</a>
-  
-</section>
 
 
 
@@ -537,7 +522,7 @@ $ git commit --amend
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Your Name -
+  Copyright &copy; 2012 - Samurai Dev -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

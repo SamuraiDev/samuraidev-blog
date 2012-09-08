@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linguagens e frameworks | My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/linguagens-e-frameworks/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Category: Linguagens e frameworks | Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/blog/categories/linguagens-e-frameworks/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-07T21:16:12-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Ruby?]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby/"/>
     <updated>2012-07-04T16:30:35-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby</id>
     <content type="html"><![CDATA[<p>[singlepic id=28]</p>
 
 <p>Em mais um episodio da nossa serie "Voce conhece?",  apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta vez, deixaremos esta tarefa para os proximos posts, hoje iremos focar na historia e no ecossistema Ruby.</p>
@@ -90,9 +90,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached/"/>
     <updated>2012-06-16T16:17:21-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached</id>
     <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
 
 <p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
@@ -144,9 +144,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[Primeiros passos com Groovy]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy/"/>
     <updated>2012-05-10T18:44:28-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy</id>
     <content type="html"><![CDATA[<p><img src="/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
 Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
 
@@ -310,9 +310,9 @@ println d.algo(3, 6)
   
   <entry>
     <title type="html"><![CDATA[Instalando node.js no Fedora a partir do código fonte]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/"/>
     <updated>2012-04-26T16:21:09-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte</id>
     <content type="html"><![CDATA[<p>[singlepic id=12 w=320 h=240 float=left]</p>
 
 <p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>

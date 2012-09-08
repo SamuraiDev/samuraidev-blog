@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-07T21:16:12-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Hello World Post]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/"/>
-    <updated>2012-09-07T15:48:00-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world</id>
-    <content type="html"><![CDATA[<p>Hi, this is an experiment with Octopress. Nice! :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Você conhece Ruby?]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby/"/>
     <updated>2012-07-04T16:30:35-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby</id>
     <content type="html"><![CDATA[<p>[singlepic id=28]</p>
 
 <p>Em mais um episodio da nossa serie &#8220;Voce conhece?&#8221;,  apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta vez, deixaremos esta tarefa para os proximos posts, hoje iremos focar na historia e no ecossistema Ruby.</p>
@@ -99,9 +90,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Tipografía? Utilizando fontes ricas na web.]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
     <updated>2012-06-25T16:43:34-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
     <content type="html"><![CDATA[<p>Acredite ou não, a tipografía é um campo enorme, de grande interesse e pode ter um efeito profundo no resultado do seu trabalho. Até pouco tempo a web esteve um tanto limitada quanto ao uso de fontes, ficando restrito às que o usuário possuía em seu sistema. Agora as coisas estão um pouco melhor, porém antes mostrar como utilizar fontes mais ricas em sistemas web veremos um pouco mais sobre tipografía.</p>
 
 <p>[singlepic id=20 w=320 h=240 float=right]É importante saber que um dos princípios teóricos por traz do Design Gráfico é o Equilibrio, no entanto ele nem sempre é alcançado pela uniformidade. A fonte Gill Sans possui a caracteristica de ser perceptivelmente equilibrada, mas se você perceber a espessura de suas linhas variam em diferentes pontos dos seus traços. Veja imagem ao lado.</p>
@@ -163,9 +154,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached/"/>
     <updated>2012-06-16T16:17:21-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached</id>
     <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
 
 <p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
@@ -217,9 +208,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[DNS do Registro.br + Google App Engine]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
     <updated>2012-06-10T18:34:40-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
     <content type="html"><![CDATA[<p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
 
 <p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
@@ -252,9 +243,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[Dica de editor simples - SublimeText]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
     <updated>2012-05-27T15:13:46-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
     <content type="html"><![CDATA[<p>Olá pessoal, hoje viemos dar a dica de um editor de código simples, ágil e o mais próximo do TextMate (hehehe). Os novos frameworks, e até mesmo linguagens mais novas, trazem uma simplicidade que nos induz a trabalhar livre de uma IDE, como é o caso do Rails, Grails, Play, etc&#8230;</p>
 
 <p>[singlepic id=16]</p>
@@ -284,10 +275,10 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[Primeiros passos com Groovy]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy/"/>
     <updated>2012-05-10T18:44:28-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy</id>
-    <content type="html"><![CDATA[<p><img src="http://guilhermeka.github.com/samuraidev-blog/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy</id>
+    <content type="html"><![CDATA[<p><img src="http://samuraidev.herokuapps.com.br/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
 Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
 
 <h2>Instalação e configuração&#8230;</h2>
@@ -303,7 +294,7 @@ Groovy Version: 1.8.4 JVM: 1.7.0_03
 <p>Agora é a hora da diversão! Iremos codar nossos primeiros fontes Groovy. Uma facilidade, para quem é familiarizado com Java, é que você pode continuar utilizando a sintaxe Java e ir melhorando suas habilidades em Groovy aos poucos e assim, incorporar as facilidades do Groovy conforme vai evoluindo em seus estudos.
 Iniciaremos nossos testes com o Groovy Console, que é um editor simples onde podemos codar e testar a execução dos nossos primeiros códigos:</p>
 
-<p><img src="http://guilhermeka.github.com/samuraidev-blog/wp-content/gallery/groovy/groovyconsole.png" alt="Editor simples com um console que acompanha a sdk do Groovy" /></p>
+<p><img src="http://samuraidev.herokuapps.com.br/wp-content/gallery/groovy/groovyconsole.png" alt="Editor simples com um console que acompanha a sdk do Groovy" /></p>
 
 <p>Para executar o Groovy Console devemos digitar no Console o comando groovyConsole.</p>
 
@@ -450,9 +441,9 @@ println d.algo(3, 6)
   
   <entry>
     <title type="html"><![CDATA[CSS inteligente, use SASS!]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/07/css-inteligente-use-sass/"/>
     <updated>2012-05-07T05:15:20-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/07/css-inteligente-use-sass</id>
     <content type="html"><![CDATA[<p>Bom, o post de hoje é uma dica referente a desenvolvimento web, mais especificamente de CSS. Atualmente atuo como desenvolvedor mobile e já fazia algum tempo que não desenvolvia nada web, até o final do ano passado, quando nosso cliente teve a necessidade da reescrita de um sistema web. Em nosso time não há alguém responsável somente pelo layout, mas todos tínhamos conhecimento em CSS. Logo no início do projeto sentamos e discutimos alguns padrões para o layout do sistema, mas algo me incomodava na organização do CSS. O CSS, em sua criação, veio com a intenção de padronizar o layout do seu sistema/site, fazendo um controle centralizado dos estilos evitando assim a duplicação de código que torna simples alterações em tarefas custosas. Minha incomodação era justamente com essa centralização, ela ainda não estava correta, o CSS não cumpre totalmente o seu papel de evitar repetição de código e centralizar as mudanças, pois há muitas classes com comportamentos parecidos e que na maioria das vezes quando precisamos alterá-las gostaríamos que essas alterações afetassem todos esses padrões duplicados em nossas classes, e.g. uma cor padrão ou tamanho de margens. Foi nesse instante que um colega mencionou o SASS que traz todas essas melhorias que eu queria e o CSS não me proporcionava.</p>
 
 <h2>Iniciando&#8230;</h2>
@@ -576,9 +567,9 @@ $padding: 5px
   
   <entry>
     <title type="html"><![CDATA[Instalando node.js no Fedora a partir do código fonte]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/"/>
     <updated>2012-04-26T16:21:09-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte</id>
     <content type="html"><![CDATA[<p>[singlepic id=12 w=320 h=240 float=left]</p>
 
 <p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
@@ -642,9 +633,9 @@ $ git checkout [nome_da_tag]
   
   <entry>
     <title type="html"><![CDATA[Eventos fim de abril]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/24/eventos-fim-de-abril/"/>
     <updated>2012-04-24T15:18:29-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/24/eventos-fim-de-abril</id>
     <content type="html"><![CDATA[<p>Pessoal, esse post é meramente informativo, vou citar alguns eventos que vão ocorrer agora nesse fim de abril, aqui em Porto Alegre ou na Web.</p>
 
 <p>25/04: Webinar - Reduce Your IT Risks by Using Continuous Delivery by Joanne Molesky, evento organizado pela ThoughtWorks, as 19h. Gratuito via Web com duração de 1h. Exige registrar-se com antecedência <a href="https://thoughtworks.webex.com/mw0306ld/mywebex/default.do?nomenu=true&amp;siteurl=thoughtworks&amp;service=6&amp;rnd=0.22434889546550585&amp;main_url=https%3A%2F%2Fthoughtworks.webex.com%2Fec0605ld%2Feventcenter%2Fevent%2FeventAction.do%3FtheAction%3Ddetail%26confViewID%3D909461151%26%26%26%26siteurl%3Dthoughtworks">aqui</a>.</p>
@@ -663,9 +654,9 @@ $ git checkout [nome_da_tag]
   
   <entry>
     <title type="html"><![CDATA[Prince of Persia no GitHub]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/24/prince-of-persia-no-github/"/>
     <updated>2012-04-24T09:26:08-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/24/prince-of-persia-no-github</id>
     <content type="html"><![CDATA[<p>Eu me lembro do inicio dos anos 90, quando vi pela primeira vez essa máquina chamada computador. Causou tal admiração que uma decada depois resolvi iniciar meus estudos em Ciência da Computação. Quem &#8220;operava&#8221; a máquina era meu primo, enquanto meu tio falava entusiasmado dos grandes beneficios que ela traria para trabalho, estudos e diversão. Na tela eu via algo muito semelhante a essa imagem:</p>
 
 <p>[singlepic id=9 w=320 h=240 float=center]</p>
@@ -678,9 +669,9 @@ $ git checkout [nome_da_tag]
   
   <entry>
     <title type="html"><![CDATA[Versionamento de Código (c/ Git) p2]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/22/versionamento-de-codigo-c-git-p2/"/>
     <updated>2012-04-22T14:28:02-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/22/versionamento-de-codigo-c-git-p2</id>
     <content type="html"><![CDATA[<p>No outro <a href="http://samuraidev.com/tutoriais/versionamento-de-codigo-c-git-p1/">post</a>, fiz uma introdução ao versionamento de código, falei sobre o Git e GitHub. Agora vamos ver mais de perto como essa ferramenta funciona. Ao fim desse post você vai ter visto como configurar e inicializar um repositório, realizar, gravar, desfazer e comparar mudanças, e ver o estado e historico de seus arquivos.</p>
 
 <p>Se você vai utilizar o Git, seria muito legal tambem criar uma conta no <a href="https://github.com/">GitHub</a>. Não só porque ele oferece a hospedagem gratuita para repositórios de código livre, mas também por ser uma espécie de currículo utilizado no mercado de desenvolvimento. Além do GitHub, existem outros sites de hospedagem de repositórios para o Git, veja uma lista deles:</p>
@@ -928,22 +919,22 @@ $ git commit -m ‘inclusão do nome Guilherme Kruger Araujo 25’
 <p>O resutlado será algo assim:</p>
 
 <p>  <em>commit b0837c9d941a9e9549164aedaeb620d23d9ca6cc</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x67;&#x75;&#105;&#50;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#103;&#117;&#105;&#x32;&#x38;&#x31;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x67;&#x75;&#105;&#50;&#x38;&#49;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#103;&#x75;&#105;&#x32;&#x38;&#x31;&#49;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;</a></em>
   <em>Date: Sat Apr 21 19:54:08 2012 -0300</em>
   <em>teste</em></p>
 
 <p>  <em>commit c5873bf79859688622b29a3d576c12e06cfd793b</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x67;&#x75;&#x69;&#x32;&#56;&#x31;&#x31;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#103;&#117;&#x69;&#50;&#56;&#49;&#x31;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x67;&#117;&#x69;&#50;&#56;&#49;&#x31;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x75;&#105;&#x32;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></em>
   <em>Date: Sat Apr 21 19:33:41 2012 -0300</em>
   <em>inclusão do nome Guilherme Kruger Araujo 25</em></p>
 
 <p>  <em>commit 6de3005ccc52f829d10ac78a2c3062796d96a135</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#103;&#x75;&#x69;&#x32;&#x38;&#49;&#x31;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#103;&#x75;&#105;&#x32;&#56;&#49;&#49;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x67;&#117;&#105;&#50;&#x38;&#x31;&#49;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#103;&#x75;&#105;&#x32;&#56;&#x31;&#49;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a></em>
   <em>Date: Sat Apr 21 19:13:37 2012 -0300</em>
   <em>criando arquivos para o post</em></p>
 
 <p>  <em>commit c2df99536d815782a34a4bb64789e65aa4790947</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#103;&#117;&#x69;&#x32;&#x38;&#x31;&#49;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#109;">&#x67;&#x75;&#105;&#50;&#56;&#x31;&#49;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#103;&#117;&#x69;&#x32;&#56;&#x31;&#49;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x67;&#117;&#105;&#x32;&#56;&#x31;&#49;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
   <em>Date: Wed Apr 11 21:37:41 2012 -0300</em>
   <em>first commit</em></p>
 
@@ -991,9 +982,9 @@ $ git commit --amend
   
   <entry>
     <title type="html"><![CDATA[Versionamento de Código (c/ Git) p1]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/17/versionamento-de-codigo-c-git-p1/"/>
     <updated>2012-04-17T13:54:18-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/17/versionamento-de-codigo-c-git-p1</id>
     <content type="html"><![CDATA[<p>Se você é um desenvolvedor entusiasta e gosta de estar por dentro das novidades desse mundo, vai encontrar aqui no SamuraiDev uma fonte riquissíma e abrangente sobre tecnologias e ferramentas de desenvolvimento, assim como debates e novidades envolvendo o tema.</p>
 
 <p>Como muitos dos posts serão no estilo <a href="http://pt.wikipedia.org/wiki/DIY">DIY</a>, acredito que não existe uma melhor maneira de começar do que apresentar uma ferramenta que revolucionou a cultura do Desenvolvimento de Software. O <a href="https://github.com/">GitHub</a>! Ele é uma plataforma social para o desenvolvimento de software construido ao redor do <a href="http://pt.wikipedia.org/wiki/Git">Git</a>, e traz uma nova abordagem para a escrita e compartilhamento de código. Enquanto o Git cuida da parte técnica, como fork e merge, o GitHub trata das questões sociais como requisições para pulls e o rastreamento de forks.</p>

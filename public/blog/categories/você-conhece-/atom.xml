@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Você conhece? | My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/você-conhece-/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Category: Você conhece? | Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/blog/categories/você-conhece-/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-07T21:16:12-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Ruby?]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby/"/>
     <updated>2012-07-04T16:30:35-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby</id>
     <content type="html"><![CDATA[<p>[singlepic id=28]</p>
 
 <p>Em mais um episodio da nossa serie "Voce conhece?",  apresentarei a linguagem Ruby. Porem nao entraremos em codigo desta vez, deixaremos esta tarefa para os proximos posts, hoje iremos focar na historia e no ecossistema Ruby.</p>
@@ -90,9 +90,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Tipografía? Utilizando fontes ricas na web.]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/"/>
     <updated>2012-06-25T16:43:34-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web</id>
     <content type="html"><![CDATA[<p>Acredite ou não, a tipografía é um campo enorme, de grande interesse e pode ter um efeito profundo no resultado do seu trabalho. Até pouco tempo a web esteve um tanto limitada quanto ao uso de fontes, ficando restrito às que o usuário possuía em seu sistema. Agora as coisas estão um pouco melhor, porém antes mostrar como utilizar fontes mais ricas em sistemas web veremos um pouco mais sobre tipografía.</p>
 
 <p>[singlepic id=20 w=320 h=240 float=right]É importante saber que um dos princípios teóricos por traz do Design Gráfico é o Equilibrio, no entanto ele nem sempre é alcançado pela uniformidade. A fonte Gill Sans possui a caracteristica de ser perceptivelmente equilibrada, mas se você perceber a espessura de suas linhas variam em diferentes pontos dos seus traços. Veja imagem ao lado.</p>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tutoriais | My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/tutoriais/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Category: Tutoriais | Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/blog/categories/tutoriais/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-07T21:16:12-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached/"/>
     <updated>2012-06-16T16:17:21-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached</id>
     <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
 
 <p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
@@ -69,9 +69,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[DNS do Registro.br + Google App Engine]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/10/dns-do-registro-br-google-app-engine/"/>
     <updated>2012-06-10T18:34:40-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/10/dns-do-registro-br-google-app-engine</id>
     <content type="html"><![CDATA[<p>Primeiramente quero deixar claro que esse post não vai ensinar a criar um sistema web, apenas será mostrado que é possivel publicar aquela sua ideia pagando apenas o registro de seu domínio. Então, se você tem uma ideia revolucionaria para um sistema web, nada melhor do que desenvolver um protótipo publicando ele na web para provar o seu conceito. Ressalto que nem mesmo um dominio é necessário se você quiser apenas provar sua ideia, mas é um passo importante depois que ela amadurece.</p>
 
 <p>No meu caso eu fiz isso para o <a href="http://www.tweetvagas.com.br">Tweet Vagas</a> com o Google App Engine, colocando o meu site no ar com dominio e email próprio, pagando apenas pelo domínio. Para isso precisa registrar o domínio no <a href="http://registro.br/">Registro.br</a> (onde você pode registrar por R$30,00/ano), ter seu applicativo web no <a href="https://developers.google.com/appengine/?hl=pt-BR">Google App Engine</a> e criar uma conta no <a href="http://www.google.com/apps/intl/pt-BR/business/">Google Apps</a> para o seu dominio.</p>
@@ -104,9 +104,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[Dica de editor simples - SublimeText]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
     <updated>2012-05-27T15:13:46-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
     <content type="html"><![CDATA[<p>Olá pessoal, hoje viemos dar a dica de um editor de código simples, ágil e o mais próximo do TextMate (hehehe). Os novos frameworks, e até mesmo linguagens mais novas, trazem uma simplicidade que nos induz a trabalhar livre de uma IDE, como é o caso do Rails, Grails, Play, etc...</p>
 
 <p>[singlepic id=16]</p>
@@ -136,9 +136,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[Primeiros passos com Groovy]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy/"/>
     <updated>2012-05-10T18:44:28-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy</id>
     <content type="html"><![CDATA[<p><img src="/wp-content/gallery/groovy/groovy-logo-medium.png" alt="Logo do Groovy" />Olá pessoal, hoje vamos aprender como configurar e dar os primeiros passos com a linguagem Groovy. Ela é uma linguagem de programação dinâmica que roda na plataforma Java, ou seja, também é compilada para os famosos bytecodes Java, e foi inspirada em linguagens como Python, Ruby e Smalltalk. Ok, e o que eu ganho com isso? Agilidade no desenvolvimento e compatibilidade com códigos já escritos em Java!
 Além disso, Groovy é menos verboso e reduz o tempo de desenvolvimento em muitas das nossas tarefas corriqueiras como veremos em alguns exemplos em futuros posts.</p>
 
@@ -302,9 +302,9 @@ println d.algo(3, 6)
   
   <entry>
     <title type="html"><![CDATA[CSS inteligente, use SASS!]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/07/css-inteligente-use-sass/"/>
     <updated>2012-05-07T05:15:20-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/07/css-inteligente-use-sass</id>
     <content type="html"><![CDATA[<p>Bom, o post de hoje é uma dica referente a desenvolvimento web, mais especificamente de CSS. Atualmente atuo como desenvolvedor mobile e já fazia algum tempo que não desenvolvia nada web, até o final do ano passado, quando nosso cliente teve a necessidade da reescrita de um sistema web. Em nosso time não há alguém responsável somente pelo layout, mas todos tínhamos conhecimento em CSS. Logo no início do projeto sentamos e discutimos alguns padrões para o layout do sistema, mas algo me incomodava na organização do CSS. O CSS, em sua criação, veio com a intenção de padronizar o layout do seu sistema/site, fazendo um controle centralizado dos estilos evitando assim a duplicação de código que torna simples alterações em tarefas custosas. Minha incomodação era justamente com essa centralização, ela ainda não estava correta, o CSS não cumpre totalmente o seu papel de evitar repetição de código e centralizar as mudanças, pois há muitas classes com comportamentos parecidos e que na maioria das vezes quando precisamos alterá-las gostaríamos que essas alterações afetassem todos esses padrões duplicados em nossas classes, e.g. uma cor padrão ou tamanho de margens. Foi nesse instante que um colega mencionou o SASS que traz todas essas melhorias que eu queria e o CSS não me proporcionava.</p>
 
 <h2>Iniciando...</h2>

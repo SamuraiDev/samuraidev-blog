@@ -2,86 +2,76 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/17/versionamento-de-codigo-c-git-p1/
+            http://samuraidev.herokuapps.com.br/blog/2012/04/17/versionamento-de-codigo-c-git-p1/
         </loc>
         <lastmod>2012-09-07T17:47:56-03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/22/versionamento-de-codigo-c-git-p2/
+            http://samuraidev.herokuapps.com.br/blog/2012/04/22/versionamento-de-codigo-c-git-p2/
         </loc>
         <lastmod>2012-09-07T18:03:30-03:00</lastmod>
     </url>
     <url>
+        <loc>http://samuraidev.herokuapps.com.br/blog/2012/04/24/prince-of-persia-no-github/</loc>
+        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://samuraidev.herokuapps.com.br/blog/2012/04/24/eventos-fim-de-abril/</loc>
+        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
+    </url>
+    <url>
         <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github/
+            http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/
+        </loc>
+        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://samuraidev.herokuapps.com.br/blog/2012/05/07/css-inteligente-use-sass/</loc>
+        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://samuraidev.herokuapps.com.br/blog/2012/05/10/primeiros-passos-com-groovy/
         </loc>
         <lastmod>2012-09-07T17:04:16-03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril/
+            http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext/
         </loc>
         <lastmod>2012-09-07T17:04:16-03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/
+            http://samuraidev.herokuapps.com.br/blog/2012/06/10/dns-do-registro-br-google-app-engine/
         </loc>
         <lastmod>2012-09-07T17:04:16-03:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/07/css-inteligente-use-sass/
-        </loc>
-        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/10/primeiros-passos-com-groovy/
-        </loc>
-        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext/
-        </loc>
-        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/10/dns-do-registro-br-google-app-engine/
-        </loc>
-        <lastmod>2012-09-07T17:04:16-03:00</lastmod>
-    </url>
-    <url>
-        <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/
-        </loc>
+        <loc>http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached/</loc>
         <lastmod>2012-09-07T20:23:31-03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/
+            http://samuraidev.herokuapps.com.br/blog/2012/06/25/voce-conhece-tipografia-utilizando-fontes-ricas-na-web/
         </loc>
         <lastmod>2012-09-07T20:23:08-03:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://guilhermeka.github.com/samuraidev-blog/blog/2012/07/04/voce-conhece-ruby/
-        </loc>
+        <loc>http://samuraidev.herokuapps.com.br/blog/2012/07/04/voce-conhece-ruby/</loc>
         <lastmod>2012-09-07T17:04:16-03:00</lastmod>
     </url>
     <url>
-        <loc>http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/</loc>
-        <lastmod>2012-09-07T15:53:31-03:00</lastmod>
-    </url>
-    <url>
-        <loc>http://guilhermeka.github.com/samuraidev-blog/</loc>
+        <loc>http://samuraidev.herokuapps.com.br/</loc>
         <lastmod>2012-09-07T20:23:31-03:00</lastmod>
     </url>
     <url>
-        <loc>http://guilhermeka.github.com/samuraidev-blog/blog/archives/</loc>
+        <loc>http://samuraidev.herokuapps.com.br/blog/about/</loc>
+        <lastmod>2012-09-07T20:49:13-03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://samuraidev.herokuapps.com.br/blog/archives/</loc>
         <lastmod>2012-09-07T20:23:31-03:00</lastmod>
     </url>
 </urlset>

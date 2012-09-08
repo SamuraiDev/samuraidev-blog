@@ -66,7 +66,7 @@ A utilização de Memcache é bastante simples e encorajada pelo Google App Engi
 
 
 
-[gist id=2941459]
+{% gist 2941459 %}
 
 
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Notícias | My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/notícias/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Category: Notícias | Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/blog/categories/notícias/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-07T21:16:12-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Eventos fim de abril]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/24/eventos-fim-de-abril/"/>
     <updated>2012-04-24T15:18:29-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/eventos-fim-de-abril</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/24/eventos-fim-de-abril</id>
     <content type="html"><![CDATA[<p>Pessoal, esse post é meramente informativo, vou citar alguns eventos que vão ocorrer agora nesse fim de abril, aqui em Porto Alegre ou na Web.</p>
 
 <p>25/04: Webinar - Reduce Your IT Risks by Using Continuous Delivery by Joanne Molesky, evento organizado pela ThoughtWorks, as 19h. Gratuito via Web com duração de 1h. Exige registrar-se com antecedência <a href="https://thoughtworks.webex.com/mw0306ld/mywebex/default.do?nomenu=true&amp;siteurl=thoughtworks&amp;service=6&amp;rnd=0.22434889546550585&amp;main_url=https%3A%2F%2Fthoughtworks.webex.com%2Fec0605ld%2Feventcenter%2Fevent%2FeventAction.do%3FtheAction%3Ddetail%26confViewID%3D909461151%26%26%26%26siteurl%3Dthoughtworks">aqui</a>.</p>
@@ -36,9 +36,9 @@
   
   <entry>
     <title type="html"><![CDATA[Prince of Persia no GitHub]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/24/prince-of-persia-no-github/"/>
     <updated>2012-04-24T09:26:08-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/04/24/prince-of-persia-no-github</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/04/24/prince-of-persia-no-github</id>
     <content type="html"><![CDATA[<p>Eu me lembro do inicio dos anos 90, quando vi pela primeira vez essa máquina chamada computador. Causou tal admiração que uma decada depois resolvi iniciar meus estudos em Ciência da Computação. Quem "operava" a máquina era meu primo, enquanto meu tio falava entusiasmado dos grandes beneficios que ela traria para trabalho, estudos e diversão. Na tela eu via algo muito semelhante a essa imagem:</p>
 
 <p>[singlepic id=9 w=320 h=240 float=center]</p>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Ferramentas | My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/ferramentas/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Category: Ferramentas | Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/blog/categories/ferramentas/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-07T21:16:12-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Você conhece Memcached?!]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached/"/>
     <updated>2012-06-16T16:17:21-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/06/16/voce-conhece-memcached</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/06/16/voce-conhece-memcached</id>
     <content type="html"><![CDATA[<p>[singlepic id=18 w=160 h=120 float=left]</p>
 
 <p>Memcached é um sistema para lidar com memória cache de forma distribuida e com alto desempenho. Dependendo do design de sua aplicação, existem diversos lugares que poderiam ser interessantes a utilização de Memcached para melhorar a performance e a utilização de recursos. Alguns exemplos são:</p>
@@ -69,9 +69,9 @@ def get_vaga(vaga_id, update = False):
   
   <entry>
     <title type="html"><![CDATA[Dica de editor simples - SublimeText]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext/"/>
     <updated>2012-05-27T15:13:46-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/05/27/dica-de-editor-simples-sublimetext</id>
     <content type="html"><![CDATA[<p>Olá pessoal, hoje viemos dar a dica de um editor de código simples, ágil e o mais próximo do TextMate (hehehe). Os novos frameworks, e até mesmo linguagens mais novas, trazem uma simplicidade que nos induz a trabalhar livre de uma IDE, como é o caso do Rails, Grails, Play, etc...</p>
 
 <p>[singlepic id=16]</p>
