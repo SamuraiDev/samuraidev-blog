@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://guilhermeka.github.com/samuraidev-blog
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://samuraidev.herokuapps.com.br
+title: Samurai Dev
+subtitle: Acompanhe o blog SamuraiDev para trilhar o “caminho do desenvolvedor” ao mais nobre estilo Samurai. 
+author: Samurai Dev
 simple_search: http://google.com/search
 description:
 
@@ -58,13 +58,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # ----------------------- #
 
 # Github repositories
-github_user: guilhermeka
+github_user: SamuraiDev
 github_repo_count: 4
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user: gkrugeraraujo
+twitter_user: 
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true

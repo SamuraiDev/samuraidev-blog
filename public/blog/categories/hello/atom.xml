@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: hello | My Octopress Blog]]></title>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/blog/categories/hello/atom.xml" rel="self"/>
-  <link href="http://guilhermeka.github.com/samuraidev-blog/"/>
-  <updated>2012-09-07T20:23:32-03:00</updated>
-  <id>http://guilhermeka.github.com/samuraidev-blog/</id>
+  <title><![CDATA[Category: hello | Samurai Dev]]></title>
+  <link href="http://samuraidev.herokuapps.com.br/blog/categories/hello/atom.xml" rel="self"/>
+  <link href="http://samuraidev.herokuapps.com.br/"/>
+  <updated>2012-09-09T15:51:40-03:00</updated>
+  <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Samurai Dev]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World Post]]></title>
-    <link href="http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world/"/>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/09/07/hello-world/"/>
     <updated>2012-09-07T15:48:00-03:00</updated>
-    <id>http://guilhermeka.github.com/samuraidev-blog/blog/2012/09/07/hello-world</id>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/09/07/hello-world</id>
     <content type="html"><![CDATA[<p>Hi, this is an experiment with Octopress. Nice! :)</p>
 ]]></content>
   </entry>

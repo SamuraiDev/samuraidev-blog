@@ -4,7 +4,7 @@
   <title><![CDATA[Samurai Dev]]></title>
   <link href="http://samuraidev.herokuapps.com.br/atom.xml" rel="self"/>
   <link href="http://samuraidev.herokuapps.com.br/"/>
-  <updated>2012-09-07T21:16:12-03:00</updated>
+  <updated>2012-09-09T15:51:40-03:00</updated>
   <id>http://samuraidev.herokuapps.com.br/</id>
   <author>
     <name><![CDATA[Samurai Dev]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Post]]></title>
+    <link href="http://samuraidev.herokuapps.com.br/blog/2012/09/07/hello-world/"/>
+    <updated>2012-09-07T15:48:00-03:00</updated>
+    <id>http://samuraidev.herokuapps.com.br/blog/2012/09/07/hello-world</id>
+    <content type="html"><![CDATA[<p>Hi, this is an experiment with Octopress. Nice! :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Você conhece Ruby?]]></title>
@@ -570,9 +579,9 @@ $padding: 5px
     <link href="http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte/"/>
     <updated>2012-04-26T16:21:09-03:00</updated>
     <id>http://samuraidev.herokuapps.com.br/blog/2012/04/26/instalando-node-js-no-fedora-a-partir-do-codigo-fonte</id>
-    <content type="html"><![CDATA[<p>[singlepic id=12 w=320 h=240 float=left]</p>
+    <content type="html"><![CDATA[<p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
 
-<p>O node.js é uma plataforma para construir, de uma forma fácil, aplicações de alta escalabilidade (como um servidor web). Construido sobre o <a href="http://pt.wikipedia.org/wiki/V8_%28JavaScript%29">V8</a>, Node.js usa um modelo orientado a eventos com entradas/saídas assíncronas (que não bloqueiam o servidor). Mas para que você consiga instalar o Node.js no Fedora, primeiro terá que instalar os seguintes pacotes:</p>
+<p><img class="left" src="http://samuraidev.herokuapps.com.br/images/node-js.jpg"></p>
 
 <pre><code># yum install openssl-devel
 # yum install gcc
@@ -619,8 +628,6 @@ $ git checkout [nome_da_tag]
 </code></pre>
 
 <p>Procure a linha que contem &#8220;Defaults secure_path=/sbin:/bin:/usr/sbin:/usr/bin&#8221; e adicione ao fim da linha &#8220;:/usr/local/bin&#8221; sem os parenteses. Você faz isso indo com cursor até o fim da linha, digite &#8220;i&#8221;, escreva &#8220;:/usr/local/bin&#8221; e então, para salvar, aperte ESC e digite &#8220;wq&#8221;, ENTER.</p>
-
-<p>[singlepic id=13 w=320 h=240 float=center]</p>
 
 <p>Para verificar a versão instalada:</p>
 
@@ -919,22 +926,22 @@ $ git commit -m ‘inclusão do nome Guilherme Kruger Araujo 25’
 <p>O resutlado será algo assim:</p>
 
 <p>  <em>commit b0837c9d941a9e9549164aedaeb620d23d9ca6cc</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x67;&#x75;&#105;&#50;&#x38;&#49;&#49;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#103;&#x75;&#105;&#x32;&#x38;&#x31;&#49;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#103;&#x75;&#105;&#x32;&#56;&#49;&#x31;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x75;&#x69;&#50;&#56;&#49;&#49;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
   <em>Date: Sat Apr 21 19:54:08 2012 -0300</em>
   <em>teste</em></p>
 
 <p>  <em>commit c5873bf79859688622b29a3d576c12e06cfd793b</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x67;&#117;&#x69;&#50;&#56;&#49;&#x31;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x75;&#105;&#x32;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x67;&#x75;&#105;&#50;&#56;&#49;&#x31;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x75;&#x69;&#x32;&#56;&#49;&#x31;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></em>
   <em>Date: Sat Apr 21 19:33:41 2012 -0300</em>
   <em>inclusão do nome Guilherme Kruger Araujo 25</em></p>
 
 <p>  <em>commit 6de3005ccc52f829d10ac78a2c3062796d96a135</em>
-  <em>Author: Guilherme Araujo <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x67;&#117;&#105;&#50;&#x38;&#x31;&#49;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#103;&#x75;&#105;&#x32;&#56;&#x31;&#49;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#117;&#x69;&#x32;&#x38;&#x31;&#x31;&#64;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x75;&#105;&#50;&#56;&#49;&#x31;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></em>
   <em>Date: Sat Apr 21 19:13:37 2012 -0300</em>
   <em>criando arquivos para o post</em></p>
 
 <p>  <em>commit c2df99536d815782a34a4bb64789e65aa4790947</em>
-  <em>Author: Guilherme Araujo <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#103;&#117;&#x69;&#x32;&#56;&#x31;&#49;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x67;&#117;&#105;&#x32;&#56;&#x31;&#49;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></em>
+  <em>Author: Guilherme Araujo <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x67;&#117;&#x69;&#50;&#56;&#49;&#x31;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x75;&#x69;&#x32;&#x38;&#49;&#49;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></em>
   <em>Date: Wed Apr 11 21:37:41 2012 -0300</em>
   <em>first commit</em></p>
 
